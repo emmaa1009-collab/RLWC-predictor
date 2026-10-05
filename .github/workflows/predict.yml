@@ -1,0 +1,76 @@
+name: RLWC predictions
+
+on:
+  schedule:
+    # GitHub cron runs in UTC. Sydney is on AEDT (UTC+11) during the tournament.
+    - cron: "0 20 * * *"   # 07:00 AEDT, morning run: picks up overnight team news
+    - cron: "0 2 * * *"    # 13:00 AEDT, pre-kickoff run: last chance before evening games
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print predictions only, do not commit anything"
+        type: boolean
+        default: false
+
+# Never let two runs overlap, so commits cannot collide.
+concurrency:
+  group: rlwc-predictions
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check tournament window
+        id: window
+        run: |
+          today=$(date -u +%F)
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [[ "$today" < "2026-10-14" || "$today" > "2026-11-16" ]]; then
+            echo "Outside tournament window ($today), skipping."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out repo
+        if: steps.window.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.window.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        if: steps.window.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Predict new matches and score finished ones
+        if: steps.window.outputs.run == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: python src/run.py
+
+      - name: Commit predictions and scoreboard
+        if: steps.window.outputs.run == 'true' && inputs.dry_run != true
+        run: |
+          git config user.name "rlwc-predictor[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add data SCOREBOARD.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Predictions and scores: $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
