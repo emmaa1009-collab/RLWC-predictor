@@ -1,0 +1,249 @@
+{
+  "source": "Official RLWC 2026 draw (rlwc2026.com) for men; Wikipedia women's tournament page for women pool times/venues",
+  "updated": "2026-10-05",
+  "matches": [
+    {
+      "competition": "men",
+      "home_team": "Australia",
+      "away_team": "New Zealand",
+      "kickoff_utc": "2026-10-15T09:05:00Z",
+      "venue": "Allianz Stadium, Sydney",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "women",
+      "home_team": "Australia",
+      "away_team": "Samoa",
+      "kickoff_utc": "2026-10-15T09:05:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "men",
+      "home_team": "Samoa",
+      "away_team": "France",
+      "kickoff_utc": "2026-10-16T06:45:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "women",
+      "home_team": "Papua New Guinea",
+      "away_team": "France",
+      "kickoff_utc": "2026-10-17T02:15:00Z",
+      "venue": "Santos National Football Stadium, Port Moresby",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "women",
+      "home_team": "England",
+      "away_team": "Wales",
+      "kickoff_utc": "2026-10-17T04:15:00Z",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "men",
+      "home_team": "Papua New Guinea",
+      "away_team": "Lebanon",
+      "kickoff_utc": "2026-10-17T04:25:00Z",
+      "venue": "Santos National Football Stadium, Port Moresby",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "England",
+      "away_team": "Tonga",
+      "kickoff_utc": "2026-10-17T09:05:00Z",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "women",
+      "home_team": "New Zealand",
+      "away_team": "Fiji",
+      "kickoff_utc": "2026-10-18T02:50:00Z",
+      "venue": "McDonald Jones Stadium, Newcastle",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "Fiji",
+      "away_team": "Cook Islands",
+      "kickoff_utc": "2026-10-18T05:05:00Z",
+      "venue": "McDonald Jones Stadium, Newcastle",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "women",
+      "home_team": "Samoa",
+      "away_team": "Wales",
+      "kickoff_utc": "2026-10-23T06:50:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "men",
+      "home_team": "Tonga",
+      "away_team": "Lebanon",
+      "kickoff_utc": "2026-10-23T09:05:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "women",
+      "home_team": "Papua New Guinea",
+      "away_team": "Fiji",
+      "kickoff_utc": "2026-10-24T02:15:00Z",
+      "venue": "Santos National Football Stadium, Port Moresby",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "Papua New Guinea",
+      "away_team": "Samoa",
+      "kickoff_utc": "2026-10-24T04:25:00Z",
+      "venue": "Santos National Football Stadium, Port Moresby",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "England",
+      "away_team": "France",
+      "kickoff_utc": "2026-10-24T06:35:00Z",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "women",
+      "home_team": "Australia",
+      "away_team": "England",
+      "kickoff_utc": "2026-10-24T09:05:00Z",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "women",
+      "home_team": "New Zealand",
+      "away_team": "France",
+      "kickoff_utc": "2026-10-25T01:50:00Z",
+      "venue": "One NZ Stadium, Christchurch",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "New Zealand",
+      "away_team": "Cook Islands",
+      "kickoff_utc": "2026-10-25T05:05:00Z",
+      "venue": "One NZ Stadium, Christchurch",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "men",
+      "home_team": "Australia",
+      "away_team": "Fiji",
+      "kickoff_utc": "2026-10-25T09:05:00Z",
+      "venue": "Suncorp Stadium, Brisbane",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "women",
+      "home_team": "England",
+      "away_team": "Samoa",
+      "kickoff_utc": "2026-10-30T06:50:00Z",
+      "venue": "WIN Stadium, Wollongong",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "men",
+      "home_team": "England",
+      "away_team": "Papua New Guinea",
+      "kickoff_utc": "2026-10-30T09:05:00Z",
+      "venue": "WIN Stadium, Wollongong",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "women",
+      "home_team": "Fiji",
+      "away_team": "France",
+      "kickoff_utc": "2026-10-31T02:35:00Z",
+      "venue": "Cbus Super Stadium, Gold Coast",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "New Zealand",
+      "away_team": "Fiji",
+      "kickoff_utc": "2026-10-31T04:30:00Z",
+      "venue": "Cbus Super Stadium, Gold Coast",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "women",
+      "home_team": "New Zealand",
+      "away_team": "Papua New Guinea",
+      "kickoff_utc": "2026-10-31T06:55:00Z",
+      "venue": "Cbus Super Stadium, Gold Coast",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "Australia",
+      "away_team": "Cook Islands",
+      "kickoff_utc": "2026-10-31T09:05:00Z",
+      "venue": "Queensland Country Bank Stadium, Townsville",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "women",
+      "home_team": "Australia",
+      "away_team": "Wales",
+      "kickoff_utc": "2026-11-01T04:45:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "men",
+      "home_team": "Lebanon",
+      "away_team": "France",
+      "kickoff_utc": "2026-11-01T05:40:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "B"
+    },
+    {
+      "competition": "men",
+      "home_team": "Tonga",
+      "away_team": "Samoa",
+      "kickoff_utc": "2026-11-01T08:05:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "B"
+    }
+  ]
+}

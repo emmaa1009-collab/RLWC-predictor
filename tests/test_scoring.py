@@ -289,3 +289,74 @@ def test_build_site_payload_includes_pending_and_scored():
     assert "RLWC" in html
     assert '"home_team": "C"' in html
     assert '"away_team": "D"' in html
+
+
+def test_build_site_payload_includes_scheduled_without_prediction():
+    scheduled = [
+        {
+            "match_id": "2026-10-17_men_england_tonga",
+            "competition": "men",
+            "home_team": "England",
+            "away_team": "Tonga",
+            "kickoff_utc": "2026-10-17T09:05:00Z",
+            "venue": "HBF Park, Perth",
+            "stage": "pool",
+            "pool": "B",
+        }
+    ]
+    payload = run.scoreboard_site.build_site_payload(
+        updated="2026-10-05T00:00:00Z",
+        scored_rows=[],
+        pending_rows=[],
+        overall=run.scoreboard_site.empty_stats(),
+        men=run.scoreboard_site.empty_stats(),
+        women=run.scoreboard_site.empty_stats(),
+        scheduled_rows=scheduled,
+    )
+    assert len(payload["matches"]) == 1
+    match = payload["matches"][0]
+    assert match["status"] == "scheduled"
+    assert match["prediction"] is None
+    assert match["home_team"] == "England"
+    html = run.scoreboard_site.render_index_html(payload)
+    assert "No prediction yet" in html
+    assert "England" in html
+
+
+def test_load_scheduled_fixtures_has_men_and_women_pools():
+    fixtures = run.load_scheduled_fixtures()
+    assert len(fixtures) >= 20
+    comps = {row["competition"] for row in fixtures}
+    assert comps == {"men", "women"}
+    assert all(row["stage"] == "pool" for row in fixtures)
+    assert all(row.get("match_id") for row in fixtures)
+    # Prediction rows must win over scheduled duplicates.
+    pending = [
+        {
+            "match_id": fixtures[0]["match_id"],
+            "prediction": {
+                "competition": fixtures[0]["competition"],
+                "home_team": fixtures[0]["home_team"],
+                "away_team": fixtures[0]["away_team"],
+                "kickoff_utc": fixtures[0]["kickoff_utc"],
+                "made_at": "2026-10-01T00:00:00Z",
+                "home_win_prob": 0.6,
+                "away_win_prob": 0.4,
+                "predicted_margin": 6,
+                "predicted_winner": "home",
+                "reasoning": "test",
+            },
+        }
+    ]
+    payload = run.scoreboard_site.build_site_payload(
+        updated="2026-10-05T00:00:00Z",
+        scored_rows=[],
+        pending_rows=pending,
+        overall=run.scoreboard_site.empty_stats(),
+        men=run.scoreboard_site.empty_stats(),
+        women=run.scoreboard_site.empty_stats(),
+        scheduled_rows=fixtures,
+    )
+    by_id = {m["match_id"]: m for m in payload["matches"]}
+    assert by_id[fixtures[0]["match_id"]]["status"] == "pending"
+    assert len(payload["matches"]) == len(fixtures)

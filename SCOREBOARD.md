@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-10-05T10:19:03Z
+Updated: 2026-10-05T10:29:25Z
 
 ## Matches
 
@@ -46,3 +46,4 @@ Results stay provisional until two agreeing lookups or 24h after kickoff.
 Market odds come from `data/baseline_odds.json` when present (optional, manual).
 
 HTML scoreboard: `docs/index.html` (optional GitHub Pages from `/docs`).
+Scheduled pool fixtures (no prediction yet) come from `data/fixtures.json`.

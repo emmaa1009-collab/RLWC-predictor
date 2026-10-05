@@ -22,6 +22,7 @@ The prompt is built into `src/run.py`, so nothing needs to be written by hand be
 .github/workflows/predict.yml   Schedule and automation
 src/run.py                      Predict, record and score logic (with the built-in prompt)
 requirements.txt                Python dependencies
+data/fixtures.json              Published pool fixtures (shown on the site before predictions exist)
 data/predictions/               One JSON file per match, append-only list of versions
 data/results/                   One JSON file per finished match
 SCOREBOARD.md                   Auto-generated running results
@@ -118,7 +119,13 @@ Free-tier rate limits reset daily. Two runs a day across men's plus women's fixt
 Easiest views while the repo stays private:
 
 1. **[`SCOREBOARD.md`](SCOREBOARD.md)** — markdown tally on GitHub
-2. **[`docs/index.html`](docs/index.html)** — HTML scoreboard (open the file locally after cloning, or download it from GitHub). It shows Overall / Men / Women summaries, each forecast, and the final score when available.
+2. **[`docs/index.html`](docs/index.html)** — HTML scoreboard (open the file locally after cloning, or download it from GitHub). It lists pool fixtures from `data/fixtures.json` with **No prediction yet** until a forecast is recorded, then Overall / Men / Women summaries, each forecast, and the final score when available.
+
+To refresh the HTML from fixtures without calling Gemini:
+
+```bash
+python src/run.py --docs-only
+```
 
 ### Optional GitHub Pages
 

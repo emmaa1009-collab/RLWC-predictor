@@ -17,6 +17,7 @@ from google.genai import types
 ROOT = Path(__file__).resolve().parents[1]
 PREDICTIONS_DIR = ROOT / "data" / "predictions"
 RESULTS_DIR = ROOT / "data" / "results"
+FIXTURES_PATH = ROOT / "data" / "fixtures.json"
 SCOREBOARD_PATH = ROOT / "SCOREBOARD.md"
 BASELINE_ODDS_PATH = ROOT / "data" / "baseline_odds.json"
 
@@ -711,6 +712,44 @@ def collect_pending_predictions(exclude_ids: set[str] | None = None) -> list[dic
     return pending
 
 
+def load_scheduled_fixtures() -> list[dict[str, Any]]:
+    """Pool fixtures from data/fixtures.json for the HTML scoreboard (no predictions)."""
+    payload = load_json(FIXTURES_PATH, {})
+    raw_matches = payload.get("matches", []) if isinstance(payload, dict) else []
+    scheduled: list[dict[str, Any]] = []
+    for raw in raw_matches:
+        if not isinstance(raw, dict):
+            continue
+        competition = normalize_competition(raw.get("competition"))
+        if competition is None:
+            continue
+        home = str(raw.get("home_team") or "").strip()
+        away = str(raw.get("away_team") or "").strip()
+        if not home or not away:
+            continue
+        try:
+            kickoff = iso_z(parse_iso(str(raw["kickoff_utc"])))
+        except (KeyError, TypeError, ValueError):
+            continue
+        stage = str(raw.get("stage") or "pool").strip().lower()
+        if stage not in {"pool", "knockout"}:
+            stage = "pool"
+        scheduled.append(
+            {
+                "match_id": match_id(kickoff, competition, home, away),
+                "competition": competition,
+                "home_team": home,
+                "away_team": away,
+                "kickoff_utc": kickoff,
+                "venue": str(raw.get("venue") or "").strip(),
+                "stage": stage,
+                "pool": str(raw.get("pool") or "").strip(),
+            }
+        )
+    scheduled.sort(key=lambda row: (row["kickoff_utc"], row["competition"]))
+    return scheduled
+
+
 def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
     grouped = group_rows_by_competition(rows)
     overall = summarize_rows(rows)
@@ -776,12 +815,14 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
             "Market odds come from `data/baseline_odds.json` when present (optional, manual).",
             "",
             "HTML scoreboard: `docs/index.html` (optional GitHub Pages from `/docs`).",
+            "Scheduled pool fixtures (no prediction yet) come from `data/fixtures.json`.",
             "",
         ]
     )
 
     content = "\n".join(lines)
     pending = collect_pending_predictions({row["match_id"] for row in rows})
+    scheduled = load_scheduled_fixtures()
     payload = scoreboard_site.build_site_payload(
         updated=updated,
         scored_rows=rows,
@@ -789,6 +830,7 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
         overall=overall,
         men=men_stats,
         women=women_stats,
+        scheduled_rows=scheduled,
     )
 
     if DRY_RUN:
@@ -895,6 +937,12 @@ def predict_upcoming(client: genai.Client, now: datetime) -> None:
 
 
 def main() -> None:
+    if len(sys.argv) > 1 and sys.argv[1] in {"--docs-only", "docs-only"}:
+        print("Rebuilding scoreboard site from fixtures/predictions (no Gemini calls).")
+        write_scoreboard_outputs([])
+        print("Done.")
+        return
+
     require_api_key()
     PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)

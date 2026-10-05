@@ -233,6 +233,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
     .badge.miss { color: var(--bad); }
     .badge.half { color: var(--whistle); }
     .badge.pending { color: var(--muted); }
+    .badge.scheduled { color: var(--muted); }
     .empty {
       padding: 1.5rem 0;
       color: var(--muted);
@@ -328,27 +329,41 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
       const pred = match.prediction || {};
       const result = match.result;
       const scored = match.scored;
-      const homeP = Math.round((pred.home_win_prob || 0) * 100);
-      const awayP = Math.round((pred.away_win_prob || 0) * 100);
-      const pick = pred.predicted_winner === "away" ? pred.away_team : pred.home_team;
-      const reason = pred.reasoning ? `<p class="detail">${esc(pred.reasoning)}</p>` : "";
+      const home = pred.home_team || match.home_team || "";
+      const away = pred.away_team || match.away_team || "";
+      const kickoff = pred.kickoff_utc || match.kickoff_utc || "";
+      const venue = match.venue || pred.venue || "";
+      const venueBit = venue ? ` · ${esc(venue)}` : "";
+      let middle = "";
       let scoreHtml = `<p class="score">TBD</p>`;
       let badge = hitLabel(null);
-      if (result) {
-        scoreHtml = `<p class="score">${result.home_score}–${result.away_score}</p>`;
-        badge = hitLabel(scored ? scored.hit : null);
-        if (scored) {
-          badge.text += ` · Brier ${num(scored.brier)}`;
+
+      if (match.status === "scheduled" || !match.prediction) {
+        middle = `<p class="detail">Kickoff ${esc(kickoff)}${venueBit}</p>`;
+        badge = { text: "No prediction yet", cls: "scheduled" };
+      } else {
+        const homeP = Math.round((pred.home_win_prob || 0) * 100);
+        const awayP = Math.round((pred.away_win_prob || 0) * 100);
+        const pick = pred.predicted_winner === "away" ? pred.away_team : pred.home_team;
+        const reason = pred.reasoning ? `<p class="detail">${esc(pred.reasoning)}</p>` : "";
+        middle = `<p class="detail">Pick ${esc(pick)} (${homeP}–${awayP}) · margin ${esc(pred.predicted_margin ?? "n/a")} · kickoff ${esc(kickoff)}${venueBit}</p>${reason}`;
+        if (result) {
+          scoreHtml = `<p class="score">${result.home_score}–${result.away_score}</p>`;
+          badge = hitLabel(scored ? scored.hit : null);
+          if (scored) {
+            badge.text += ` · Brier ${num(scored.brier)}`;
+          }
+          if (!result.locked) badge.text += " · provisional";
+        } else {
+          badge = { text: "Pending", cls: "pending" };
         }
-        if (!result.locked) badge.text += " · provisional";
       }
       return `
         <article class="match" data-competition="${esc(match.competition)}">
           <div class="comp">${esc(match.competition === "women" ? "Women" : "Men")}</div>
           <div>
-            <p class="fixture">${esc(pred.home_team)} vs ${esc(pred.away_team)}</p>
-            <p class="detail">Pick ${esc(pick)} (${homeP}–${awayP}) · margin ${esc(pred.predicted_margin ?? "n/a")} · kickoff ${esc(pred.kickoff_utc || match.kickoff_utc || "")}</p>
-            ${reason}
+            <p class="fixture">${esc(home)} vs ${esc(away)}</p>
+            ${middle}
           </div>
           <div class="outcome">
             ${scoreHtml}
@@ -371,7 +386,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
     const matchesEl = document.getElementById("matches");
     const matches = data.matches || [];
     if (!matches.length) {
-      matchesEl.innerHTML = `<p class="empty">No match forecasts yet. After the workflow runs during the tournament window, predictions and results will land here.</p>`;
+      matchesEl.innerHTML = `<p class="empty">No pool fixtures loaded yet. Add matches to data/fixtures.json or wait for the workflow to record forecasts.</p>`;
     } else {
       matchesEl.innerHTML = matches.map(renderMatch).join("");
     }
@@ -425,23 +440,31 @@ def build_site_payload(
     overall: dict[str, Any],
     men: dict[str, Any],
     women: dict[str, Any],
+    scheduled_rows: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     matches: list[dict[str, Any]] = []
+    present_ids: set[str] = set()
 
     for row in scored_rows:
         pred = row["prediction"]
         result = row["result"]
         scored = row["scored"]
+        present_ids.add(row["match_id"])
         matches.append(
             {
                 "match_id": row["match_id"],
                 "competition": pred.get("competition") or "men",
                 "kickoff_utc": pred.get("kickoff_utc"),
+                "home_team": pred.get("home_team"),
+                "away_team": pred.get("away_team"),
+                "venue": pred.get("venue") or "",
+                "stage": pred.get("stage") or "pool",
                 "status": "scored",
                 "prediction": {
                     "home_team": pred.get("home_team"),
                     "away_team": pred.get("away_team"),
                     "kickoff_utc": pred.get("kickoff_utc"),
+                    "venue": pred.get("venue") or "",
                     "made_at": pred.get("made_at"),
                     "home_win_prob": pred.get("home_win_prob"),
                     "away_win_prob": pred.get("away_win_prob"),
@@ -465,21 +488,26 @@ def build_site_payload(
             }
         )
 
-    scored_ids = {row["match_id"] for row in scored_rows}
     for row in pending_rows:
-        if row["match_id"] in scored_ids:
+        if row["match_id"] in present_ids:
             continue
         pred = row["prediction"]
+        present_ids.add(row["match_id"])
         matches.append(
             {
                 "match_id": row["match_id"],
                 "competition": pred.get("competition") or "men",
                 "kickoff_utc": pred.get("kickoff_utc"),
+                "home_team": pred.get("home_team"),
+                "away_team": pred.get("away_team"),
+                "venue": pred.get("venue") or "",
+                "stage": pred.get("stage") or "pool",
                 "status": "pending",
                 "prediction": {
                     "home_team": pred.get("home_team"),
                     "away_team": pred.get("away_team"),
                     "kickoff_utc": pred.get("kickoff_utc"),
+                    "venue": pred.get("venue") or "",
                     "made_at": pred.get("made_at"),
                     "home_win_prob": pred.get("home_win_prob"),
                     "away_win_prob": pred.get("away_win_prob"),
@@ -487,6 +515,27 @@ def build_site_payload(
                     "predicted_winner": pred.get("predicted_winner"),
                     "reasoning": pred.get("reasoning"),
                 },
+                "result": None,
+                "scored": None,
+            }
+        )
+
+    for row in scheduled_rows or []:
+        mid = row["match_id"]
+        if mid in present_ids:
+            continue
+        matches.append(
+            {
+                "match_id": mid,
+                "competition": row.get("competition") or "men",
+                "kickoff_utc": row.get("kickoff_utc"),
+                "home_team": row.get("home_team"),
+                "away_team": row.get("away_team"),
+                "venue": row.get("venue") or "",
+                "stage": row.get("stage") or "pool",
+                "pool": row.get("pool") or "",
+                "status": "scheduled",
+                "prediction": None,
                 "result": None,
                 "scored": None,
             }
