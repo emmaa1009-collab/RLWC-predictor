@@ -180,6 +180,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
       border-bottom: 1px solid var(--line);
       animation: rise 0.55s ease-out both;
     }
+    .match[hidden] { display: none; }
     @media (min-width: 720px) {
       .match {
         grid-template-columns: 6.5rem 1fr auto;
@@ -310,6 +311,21 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;");
     }
+    function formatKickoffAedt(iso) {
+      if (!iso) return "";
+      const date = new Date(iso);
+      if (Number.isNaN(date.getTime())) return String(iso);
+      const formatted = new Intl.DateTimeFormat("en-AU", {
+        timeZone: "Australia/Sydney",
+        weekday: "short",
+        day: "numeric",
+        month: "short",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      }).format(date);
+      return `${formatted} AEDT`;
+    }
 
     function renderSummary(title, stats) {
       return `
@@ -331,7 +347,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
       const scored = match.scored;
       const home = pred.home_team || match.home_team || "";
       const away = pred.away_team || match.away_team || "";
-      const kickoff = pred.kickoff_utc || match.kickoff_utc || "";
+      const kickoff = formatKickoffAedt(pred.kickoff_utc || match.kickoff_utc || "");
       const venue = match.venue || pred.venue || "";
       const venueBit = venue ? ` · ${esc(venue)}` : "";
       let middle = "";
@@ -373,7 +389,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
     }
 
     document.getElementById("updated").textContent = data.updated
-      ? `Updated ${data.updated}`
+      ? `Updated ${formatKickoffAedt(data.updated)}`
       : "No update yet";
 
     const summaries = data.summaries || {};

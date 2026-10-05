@@ -321,6 +321,8 @@ def test_build_site_payload_includes_scheduled_without_prediction():
     html = run.scoreboard_site.render_index_html(payload)
     assert "No prediction yet" in html
     assert "England" in html
+    assert "formatKickoffAedt" in html
+    assert "Australia/Sydney" in html
 
 
 def test_load_scheduled_fixtures_has_men_and_women_pools():
