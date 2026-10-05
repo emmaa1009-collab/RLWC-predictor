@@ -12,7 +12,7 @@ A GitHub Actions workflow runs twice a day during the tournament window. Each ru
 
 1. **Predict.** Gemini searches the web (Google Search grounding) for men's and women's matches kicking off in the next 36 hours. For each one it researches recent form, squad and injury news, rankings, venue and head-to-head record, then outputs a win probability for each team and a predicted margin.
 2. **Record.** The prediction is saved to `data/predictions/` and committed to this repo. The commit history is the audit trail showing each prediction was made before kickoff.
-3. **Score.** For any match that has finished, the agent looks up the final score, saves it to `data/results/`, and updates `SCOREBOARD.md` (Overall, Men, and Women summaries).
+3. **Score.** For any match that has finished, the agent looks up the final score, saves it to `data/results/`, and updates `SCOREBOARD.md` plus the HTML scoreboard in `docs/` (Overall, Men, and Women summaries).
 
 The prompt is built into `src/run.py`, so nothing needs to be written by hand before each match.
 
@@ -25,6 +25,8 @@ requirements.txt                Python dependencies
 data/predictions/               One JSON file per match, append-only list of versions
 data/results/                   One JSON file per finished match
 SCOREBOARD.md                   Auto-generated running results
+docs/index.html                 HTML scoreboard (local open or optional GitHub Pages)
+docs/scoreboard.json            Same data as JSON for the HTML page
 ```
 
 ## Setup
@@ -111,6 +113,19 @@ Free-tier rate limits reset daily. Two runs a day across men's plus women's fixt
 | Duplicate or missing matches | Open the run log and check the fixture list the agent found |
 | Run skipped | The window check step prints the reason in the log |
 
+## Watching results
+
+Easiest views while the repo stays private:
+
+1. **[`SCOREBOARD.md`](SCOREBOARD.md)** — markdown tally on GitHub
+2. **[`docs/index.html`](docs/index.html)** — HTML scoreboard (open the file locally after cloning, or download it from GitHub). It shows Overall / Men / Women summaries, each forecast, and the final score when available.
+
+### Optional GitHub Pages
+
+You can publish `docs/` via **Settings → Pages → Deploy from a branch → `/docs`**.
+
+**Privacy warning:** even with a private repo, a GitHub Pages site is usually **public** (anyone with the URL). Private Pages visibility is an Enterprise feature. If you only want yourself to see results, leave Pages off and use the private repo / local HTML file.
+
 ## Ending the experiment
 
-After the finals around 15 November, the scheduled runs skip themselves from 17 November. `SCOREBOARD.md` will hold the final tally.
+After the finals around 15 November, the scheduled runs skip themselves from 17 November. `SCOREBOARD.md` and `docs/index.html` will hold the final tally.

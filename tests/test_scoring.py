@@ -228,3 +228,64 @@ def test_summarize_rows_overall_and_split():
     assert abs(overall["hit_rate"] - 0.5) < 1e-9
     assert men["count"] == 1 and men["hit_rate"] == 1.0
     assert women["count"] == 1 and women["hit_rate"] == 0.0
+
+
+def test_build_site_payload_includes_pending_and_scored():
+    scored = [
+        {
+            "match_id": "2026-10-15_men_a_b",
+            "prediction": {
+                "competition": "men",
+                "home_team": "A",
+                "away_team": "B",
+                "kickoff_utc": "2026-10-15T09:00:00Z",
+                "made_at": "2026-10-14T12:00:00Z",
+                "home_win_prob": 0.6,
+                "away_win_prob": 0.4,
+                "predicted_margin": 8,
+                "predicted_winner": "home",
+                "reasoning": "form",
+            },
+            "result": {"home_score": 20, "away_score": 10, "locked": True, "source": "test"},
+            "scored": {
+                "hit": 1.0,
+                "brier": 0.16,
+                "margin_error": 2,
+                "ranking_hit": 1.0,
+                "pred_side": "home",
+            },
+        }
+    ]
+    pending = [
+        {
+            "match_id": "2026-10-16_women_c_d",
+            "prediction": {
+                "competition": "women",
+                "home_team": "C",
+                "away_team": "D",
+                "kickoff_utc": "2026-10-16T09:00:00Z",
+                "made_at": "2026-10-15T12:00:00Z",
+                "home_win_prob": 0.55,
+                "away_win_prob": 0.45,
+                "predicted_margin": 4,
+                "predicted_winner": "home",
+                "reasoning": "edge",
+            },
+        }
+    ]
+    payload = run.scoreboard_site.build_site_payload(
+        updated="2026-10-16T00:00:00Z",
+        scored_rows=scored,
+        pending_rows=pending,
+        overall=run.summarize_rows(scored),
+        men=run.summarize_rows(scored),
+        women=run.scoreboard_site.empty_stats(),
+    )
+    assert payload["summaries"]["overall"]["count"] == 1
+    assert len(payload["matches"]) == 2
+    assert payload["matches"][0]["status"] == "scored"
+    assert payload["matches"][1]["status"] == "pending"
+    html = run.scoreboard_site.render_index_html(payload)
+    assert "RLWC" in html
+    assert '"home_team": "C"' in html
+    assert '"away_team": "D"' in html

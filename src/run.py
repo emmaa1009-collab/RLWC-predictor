@@ -20,6 +20,9 @@ RESULTS_DIR = ROOT / "data" / "results"
 SCOREBOARD_PATH = ROOT / "SCOREBOARD.md"
 BASELINE_ODDS_PATH = ROOT / "data" / "baseline_odds.json"
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import scoreboard_site  # noqa: E402
+
 # "half" scores draws as 0.5 for hit-rate; "exclude" drops draws from hit-rate.
 DRAW_HANDLING = os.environ.get("DRAW_HANDLING", "half")
 
@@ -684,16 +687,41 @@ def summary_table_lines(title: str, stats: dict[str, Any]) -> list[str]:
     ]
 
 
-def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
+def collect_pending_predictions(exclude_ids: set[str] | None = None) -> list[dict[str, Any]]:
+    """Latest prediction version per match that is not already in the scored set."""
+    exclude_ids = exclude_ids or set()
+    pending: list[dict[str, Any]] = []
+    for path in list_prediction_files():
+        mid = path.stem
+        if mid in exclude_ids:
+            continue
+        versions = load_json(path, [])
+        if not versions or not isinstance(versions, list):
+            continue
+        latest = versions[-1]
+        if not isinstance(latest, dict):
+            continue
+        pending.append({"match_id": mid, "prediction": latest})
+    pending.sort(
+        key=lambda row: (
+            row["prediction"].get("kickoff_utc", ""),
+            row["prediction"].get("competition", ""),
+        )
+    )
+    return pending
+
+
+def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
     grouped = group_rows_by_competition(rows)
     overall = summarize_rows(rows)
     men_stats = summarize_rows(grouped.get("men", []))
     women_stats = summarize_rows(grouped.get("women", []))
 
+    updated = iso_z(utc_now())
     lines = [
         "# SCOREBOARD",
         "",
-        f"Updated: {iso_z(utc_now())}",
+        f"Updated: {updated}",
         "",
         "## Matches",
         "",
@@ -727,6 +755,9 @@ def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
             f"{hit_cell} | {scored['brier']:.3f} | {scored['margin_error']} | {rank_cell} | {locked} |"
         )
 
+    if not rows:
+        lines.append("| — | No scored matches yet | — | — | — | — | — | — | — |")
+
     lines.extend(
         [
             "",
@@ -744,15 +775,34 @@ def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
             "",
             "Market odds come from `data/baseline_odds.json` when present (optional, manual).",
             "",
+            "HTML scoreboard: `docs/index.html` (optional GitHub Pages from `/docs`).",
+            "",
         ]
     )
 
     content = "\n".join(lines)
+    pending = collect_pending_predictions({row["match_id"] for row in rows})
+    payload = scoreboard_site.build_site_payload(
+        updated=updated,
+        scored_rows=rows,
+        pending_rows=pending,
+        overall=overall,
+        men=men_stats,
+        women=women_stats,
+    )
+
     if DRY_RUN:
         print("[dry_run] would write SCOREBOARD.md")
         print(content)
+        scoreboard_site.write_docs_site(payload, dry_run=True)
         return
+
     SCOREBOARD_PATH.write_text(content, encoding="utf-8")
+    scoreboard_site.write_docs_site(payload, dry_run=False)
+
+
+def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
+    write_scoreboard_outputs(rows)
 
 
 def score_finished(client: genai.Client, now: datetime) -> None:
@@ -805,16 +855,17 @@ def score_finished(client: genai.Client, now: datetime) -> None:
             }
         )
 
-    if scored_rows:
-        scored_rows.sort(
-            key=lambda row: (
-                row["prediction"].get("kickoff_utc", ""),
-                row["prediction"].get("competition", ""),
-            )
+    scored_rows.sort(
+        key=lambda row: (
+            row["prediction"].get("kickoff_utc", ""),
+            row["prediction"].get("competition", ""),
         )
+    )
+    if scored_rows:
         rebuild_scoreboard(scored_rows)
     else:
-        print("No scored matches yet; scoreboard unchanged.")
+        print("No scored matches yet; refreshing pending scoreboard site.")
+        write_scoreboard_outputs([])
 
 
 def predict_upcoming(client: genai.Client, now: datetime) -> None:

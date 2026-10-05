@@ -1,0 +1,33 @@
+{
+  "updated": "2026-10-05T10:19:03Z",
+  "summaries": {
+    "overall": {
+      "count": 0,
+      "hit_rate": null,
+      "ranking_hit_rate": null,
+      "brier": null,
+      "market_hit_rate": null,
+      "market_brier": null,
+      "margin_error": null
+    },
+    "men": {
+      "count": 0,
+      "hit_rate": null,
+      "ranking_hit_rate": null,
+      "brier": null,
+      "market_hit_rate": null,
+      "market_brier": null,
+      "margin_error": null
+    },
+    "women": {
+      "count": 0,
+      "hit_rate": null,
+      "ranking_hit_rate": null,
+      "brier": null,
+      "market_hit_rate": null,
+      "market_brier": null,
+      "margin_error": null
+    }
+  },
+  "matches": []
+}

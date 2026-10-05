@@ -67,7 +67,7 @@ jobs:
         run: |
           git config user.name "rlwc-predictor[bot]"
           git config user.email "actions@users.noreply.github.com"
-          git add data SCOREBOARD.md
+          git add data SCOREBOARD.md docs
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
