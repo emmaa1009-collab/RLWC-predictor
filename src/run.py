@@ -32,13 +32,18 @@ PREDICT_BUFFER_MINUTES = 1
 RESULT_LOCK_AFTER = timedelta(hours=24)
 RESULT_AGREE_TO_LOCK = 2
 
+VALID_COMPETITIONS = frozenset({"men", "women"})
+
 SYSTEM_RULES = """
-You are forecasting the 2026 Men's Rugby League World Cup (15 Oct–15 Nov 2026,
-hosted in Australia, New Zealand and Papua New Guinea).
+You are forecasting the 2026 Rugby League World Cup men's and women's tournaments
+(hosted in Australia, New Zealand and Papua New Guinea; roughly 15 Oct–15 Nov 2026).
+The women's tournament starts about a day after the men's.
 
 Rules:
 - Use Google Search for current fixtures, form, injuries, squads, rankings, venue,
   and head-to-head. Prefer official / reputable rugby league sources.
+- Always keep men's and women's competitions separate. Never mix rankings, squads,
+  or results across competitions.
 - Never invent final scores for unfinished matches.
 - Respond with JSON only. No markdown fences, no commentary outside JSON.
 """.strip()
@@ -66,9 +71,32 @@ def slugify(name: str) -> str:
     return text.strip("-") or "team"
 
 
-def match_id(kickoff_utc: str, home: str, away: str) -> str:
+def normalize_competition(value: Any) -> str | None:
+    text = str(value or "").strip().lower()
+    aliases = {
+        "men": "men",
+        "mens": "men",
+        "men's": "men",
+        "male": "men",
+        "women": "women",
+        "womens": "women",
+        "women's": "women",
+        "female": "women",
+    }
+    competition = aliases.get(text)
+    if competition in VALID_COMPETITIONS:
+        return competition
+    return None
+
+
+def competition_label(competition: str) -> str:
+    return "Men" if competition == "men" else "Women"
+
+
+def match_id(kickoff_utc: str, competition: str, home: str, away: str) -> str:
     day = parse_iso(kickoff_utc).strftime("%Y-%m-%d")
-    return f"{day}_{slugify(home)}_{slugify(away)}"
+    comp = normalize_competition(competition) or slugify(str(competition))
+    return f"{day}_{comp}_{slugify(home)}_{slugify(away)}"
 
 
 def load_json(path: Path, default: Any) -> Any:
@@ -180,13 +208,17 @@ def discover_fixtures(client: genai.Client, now: datetime) -> list[dict[str, Any
     until = now + timedelta(hours=LOOKAHEAD_HOURS)
     earliest = now + timedelta(minutes=PREDICT_BUFFER_MINUTES)
     prompt = f"""
-Search for Men's Rugby League World Cup 2026 fixtures with kickoff between
+Search for Rugby League World Cup 2026 fixtures with kickoff between
 {iso_z(earliest)} and {iso_z(until)} (UTC), inclusive.
+
+Include BOTH the men's tournament and the women's tournament.
+Tag every match with the correct competition.
 
 Return a JSON object:
 {{
   "matches": [
     {{
+      "competition": "men" or "women",
       "home_team": "string",
       "away_team": "string",
       "kickoff_utc": "YYYY-MM-DDTHH:MM:SSZ",
@@ -197,14 +229,19 @@ Return a JSON object:
 }}
 
 If none are found, return {{"matches": []}}.
-Use official team names. Only include men's tournament matches.
+Use official team names. Do not invent fixtures.
 Do not include matches that have already kicked off.
+Do not include wheelchair or other competitions.
 """.strip()
     payload = gemini_json(client, prompt)
     matches = payload.get("matches", []) if isinstance(payload, dict) else []
     cleaned: list[dict[str, Any]] = []
     for raw in matches:
         try:
+            competition = normalize_competition(raw.get("competition"))
+            if competition is None:
+                print(f"Skipping fixture with invalid competition: {raw!r}")
+                continue
             home = str(raw["home_team"]).strip()
             away = str(raw["away_team"]).strip()
             kickoff = iso_z(parse_iso(str(raw["kickoff_utc"])))
@@ -221,6 +258,7 @@ Do not include matches that have already kicked off.
                 continue
             cleaned.append(
                 {
+                    "competition": competition,
                     "home_team": home,
                     "away_team": away,
                     "kickoff_utc": kickoff,
@@ -234,20 +272,26 @@ Do not include matches that have already kicked off.
 
 
 def predict_one(client: genai.Client, match: dict[str, Any], now: datetime) -> dict[str, Any]:
+    competition = normalize_competition(match.get("competition"))
+    if competition is None:
+        raise RuntimeError(f"Invalid competition on match: {match!r}")
     if not kickoff_still_upcoming(match["kickoff_utc"], now):
         raise RuntimeError(f"Kickoff has passed for {match['home_team']} vs {match['away_team']}")
 
+    label = competition_label(competition)
     prompt = f"""
-Research this upcoming Men's RLWC 2026 match and produce a probability forecast.
+Research this upcoming {label}'s RLWC 2026 match and produce a probability forecast.
 
 Match:
+- Competition: {competition}
 - Home: {match['home_team']}
 - Away: {match['away_team']}
 - Kickoff UTC: {match['kickoff_utc']}
 - Venue: {match.get('venue') or 'unknown'}
 - Stage: {match['stage']}
 
-Consider recent form, squad/injury news, world rankings, venue/travel, and head-to-head.
+Use only {label}'s rugby league evidence (form, squad/injury news, world rankings,
+venue/travel, head-to-head). Do not use the other gender's rankings or results.
 Do not use any information from after kickoff. Do not report a final score.
 If you can see live or final scores, refuse and return:
 {{"refuse": true, "reason": "match already started or finished"}}
@@ -298,6 +342,7 @@ Current UTC time for the audit trail: {iso_z(now)}
 
     return {
         "made_at": iso_z(made_at),
+        "competition": competition,
         "kickoff_utc": match["kickoff_utc"],
         "home_team": match["home_team"],
         "away_team": match["away_team"],
@@ -316,6 +361,7 @@ Current UTC time for the audit trail: {iso_z(now)}
 
 def materially_changed(previous: dict[str, Any], current: dict[str, Any]) -> bool:
     keys = (
+        "competition",
         "home_win_prob",
         "away_win_prob",
         "predicted_margin",
@@ -331,7 +377,12 @@ def materially_changed(previous: dict[str, Any], current: dict[str, Any]) -> boo
 
 
 def append_prediction(match: dict[str, Any], version: dict[str, Any]) -> Path:
-    mid = match_id(match["kickoff_utc"], match["home_team"], match["away_team"])
+    mid = match_id(
+        match["kickoff_utc"],
+        match["competition"],
+        match["home_team"],
+        match["away_team"],
+    )
     path = PREDICTIONS_DIR / f"{mid}.json"
     existing = load_json(path, [])
     if not isinstance(existing, list):
@@ -365,9 +416,12 @@ def list_prediction_files() -> list[Path]:
 
 
 def lookup_result(client: genai.Client, meta: dict[str, Any], now: datetime) -> dict[str, Any] | None:
+    competition = normalize_competition(meta.get("competition")) or "men"
+    label = competition_label(competition)
     prompt = f"""
-Has this Men's RLWC 2026 match finished?
+Has this {label}'s RLWC 2026 match finished?
 
+- Competition: {competition}
 - Home: {meta['home_team']}
 - Away: {meta['away_team']}
 - Kickoff UTC: {meta['kickoff_utc']}
@@ -386,6 +440,7 @@ If finished, return:
 }}
 
 Only mark finished when you can cite a final full-time score from a reputable source.
+Do not confuse this with the other gender's fixture of the same teams.
 """.strip()
     raw = gemini_json(client, prompt)
     if not isinstance(raw, dict) or not raw.get("finished"):
@@ -396,6 +451,7 @@ Only mark finished when you can cite a final full-time score from a reputable so
     except (KeyError, TypeError, ValueError):
         return None
     return {
+        "competition": competition,
         "home_team": meta["home_team"],
         "away_team": meta["away_team"],
         "kickoff_utc": meta["kickoff_utc"],
@@ -555,7 +611,8 @@ def load_market_baseline() -> dict[str, dict[str, float]]:
     return data if isinstance(data, dict) else {}
 
 
-def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
+def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """Aggregate scoring metrics for a set of scored match rows."""
     market = load_market_baseline()
     agent_hits: list[float] = []
     agent_briers: list[float] = []
@@ -564,19 +621,91 @@ def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
     market_hits: list[float] = []
     market_briers: list[float] = []
 
+    for row in rows:
+        scored = row["scored"]
+        if scored["hit"] is not None:
+            agent_hits.append(float(scored["hit"]))
+        agent_briers.append(float(scored["brier"]))
+        margin_errors.append(float(scored["margin_error"]))
+        if scored["ranking_hit"] is not None:
+            ranking_hits.append(float(scored["ranking_hit"]))
+
+        odds = market.get(row["match_id"])
+        if odds and scored["actual_winner"] != "draw":
+            mh = float(odds.get("home_win_prob", 0.5))
+            ma = float(odds.get("away_win_prob", 0.5))
+            mh, ma = normalize_probs(mh, ma)
+            market_pick = pick_from_probs(mh, ma)
+            if market_pick == "tie":
+                market_hits.append(0.5)
+            else:
+                market_hits.append(1.0 if market_pick == scored["actual_winner"] else 0.0)
+            p_act = mh if scored["actual_winner"] == "home" else ma
+            market_briers.append((1.0 - p_act) ** 2)
+
+    return {
+        "count": len(rows),
+        "hit_rate": mean(agent_hits),
+        "ranking_hit_rate": mean(ranking_hits),
+        "brier": mean(agent_briers),
+        "market_hit_rate": mean(market_hits),
+        "market_brier": mean(market_briers),
+        "margin_error": mean(margin_errors),
+    }
+
+
+def group_rows_by_competition(rows: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, list[dict[str, Any]]] = {"men": [], "women": []}
+    for row in rows:
+        competition = normalize_competition(row["prediction"].get("competition"))
+        if competition is None:
+            # Infer from match_id when older files lack the field.
+            mid = str(row.get("match_id", ""))
+            if "_women_" in mid:
+                competition = "women"
+            else:
+                competition = "men"
+        grouped.setdefault(competition, []).append(row)
+    return grouped
+
+
+def summary_table_lines(title: str, stats: dict[str, Any]) -> list[str]:
+    return [
+        f"### {title}",
+        "",
+        "| Metric | Agent | Ranking baseline | Coin flip | Market odds |",
+        "|---|---|---|---|---|",
+        f"| Hit rate | {format_pct(stats['hit_rate'])} | {format_pct(stats['ranking_hit_rate'])} | 50.0% | {format_pct(stats['market_hit_rate'])} |",
+        f"| Brier (lower better) | {format_num(stats['brier'])} | n/a | 0.250 | {format_num(stats['market_brier'])} |",
+        f"| Mean abs margin error | {format_num(stats['margin_error'], 2)} | n/a | n/a | n/a |",
+        "",
+        f"Matches scored: {stats['count']}.",
+        "",
+    ]
+
+
+def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
+    grouped = group_rows_by_competition(rows)
+    overall = summarize_rows(rows)
+    men_stats = summarize_rows(grouped.get("men", []))
+    women_stats = summarize_rows(grouped.get("women", []))
+
     lines = [
         "# SCOREBOARD",
         "",
         f"Updated: {iso_z(utc_now())}",
         "",
-        "| Match | Score | Agent pick | Hit | Brier | Margin err | Rank baseline | Locked |",
-        "|---|---|---|---|---|---|---|---|",
+        "## Matches",
+        "",
+        "| Competition | Match | Score | Agent pick | Hit | Brier | Margin err | Rank baseline | Locked |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
 
     for row in rows:
         pred = row["prediction"]
         result = row["result"]
         scored = row["scored"]
+        competition = normalize_competition(pred.get("competition")) or "men"
         label = f"{pred['home_team']} vs {pred['away_team']}"
         score = f"{result['home_score']}-{result['away_score']}"
         side = scored.get("pred_side") or pick_from_probs(
@@ -594,43 +723,23 @@ def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
         rank_cell = "n/a" if rank_hit is None else ("Y" if rank_hit == 1.0 else ("½" if rank_hit == 0.5 else "N"))
         locked = "Y" if result.get("locked") else "N"
         lines.append(
-            f"| {label} | {score} | {pick} ({pred['home_win_prob']:.0%}) | {hit_cell} | "
-            f"{scored['brier']:.3f} | {scored['margin_error']} | {rank_cell} | {locked} |"
+            f"| {competition_label(competition)} | {label} | {score} | {pick} ({pred['home_win_prob']:.0%}) | "
+            f"{hit_cell} | {scored['brier']:.3f} | {scored['margin_error']} | {rank_cell} | {locked} |"
         )
-
-        if scored["hit"] is not None:
-            agent_hits.append(float(scored["hit"]))
-        agent_briers.append(float(scored["brier"]))
-        margin_errors.append(float(scored["margin_error"]))
-        if scored["ranking_hit"] is not None:
-            ranking_hits.append(float(scored["ranking_hit"]))
-
-        mid = row["match_id"]
-        odds = market.get(mid)
-        if odds and scored["actual_winner"] != "draw":
-            mh = float(odds.get("home_win_prob", 0.5))
-            ma = float(odds.get("away_win_prob", 0.5))
-            mh, ma = normalize_probs(mh, ma)
-            market_pick = pick_from_probs(mh, ma)
-            if market_pick == "tie":
-                market_hits.append(0.5)
-            else:
-                market_hits.append(1.0 if market_pick == scored["actual_winner"] else 0.0)
-            p_act = mh if scored["actual_winner"] == "home" else ma
-            market_briers.append((1.0 - p_act) ** 2)
 
     lines.extend(
         [
             "",
             "## Summary",
             "",
-            "| Metric | Agent | Ranking baseline | Coin flip | Market odds |",
-            "|---|---|---|---|---|",
-            f"| Hit rate | {format_pct(mean(agent_hits))} | {format_pct(mean(ranking_hits))} | 50.0% | {format_pct(mean(market_hits))} |",
-            f"| Brier (lower better) | {format_num(mean(agent_briers))} | n/a | 0.250 | {format_num(mean(market_briers))} |",
-            f"| Mean abs margin error | {format_num(mean(margin_errors), 2)} | n/a | n/a | n/a |",
-            "",
-            f"Matches scored: {len(rows)}. Draw handling: `{DRAW_HANDLING}`.",
+        ]
+    )
+    lines.extend(summary_table_lines("Overall", overall))
+    lines.extend(summary_table_lines("Men", men_stats))
+    lines.extend(summary_table_lines("Women", women_stats))
+    lines.extend(
+        [
+            f"Draw handling: `{DRAW_HANDLING}`.",
             "Results stay provisional until two agreeing lookups or 24h after kickoff.",
             "",
             "Market odds come from `data/baseline_odds.json` when present (optional, manual).",
@@ -686,8 +795,6 @@ def score_finished(client: genai.Client, now: datetime) -> None:
         if prediction is None:
             print(f"No pre-kickoff prediction for {mid}; skipping score.")
             continue
-        # Only publish unlocked results to the scoreboard after at least one lookup,
-        # but still show them (provisional) so the board is useful during the day.
         scored = score_row(prediction, result)
         scored_rows.append(
             {
@@ -699,7 +806,12 @@ def score_finished(client: genai.Client, now: datetime) -> None:
         )
 
     if scored_rows:
-        scored_rows.sort(key=lambda row: row["prediction"].get("kickoff_utc", ""))
+        scored_rows.sort(
+            key=lambda row: (
+                row["prediction"].get("kickoff_utc", ""),
+                row["prediction"].get("competition", ""),
+            )
+        )
         rebuild_scoreboard(scored_rows)
     else:
         print("No scored matches yet; scoreboard unchanged.")
@@ -713,7 +825,12 @@ def predict_upcoming(client: genai.Client, now: datetime) -> None:
         return
     print(f"Found {len(fixtures)} fixture(s) in the next {LOOKAHEAD_HOURS}h.")
     for match in fixtures:
-        mid = match_id(match["kickoff_utc"], match["home_team"], match["away_team"])
+        mid = match_id(
+            match["kickoff_utc"],
+            match["competition"],
+            match["home_team"],
+            match["away_team"],
+        )
         try:
             fresh_now = utc_now()
             if not kickoff_still_upcoming(match["kickoff_utc"], fresh_now):

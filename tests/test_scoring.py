@@ -29,9 +29,19 @@ def test_extract_json_from_fence():
     assert run.extract_json(text) == {"matches": []}
 
 
-def test_match_id():
-    mid = run.match_id("2026-10-15T09:00:00Z", "Australia", "New Zealand")
-    assert mid == "2026-10-15_australia_new-zealand"
+def test_match_id_includes_competition():
+    men = run.match_id("2026-10-15T09:00:00Z", "men", "Australia", "New Zealand")
+    women = run.match_id("2026-10-16T09:00:00Z", "women", "Australia", "New Zealand")
+    assert men == "2026-10-15_men_australia_new-zealand"
+    assert women == "2026-10-16_women_australia_new-zealand"
+    assert men != women
+
+
+def test_normalize_competition():
+    assert run.normalize_competition("men") == "men"
+    assert run.normalize_competition("Women's") == "women"
+    assert run.normalize_competition("mens") == "men"
+    assert run.normalize_competition("wheelchair") is None
 
 
 def test_kickoff_still_upcoming_hard_cutoff():
@@ -170,3 +180,51 @@ def test_merge_result_resets_on_mismatch():
     assert merged["verified_count"] == 1
     assert merged["locked"] is False
     assert merged["previous"]["home_score"] == 24
+
+
+def _scored_row(competition: str, hit: float, brier: float, match_id: str) -> dict:
+    return {
+        "match_id": match_id,
+        "prediction": {
+            "competition": competition,
+            "home_team": "A",
+            "away_team": "B",
+            "home_win_prob": 0.6,
+            "away_win_prob": 0.4,
+            "kickoff_utc": "2026-10-16T09:00:00Z",
+        },
+        "result": {"home_score": 20, "away_score": 10, "locked": True},
+        "scored": {
+            "actual_winner": "home",
+            "hit": hit,
+            "brier": brier,
+            "margin_error": 4,
+            "ranking_hit": 1.0,
+            "pred_side": "home",
+        },
+    }
+
+
+def test_group_rows_by_competition():
+    rows = [
+        _scored_row("men", 1.0, 0.16, "2026-10-15_men_a_b"),
+        _scored_row("women", 0.0, 0.36, "2026-10-16_women_a_b"),
+        _scored_row("men", 1.0, 0.09, "2026-10-17_men_c_d"),
+    ]
+    grouped = run.group_rows_by_competition(rows)
+    assert len(grouped["men"]) == 2
+    assert len(grouped["women"]) == 1
+
+
+def test_summarize_rows_overall_and_split():
+    rows = [
+        _scored_row("men", 1.0, 0.16, "2026-10-15_men_a_b"),
+        _scored_row("women", 0.0, 0.36, "2026-10-16_women_a_b"),
+    ]
+    overall = run.summarize_rows(rows)
+    men = run.summarize_rows(run.group_rows_by_competition(rows)["men"])
+    women = run.summarize_rows(run.group_rows_by_competition(rows)["women"])
+    assert overall["count"] == 2
+    assert abs(overall["hit_rate"] - 0.5) < 1e-9
+    assert men["count"] == 1 and men["hit_rate"] == 1.0
+    assert women["count"] == 1 and women["hit_rate"] == 0.0
