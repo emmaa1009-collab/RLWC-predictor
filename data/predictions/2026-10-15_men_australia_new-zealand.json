@@ -15,5 +15,22 @@
     "away_rank": 2,
     "reasoning": "Australia enters the tournament as the top-ranked team and reigning champions, benefiting from home advantage at Allianz Stadium in Sydney. While New Zealand, ranked second, boasts a formidable squad strengthened by recent allegiance switches of star players and won the 2025 Pacific Championships, Australia holds a dominant historical head-to-head record and secured three victories in their last four encounters (2022-2024), including a 22-10 win in their most recent Test in October 2024. Australia's consistent performance and depth of NRL talent make them strong favorites for this opening pool match.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-14T22:57:36Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-15T09:05:00Z",
+    "home_team": "Australia",
+    "away_team": "New Zealand",
+    "venue": "Sydney Football Stadium",
+    "stage": "pool",
+    "home_win_prob": 0.7,
+    "away_win_prob": 0.3,
+    "predicted_margin": 10,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 2,
+    "reasoning": "Australia enters the 2026 Rugby League World Cup as the top-ranked men's team, playing on home soil at Sydney Football Stadium, which provides a significant advantage. While Australia holds a dominant historical head-to-head record against New Zealand, winning approximately 74% of their encounters, New Zealand secured a notable 30-0 victory in the 2023 Pacific Cup final and won the 2025 Pacific Championships, demonstrating their capability to challenge the Kangaroos. Australia's recent form includes a 3-0 Ashes sweep over England in 2025, and both teams boast strong squads filled with NRL stars, though New Zealand's forward pack and the debut of Kalyn Ponga are highly anticipated.",
+    "model": "gemini-2.5-flash"
   }
 ]

@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-14T22:57:50Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-15T15:05:00Z",
+    "home_team": "Australia",
+    "away_team": "Samoa",
+    "venue": "",
+    "stage": "pool",
+    "home_win_prob": 0.98,
+    "away_win_prob": 0.02,
+    "predicted_margin": 40,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 5,
+    "reasoning": "Australia enters the tournament as the top-ranked women's rugby league team, while Samoa is ranked 5th globally. Australia has a dominant head-to-head record against Samoa, including a resounding 60-0 victory in their most recent encounter in October 2025. The Jillaroos boast a strong squad with established winning combinations, featuring numerous players from the undefeated NRLW premiers Sydney Roosters and the NSW Sky Blues. Samoa, while having NRLW experience across its squad, is still developing and faces a significant challenge against the highly experienced Australian side on home soil in Sydney.",
+    "model": "gemini-2.5-flash"
+  }
+]

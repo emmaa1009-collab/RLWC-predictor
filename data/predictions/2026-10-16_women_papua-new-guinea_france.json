@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-14T22:58:07Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-16T09:15:00Z",
+    "home_team": "Papua New Guinea",
+    "away_team": "France",
+    "venue": "",
+    "stage": "pool",
+    "home_win_prob": 0.58,
+    "away_win_prob": 0.42,
+    "predicted_margin": 8,
+    "predicted_winner": "home",
+    "home_rank": 6,
+    "away_rank": 4,
+    "reasoning": "Papua New Guinea holds a significant home advantage playing in Port Moresby, a factor that often boosts team performance in rugby league. While France is ranked higher at 4th compared to Papua New Guinea's 6th in the IRL Women's rankings, both teams have experienced heavy defeats against top-tier nations recently. Papua New Guinea reached the semi-finals of the 2022 World Cup, demonstrating their capability in major tournaments. This, combined with the home crowd support, gives Papua New Guinea a slight edge in what is expected to be a competitive match.",
+    "model": "gemini-2.5-flash"
+  }
+]
