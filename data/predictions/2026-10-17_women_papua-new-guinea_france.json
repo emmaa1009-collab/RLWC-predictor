@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-15T22:52:32Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-17T03:15:00Z",
+    "home_team": "Papua New Guinea",
+    "away_team": "France",
+    "venue": "Santos National Football Stadium, Port Moresby",
+    "stage": "pool",
+    "home_win_prob": 0.7,
+    "away_win_prob": 0.3,
+    "predicted_margin": 14,
+    "predicted_winner": "home",
+    "home_rank": 6,
+    "away_rank": 4,
+    "reasoning": "Papua New Guinea (ranked 6th) will benefit significantly from playing at home in Port Moresby, with their players accustomed to the tropical conditions and a passionate home crowd. While France is ranked higher (4th), their performance in the last World Cup saw them lose all three pool matches, including heavy defeats to Australia (0-92) and New Zealand (0-46). Papua New Guinea, in contrast, reached the semi-finals in the previous World Cup, demonstrating their capability on the international stage. Although France recently beat Nigeria, they suffered a 38-4 loss to England in July 2026, suggesting potential defensive vulnerabilities.",
+    "model": "gemini-2.5-flash"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-15T22:52:20Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-16T09:05:00Z",
+    "home_team": "Australia",
+    "away_team": "Samoa",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.98,
+    "away_win_prob": 0.02,
+    "predicted_margin": 48,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 5,
+    "reasoning": "Australia is the top-ranked women's rugby league team globally, while Samoa is ranked 5th. Australia has a dominant head-to-head record, winning all three previous encounters, including a resounding 60-0 victory in their most recent match in October 2025. The Jillaroos, playing on home soil, feature a strong squad with multiple Dally M Team of the Year players, indicating superior individual talent and team cohesion. Samoa, despite having NRLW experienced players and a strong forward pack, is led by a new coach who is yet to oversee an international fixture, and they will need significant improvement in their outside backs.",
+    "model": "gemini-2.5-flash"
+  }
+]

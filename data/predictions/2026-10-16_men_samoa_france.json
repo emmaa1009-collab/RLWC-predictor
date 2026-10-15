@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-15T22:52:10Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-16T07:45:00Z",
+    "home_team": "Samoa",
+    "away_team": "France",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.95,
+    "away_win_prob": 0.05,
+    "predicted_margin": 38,
+    "predicted_winner": "home",
+    "home_rank": 4,
+    "away_rank": 11,
+    "reasoning": "Samoa enters the match as the significantly higher-ranked team at 4th globally, compared to France's 11th position. Historically, Samoa has a dominant head-to-head record, winning all four previous encounters, including a resounding 62-4 victory at the 2022 Rugby League World Cup. Samoa's squad is bolstered by numerous elite NRL players, many of whom featured in recent Grand Finals, indicating strong form and high-level experience. In contrast, France's squad is predominantly drawn from the Super League, with only one NRL-based player, and their recent results against top-tier nations have shown significant deficits.",
+    "model": "gemini-2.5-flash"
+  }
+]

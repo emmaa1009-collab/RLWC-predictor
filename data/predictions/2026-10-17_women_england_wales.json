@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-15T22:53:00Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-17T09:35:00Z",
+    "home_team": "England",
+    "away_team": "Wales",
+    "venue": "HBF Park, Perth",
+    "stage": "pool",
+    "home_win_prob": 0.98,
+    "away_win_prob": 0.02,
+    "predicted_margin": 50,
+    "predicted_winner": "home",
+    "home_rank": 3,
+    "away_rank": 9,
+    "reasoning": "England Women are significantly higher ranked at 3rd globally, compared to Wales Women at 9th. England has a dominant head-to-head record against Wales in Rugby League, having won all five previous encounters, including a record 82-0 victory in November 2024. England's squad features several experienced NRLW players and top talents from the Betfred Women's Super League, while Wales is making their World Cup debut with a less experienced international squad. Wales' recent form includes a 14-0 loss to Canada, further highlighting the disparity in international performance.",
+    "model": "gemini-2.5-flash"
+  }
+]

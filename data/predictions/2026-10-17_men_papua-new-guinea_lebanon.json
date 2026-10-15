@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-15T22:52:46Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-17T05:25:00Z",
+    "home_team": "Papua New Guinea",
+    "away_team": "Lebanon",
+    "venue": "Santos National Football Stadium, Port Moresby",
+    "stage": "pool",
+    "home_win_prob": 0.8,
+    "away_win_prob": 0.2,
+    "predicted_margin": 14,
+    "predicted_winner": "home",
+    "home_rank": 6,
+    "away_rank": 23,
+    "reasoning": "Papua New Guinea enters the match as the higher-ranked team at 6th globally, significantly above Lebanon's 23rd ranking. The Kumuls also benefit from a substantial home advantage, having won 14 of their last 15 games on home soil in Port Moresby. While Papua New Guinea is missing key players due to injury, including Lachlan Lam and Alex Johnston, their recent form includes strong wins against nations ranked higher than Lebanon, such as Fiji and the Cook Islands. Lebanon, despite reaching the quarter-finals in previous World Cups and possessing NRL talent, has had limited recent international activity and faces a tough challenge away from home.",
+    "model": "gemini-2.5-flash"
+  }
+]

@@ -276,25 +276,25 @@
   </main>
 
   <script id="scoreboard-data" type="application/json">{
-  "updated": "2026-10-15T06:35:09Z",
+  "updated": "2026-10-15T22:53:26Z",
   "summaries": {
     "overall": {
-      "count": 0,
-      "hit_rate": null,
-      "ranking_hit_rate": null,
-      "brier": null,
+      "count": 1,
+      "hit_rate": 1.0,
+      "ranking_hit_rate": 1.0,
+      "brier": 0.07840000000000001,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": null
+      "margin_error": 12.0
     },
     "men": {
-      "count": 0,
-      "hit_rate": null,
-      "ranking_hit_rate": null,
-      "brier": null,
+      "count": 1,
+      "hit_rate": 1.0,
+      "ranking_hit_rate": 1.0,
+      "brier": 0.07840000000000001,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": null
+      "margin_error": 12.0
     },
     "women": {
       "count": 0,
@@ -315,7 +315,7 @@
       "away_team": "New Zealand",
       "venue": "Sydney Football Stadium",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "Australia",
         "away_team": "New Zealand",
@@ -328,8 +328,19 @@
         "predicted_winner": "home",
         "reasoning": "Australia enters the match as the top-ranked men's rugby league team globally, while New Zealand is ranked second. Historically, Australia holds a dominant head-to-head record, winning approximately 74.3% of their 144 encounters against New Zealand. Although New Zealand secured a notable 30-0 victory in the 2023 Pacific Cup final, Australia's consistent performance and home advantage at Sydney Football Stadium reinforce their position as favorites."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 24,
+        "away_score": 22,
+        "locked": false,
+        "source": "The Guardian"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.07840000000000001,
+        "margin_error": 12,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-15_women_australia_samoa",
@@ -358,14 +369,48 @@
     {
       "match_id": "2026-10-16_men_samoa_france",
       "competition": "men",
-      "kickoff_utc": "2026-10-16T06:45:00Z",
+      "kickoff_utc": "2026-10-16T07:45:00Z",
       "home_team": "Samoa",
       "away_team": "France",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Samoa",
+        "away_team": "France",
+        "kickoff_utc": "2026-10-16T07:45:00Z",
+        "venue": "CommBank Stadium, Sydney",
+        "made_at": "2026-10-15T22:52:10Z",
+        "home_win_prob": 0.95,
+        "away_win_prob": 0.05,
+        "predicted_margin": 38,
+        "predicted_winner": "home",
+        "reasoning": "Samoa enters the match as the significantly higher-ranked team at 4th globally, compared to France's 11th position. Historically, Samoa has a dominant head-to-head record, winning all four previous encounters, including a resounding 62-4 victory at the 2022 Rugby League World Cup. Samoa's squad is bolstered by numerous elite NRL players, many of whom featured in recent Grand Finals, indicating strong form and high-level experience. In contrast, France's squad is predominantly drawn from the Super League, with only one NRL-based player, and their recent results against top-tier nations have shown significant deficits."
+      },
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-10-16_women_australia_samoa",
+      "competition": "women",
+      "kickoff_utc": "2026-10-16T09:05:00Z",
+      "home_team": "Australia",
+      "away_team": "Samoa",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "status": "pending",
+      "prediction": {
+        "home_team": "Australia",
+        "away_team": "Samoa",
+        "kickoff_utc": "2026-10-16T09:05:00Z",
+        "venue": "CommBank Stadium, Sydney",
+        "made_at": "2026-10-15T22:52:20Z",
+        "home_win_prob": 0.98,
+        "away_win_prob": 0.02,
+        "predicted_margin": 48,
+        "predicted_winner": "home",
+        "reasoning": "Australia is the top-ranked women's rugby league team globally, while Samoa is ranked 5th. Australia has a dominant head-to-head record, winning all three previous encounters, including a resounding 60-0 victory in their most recent match in October 2025. The Jillaroos, playing on home soil, feature a strong squad with multiple Dally M Team of the Year players, indicating superior individual talent and team cohesion. Samoa, despite having NRLW experienced players and a strong forward pack, is led by a new coach who is yet to oversee an international fixture, and they will need significant improvement in their outside backs."
+      },
       "result": null,
       "scored": null
     },
@@ -396,56 +441,96 @@
     {
       "match_id": "2026-10-17_women_papua-new-guinea_france",
       "competition": "women",
-      "kickoff_utc": "2026-10-17T02:15:00Z",
+      "kickoff_utc": "2026-10-17T03:15:00Z",
       "home_team": "Papua New Guinea",
       "away_team": "France",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
-      "result": null,
-      "scored": null
-    },
-    {
-      "match_id": "2026-10-17_women_england_wales",
-      "competition": "women",
-      "kickoff_utc": "2026-10-17T04:15:00Z",
-      "home_team": "England",
-      "away_team": "Wales",
-      "venue": "HBF Park, Perth",
-      "stage": "pool",
-      "pool": "A",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Papua New Guinea",
+        "away_team": "France",
+        "kickoff_utc": "2026-10-17T03:15:00Z",
+        "venue": "Santos National Football Stadium, Port Moresby",
+        "made_at": "2026-10-15T22:52:32Z",
+        "home_win_prob": 0.7,
+        "away_win_prob": 0.3,
+        "predicted_margin": 14,
+        "predicted_winner": "home",
+        "reasoning": "Papua New Guinea (ranked 6th) will benefit significantly from playing at home in Port Moresby, with their players accustomed to the tropical conditions and a passionate home crowd. While France is ranked higher (4th), their performance in the last World Cup saw them lose all three pool matches, including heavy defeats to Australia (0-92) and New Zealand (0-46). Papua New Guinea, in contrast, reached the semi-finals in the previous World Cup, demonstrating their capability on the international stage. Although France recently beat Nigeria, they suffered a 38-4 loss to England in July 2026, suggesting potential defensive vulnerabilities."
+      },
       "result": null,
       "scored": null
     },
     {
       "match_id": "2026-10-17_men_papua-new-guinea_lebanon",
       "competition": "men",
-      "kickoff_utc": "2026-10-17T04:25:00Z",
+      "kickoff_utc": "2026-10-17T05:25:00Z",
       "home_team": "Papua New Guinea",
       "away_team": "Lebanon",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Papua New Guinea",
+        "away_team": "Lebanon",
+        "kickoff_utc": "2026-10-17T05:25:00Z",
+        "venue": "Santos National Football Stadium, Port Moresby",
+        "made_at": "2026-10-15T22:52:46Z",
+        "home_win_prob": 0.8,
+        "away_win_prob": 0.2,
+        "predicted_margin": 14,
+        "predicted_winner": "home",
+        "reasoning": "Papua New Guinea enters the match as the higher-ranked team at 6th globally, significantly above Lebanon's 23rd ranking. The Kumuls also benefit from a substantial home advantage, having won 14 of their last 15 games on home soil in Port Moresby. While Papua New Guinea is missing key players due to injury, including Lachlan Lam and Alex Johnston, their recent form includes strong wins against nations ranked higher than Lebanon, such as Fiji and the Cook Islands. Lebanon, despite reaching the quarter-finals in previous World Cups and possessing NRL talent, has had limited recent international activity and faces a tough challenge away from home."
+      },
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-10-17_women_england_wales",
+      "competition": "women",
+      "kickoff_utc": "2026-10-17T09:35:00Z",
+      "home_team": "England",
+      "away_team": "Wales",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "status": "pending",
+      "prediction": {
+        "home_team": "England",
+        "away_team": "Wales",
+        "kickoff_utc": "2026-10-17T09:35:00Z",
+        "venue": "HBF Park, Perth",
+        "made_at": "2026-10-15T22:53:00Z",
+        "home_win_prob": 0.98,
+        "away_win_prob": 0.02,
+        "predicted_margin": 50,
+        "predicted_winner": "home",
+        "reasoning": "England Women are significantly higher ranked at 3rd globally, compared to Wales Women at 9th. England has a dominant head-to-head record against Wales in Rugby League, having won all five previous encounters, including a record 82-0 victory in November 2024. England's squad features several experienced NRLW players and top talents from the Betfred Women's Super League, while Wales is making their World Cup debut with a less experienced international squad. Wales' recent form includes a 14-0 loss to Canada, further highlighting the disparity in international performance."
+      },
       "result": null,
       "scored": null
     },
     {
       "match_id": "2026-10-17_men_england_tonga",
       "competition": "men",
-      "kickoff_utc": "2026-10-17T09:05:00Z",
+      "kickoff_utc": "2026-10-17T10:05:00Z",
       "home_team": "England",
       "away_team": "Tonga",
       "venue": "HBF Park, Perth",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "England",
+        "away_team": "Tonga",
+        "kickoff_utc": "2026-10-17T10:05:00Z",
+        "venue": "HBF Park, Perth",
+        "made_at": "2026-10-15T22:53:15Z",
+        "home_win_prob": 0.75,
+        "away_win_prob": 0.25,
+        "predicted_margin": 12,
+        "predicted_winner": "home",
+        "reasoning": "England is ranked 3rd in the Men's IRL World Rankings, two places above Tonga who are ranked 5th globally. England holds a perfect 6-0 head-to-head record against Tonga, including a narrow 20-18 victory in the 2017 Rugby League World Cup semi-final and a comprehensive 3-0 series win in 2023. This consistent historical dominance and higher ranking position England as the clear favorites for this opening pool match."
+      },
       "result": null,
       "scored": null
     },
