@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-16T22:27:30Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-18T05:05:00Z",
+    "home_team": "Fiji",
+    "away_team": "Cook Islands",
+    "venue": "McDonald Jones Stadium, Newcastle",
+    "stage": "pool",
+    "home_win_prob": 0.85,
+    "away_win_prob": 0.15,
+    "predicted_margin": 24,
+    "predicted_winner": "home",
+    "home_rank": 7,
+    "away_rank": 8,
+    "reasoning": "Fiji holds a higher world ranking (7th) compared to the Cook Islands (8th). Fiji has a dominant recent head-to-head record against the Cook Islands, including significant wins of 44-24 in 2025 and 56-6 in 2024. Furthermore, Fiji's squad is strengthened by the return of key players like captain Api Koroisau, while the Cook Islands are missing important players such as Marata Niukore and Val Holmes for this match and are noted to have fitness concerns.",
+    "model": "gemini-2.5-flash"
+  }
+]

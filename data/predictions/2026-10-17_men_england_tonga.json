@@ -32,5 +32,22 @@
     "away_rank": 5,
     "reasoning": "England holds a superior world ranking (3rd) compared to Tonga (5th). Historically, England has a perfect head-to-head record against Tonga, winning all six previous Test matches, including a 3-0 series victory in 2023. While Tonga has shown the capability to challenge top-tier nations, England's consistent performance against them and recent strong results against other Pacific nations position them as favorites for this World Cup pool match.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-16T22:27:15Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-17T09:05:00Z",
+    "home_team": "England",
+    "away_team": "Tonga",
+    "venue": "HBF Park, Perth",
+    "stage": "pool",
+    "home_win_prob": 0.62,
+    "away_win_prob": 0.38,
+    "predicted_margin": 8,
+    "predicted_winner": "home",
+    "home_rank": 3,
+    "away_rank": 5,
+    "reasoning": "England holds a perfect 6-0 head-to-head record against Tonga, including a narrow 20-18 victory in the 2017 World Cup semi-final and a 3-0 series sweep in 2023. England is also ranked 3rd globally, two places above 5th-ranked Tonga. However, England faces significant injury concerns with Morgan Smithies and Morgan Knowles ruled out of this opening match. Tonga boasts a powerful squad with strong NRL talent and will be highly motivated to secure their first-ever win against England in this World Cup opener.",
+    "model": "gemini-2.5-flash"
   }
 ]

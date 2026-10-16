@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-16T22:28:09Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-18T02:50:00Z",
+    "home_team": "New Zealand",
+    "away_team": "Fiji",
+    "venue": "McDonald Jones Stadium, Newcastle",
+    "stage": "pool",
+    "home_win_prob": 0.95,
+    "away_win_prob": 0.05,
+    "predicted_margin": 30,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 12,
+    "reasoning": "New Zealand is ranked significantly higher at 2nd in the women's IRL World Rankings, compared to Fiji's 12th. The Kiwi Ferns boast a talent-laden squad featuring experienced NRLW players and Dally M Halfback of the Year Raecene McGregor, along with several debutants including former Jillaroos and an Olympic gold medallist. Fiji's squad, while including some NRLW talent, is noted to lack overall experience, particularly in the forwards. This is the first head-to-head encounter between these two nations, but based on world rankings and recent form against common opponents, New Zealand is expected to secure a comfortable victory.",
+    "model": "gemini-2.5-flash"
+  }
+]

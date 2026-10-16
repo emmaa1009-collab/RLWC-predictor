@@ -32,5 +32,22 @@
     "away_rank": 4,
     "reasoning": "Papua New Guinea holds a significant home-ground advantage playing in Port Moresby. While France is ranked slightly higher globally (4th compared to PNG's 6th), Papua New Guinea demonstrated stronger tournament form by reaching the semi-finals of the last Women's Rugby League World Cup, whereas France did not secure a win. The presence of key player and captain Elsie Albert, a standout from the previous World Cup, further bolsters the home side's prospects.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-16T22:27:43Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-17T02:15:00Z",
+    "home_team": "Papua New Guinea",
+    "away_team": "France",
+    "venue": "Santos National Football Stadium, Port Moresby",
+    "stage": "pool",
+    "home_win_prob": 0.85,
+    "away_win_prob": 0.15,
+    "predicted_margin": 16,
+    "predicted_winner": "home",
+    "home_rank": 6,
+    "away_rank": 4,
+    "reasoning": "While France holds a higher IRL World Ranking (4th) compared to Papua New Guinea (6th), Papua New Guinea is strongly favored due to their superior recent World Cup performance, having reached the semi-finals in 2022 while France lost all pool matches. The Orchids will benefit significantly from a passionate home crowd and familiarity with the tropical conditions in Port Moresby, which are expected to challenge the French team. Key player Elsie Albert also provides a strong leadership presence for PNG.",
+    "model": "gemini-2.5-flash"
   }
 ]
