@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T06:29:51Z",
+  "updated": "2026-10-16T21:52:06Z",
   "summaries": {
     "overall": {
       "count": 1,
@@ -66,33 +66,9 @@
       }
     },
     {
-      "match_id": "2026-10-15_women_australia_samoa",
-      "competition": "women",
-      "kickoff_utc": "2026-10-15T15:05:00Z",
-      "home_team": "Australia",
-      "away_team": "Samoa",
-      "venue": "",
-      "stage": "pool",
-      "status": "pending",
-      "prediction": {
-        "home_team": "Australia",
-        "away_team": "Samoa",
-        "kickoff_utc": "2026-10-15T15:05:00Z",
-        "venue": "",
-        "made_at": "2026-10-14T22:57:50Z",
-        "home_win_prob": 0.98,
-        "away_win_prob": 0.02,
-        "predicted_margin": 40,
-        "predicted_winner": "home",
-        "reasoning": "Australia enters the tournament as the top-ranked women's rugby league team, while Samoa is ranked 5th globally. Australia has a dominant head-to-head record against Samoa, including a resounding 60-0 victory in their most recent encounter in October 2025. The Jillaroos boast a strong squad with established winning combinations, featuring numerous players from the undefeated NRLW premiers Sydney Roosters and the NSW Sky Blues. Samoa, while having NRLW experience across its squad, is still developing and faces a significant challenge against the highly experienced Australian side on home soil in Sydney."
-      },
-      "result": null,
-      "scored": null
-    },
-    {
       "match_id": "2026-10-16_men_samoa_france",
       "competition": "men",
-      "kickoff_utc": "2026-10-16T07:45:00Z",
+      "kickoff_utc": "2026-10-16T06:45:00Z",
       "home_team": "Samoa",
       "away_team": "France",
       "venue": "CommBank Stadium, Sydney",
@@ -101,7 +77,7 @@
       "prediction": {
         "home_team": "Samoa",
         "away_team": "France",
-        "kickoff_utc": "2026-10-16T07:45:00Z",
+        "kickoff_utc": "2026-10-16T06:45:00Z",
         "venue": "CommBank Stadium, Sydney",
         "made_at": "2026-10-16T06:28:51Z",
         "home_win_prob": 0.9,
@@ -138,54 +114,6 @@
       "scored": null
     },
     {
-      "match_id": "2026-10-16_women_papua-new-guinea_france",
-      "competition": "women",
-      "kickoff_utc": "2026-10-16T09:15:00Z",
-      "home_team": "Papua New Guinea",
-      "away_team": "France",
-      "venue": "",
-      "stage": "pool",
-      "status": "pending",
-      "prediction": {
-        "home_team": "Papua New Guinea",
-        "away_team": "France",
-        "kickoff_utc": "2026-10-16T09:15:00Z",
-        "venue": "",
-        "made_at": "2026-10-14T22:58:07Z",
-        "home_win_prob": 0.58,
-        "away_win_prob": 0.42,
-        "predicted_margin": 8,
-        "predicted_winner": "home",
-        "reasoning": "Papua New Guinea holds a significant home advantage playing in Port Moresby, a factor that often boosts team performance in rugby league. While France is ranked higher at 4th compared to Papua New Guinea's 6th in the IRL Women's rankings, both teams have experienced heavy defeats against top-tier nations recently. Papua New Guinea reached the semi-finals of the 2022 World Cup, demonstrating their capability in major tournaments. This, combined with the home crowd support, gives Papua New Guinea a slight edge in what is expected to be a competitive match."
-      },
-      "result": null,
-      "scored": null
-    },
-    {
-      "match_id": "2026-10-16_women_england_wales",
-      "competition": "women",
-      "kickoff_utc": "2026-10-16T23:35:00Z",
-      "home_team": "England",
-      "away_team": "Wales",
-      "venue": "HBF Park, Perth",
-      "stage": "pool",
-      "status": "pending",
-      "prediction": {
-        "home_team": "England",
-        "away_team": "Wales",
-        "kickoff_utc": "2026-10-16T23:35:00Z",
-        "venue": "HBF Park, Perth",
-        "made_at": "2026-10-16T06:29:04Z",
-        "home_win_prob": 0.95,
-        "away_win_prob": 0.05,
-        "predicted_margin": 55,
-        "predicted_winner": "home",
-        "reasoning": "England is ranked significantly higher at 3rd in the Women's Rugby League World Rankings compared to Wales at 9th. Historically, England has dominated Wales in Rugby League encounters, securing large winning margins such as 62-0 in August 2025 and 82-0 in November 2024. England's squad features experienced players and NRLW talent, while Wales is making its first-ever Women's Rugby League World Cup appearance with several uncapped players, despite including some NRLW players and a former England international."
-      },
-      "result": null,
-      "scored": null
-    },
-    {
       "match_id": "2026-10-17_women_papua-new-guinea_france",
       "competition": "women",
       "kickoff_utc": "2026-10-17T02:15:00Z",
@@ -212,7 +140,7 @@
     {
       "match_id": "2026-10-17_men_papua-new-guinea_lebanon",
       "competition": "men",
-      "kickoff_utc": "2026-10-17T05:25:00Z",
+      "kickoff_utc": "2026-10-17T04:25:00Z",
       "home_team": "Papua New Guinea",
       "away_team": "Lebanon",
       "venue": "Santos National Football Stadium, Port Moresby",
@@ -221,7 +149,7 @@
       "prediction": {
         "home_team": "Papua New Guinea",
         "away_team": "Lebanon",
-        "kickoff_utc": "2026-10-17T05:25:00Z",
+        "kickoff_utc": "2026-10-17T04:25:00Z",
         "venue": "Santos National Football Stadium, Port Moresby",
         "made_at": "2026-10-16T06:29:26Z",
         "home_win_prob": 0.73,
@@ -236,7 +164,7 @@
     {
       "match_id": "2026-10-17_women_england_wales",
       "competition": "women",
-      "kickoff_utc": "2026-10-17T09:35:00Z",
+      "kickoff_utc": "2026-10-17T06:35:00Z",
       "home_team": "England",
       "away_team": "Wales",
       "venue": "HBF Park, Perth",
@@ -245,7 +173,7 @@
       "prediction": {
         "home_team": "England",
         "away_team": "Wales",
-        "kickoff_utc": "2026-10-17T09:35:00Z",
+        "kickoff_utc": "2026-10-17T06:35:00Z",
         "venue": "HBF Park, Perth",
         "made_at": "2026-10-15T22:53:00Z",
         "home_win_prob": 0.98,
@@ -260,7 +188,7 @@
     {
       "match_id": "2026-10-17_men_england_tonga",
       "competition": "men",
-      "kickoff_utc": "2026-10-17T10:05:00Z",
+      "kickoff_utc": "2026-10-17T09:05:00Z",
       "home_team": "England",
       "away_team": "Tonga",
       "venue": "HBF Park, Perth",
@@ -269,7 +197,7 @@
       "prediction": {
         "home_team": "England",
         "away_team": "Tonga",
-        "kickoff_utc": "2026-10-17T10:05:00Z",
+        "kickoff_utc": "2026-10-17T09:05:00Z",
         "venue": "HBF Park, Perth",
         "made_at": "2026-10-16T06:29:38Z",
         "home_win_prob": 0.7,
@@ -312,7 +240,7 @@
     {
       "match_id": "2026-10-23_women_samoa_wales",
       "competition": "women",
-      "kickoff_utc": "2026-10-23T06:50:00Z",
+      "kickoff_utc": "2026-10-23T06:45:00Z",
       "home_team": "Samoa",
       "away_team": "Wales",
       "venue": "CommBank Stadium, Sydney",
@@ -338,11 +266,11 @@
       "scored": null
     },
     {
-      "match_id": "2026-10-24_women_papua-new-guinea_fiji",
+      "match_id": "2026-10-24_women_fiji_papua-new-guinea",
       "competition": "women",
       "kickoff_utc": "2026-10-24T02:15:00Z",
-      "home_team": "Papua New Guinea",
-      "away_team": "Fiji",
+      "home_team": "Fiji",
+      "away_team": "Papua New Guinea",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
       "pool": "B",
@@ -396,7 +324,7 @@
     {
       "match_id": "2026-10-25_women_new-zealand_france",
       "competition": "women",
-      "kickoff_utc": "2026-10-25T01:50:00Z",
+      "kickoff_utc": "2026-10-25T03:00:00Z",
       "home_team": "New Zealand",
       "away_team": "France",
       "venue": "One NZ Stadium, Christchurch",
@@ -438,7 +366,7 @@
     {
       "match_id": "2026-10-30_women_england_samoa",
       "competition": "women",
-      "kickoff_utc": "2026-10-30T06:50:00Z",
+      "kickoff_utc": "2026-10-30T06:45:00Z",
       "home_team": "England",
       "away_team": "Samoa",
       "venue": "WIN Stadium, Wollongong",
@@ -466,7 +394,7 @@
     {
       "match_id": "2026-10-31_women_fiji_france",
       "competition": "women",
-      "kickoff_utc": "2026-10-31T02:35:00Z",
+      "kickoff_utc": "2026-10-31T02:20:00Z",
       "home_team": "Fiji",
       "away_team": "France",
       "venue": "Cbus Super Stadium, Gold Coast",
@@ -494,7 +422,7 @@
     {
       "match_id": "2026-10-31_women_new-zealand_papua-new-guinea",
       "competition": "women",
-      "kickoff_utc": "2026-10-31T06:55:00Z",
+      "kickoff_utc": "2026-10-31T06:45:00Z",
       "home_team": "New Zealand",
       "away_team": "Papua New Guinea",
       "venue": "Cbus Super Stadium, Gold Coast",
@@ -522,7 +450,7 @@
     {
       "match_id": "2026-11-01_women_australia_wales",
       "competition": "women",
-      "kickoff_utc": "2026-11-01T04:45:00Z",
+      "kickoff_utc": "2026-11-01T04:40:00Z",
       "home_team": "Australia",
       "away_team": "Wales",
       "venue": "CommBank Stadium, Sydney",

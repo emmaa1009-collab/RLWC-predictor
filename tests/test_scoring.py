@@ -362,3 +362,67 @@ def test_load_scheduled_fixtures_has_men_and_women_pools():
     by_id = {m["match_id"]: m for m in payload["matches"]}
     assert by_id[fixtures[0]["match_id"]]["status"] == "pending"
     assert len(payload["matches"]) == len(fixtures)
+
+
+def test_dedupe_pending_predictions_keeps_one_per_pairing():
+    fixtures = [
+        {
+            "match_id": "2026-10-16_women_australia_samoa",
+            "competition": "women",
+            "home_team": "Australia",
+            "away_team": "Samoa",
+            "kickoff_utc": "2026-10-16T09:05:00Z",
+            "venue": "CommBank Stadium, Sydney",
+            "stage": "pool",
+        }
+    ]
+    pending = [
+        {
+            "match_id": "2026-10-15_women_australia_samoa",
+            "prediction": {
+                "competition": "women",
+                "home_team": "Australia",
+                "away_team": "Samoa",
+                "kickoff_utc": "2026-10-15T15:05:00Z",
+                "made_at": "2026-10-14T22:00:00Z",
+                "home_win_prob": 0.9,
+                "away_win_prob": 0.1,
+            },
+        },
+        {
+            "match_id": "2026-10-16_women_australia_samoa",
+            "prediction": {
+                "competition": "women",
+                "home_team": "Australia",
+                "away_team": "Samoa",
+                "kickoff_utc": "2026-10-16T09:05:00Z",
+                "made_at": "2026-10-15T22:00:00Z",
+                "home_win_prob": 0.98,
+                "away_win_prob": 0.02,
+            },
+        },
+    ]
+    deduped = run.dedupe_pending_predictions(pending, fixtures)
+    assert len(deduped) == 1
+    assert deduped[0]["match_id"] == "2026-10-16_women_australia_samoa"
+    assert deduped[0]["prediction"]["kickoff_utc"] == "2026-10-16T09:05:00Z"
+    assert deduped[0]["prediction"]["home_win_prob"] == 0.98
+
+
+def test_women_fixtures_include_canonical_opener():
+    fixtures = run.load_scheduled_fixtures()
+    women = [row for row in fixtures if row["competition"] == "women"]
+    opener = next(
+        row
+        for row in women
+        if row["home_team"] == "Australia" and row["away_team"] == "Samoa"
+    )
+    assert opener["kickoff_utc"] == "2026-10-16T09:05:00Z"
+    assert opener["match_id"] == "2026-10-16_women_australia_samoa"
+    # No duplicate Australia-Samoa rows in curated fixtures.
+    aus_samoa = [
+        row
+        for row in women
+        if {row["home_team"], row["away_team"]} == {"Australia", "Samoa"}
+    ]
+    assert len(aus_samoa) == 1

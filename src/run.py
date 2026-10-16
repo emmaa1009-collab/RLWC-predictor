@@ -103,6 +103,13 @@ def match_id(kickoff_utc: str, competition: str, home: str, away: str) -> str:
     return f"{day}_{comp}_{slugify(home)}_{slugify(away)}"
 
 
+def pairing_key(competition: Any, home: str, away: str) -> tuple[str, tuple[str, str]]:
+    """Stable identity for a fixture regardless of kickoff-date typos in match_id."""
+    comp = normalize_competition(competition) or "men"
+    teams = tuple(sorted((slugify(home), slugify(away))))
+    return comp, teams
+
+
 def load_json(path: Path, default: Any) -> Any:
     if not path.exists():
         return default
@@ -208,6 +215,15 @@ def kickoff_still_upcoming(kickoff_utc: str, now: datetime) -> bool:
     return parse_iso(kickoff_utc) > now + timedelta(minutes=PREDICT_BUFFER_MINUTES)
 
 
+def canonical_fixture_lookup() -> dict[tuple[str, tuple[str, str]], dict[str, Any]]:
+    """Map pairing_key -> scheduled fixture from data/fixtures.json."""
+    lookup: dict[tuple[str, tuple[str, str]], dict[str, Any]] = {}
+    for row in load_scheduled_fixtures():
+        key = pairing_key(row["competition"], row["home_team"], row["away_team"])
+        lookup[key] = row
+    return lookup
+
+
 def discover_fixtures(client: genai.Client, now: datetime) -> list[dict[str, Any]]:
     until = now + timedelta(hours=LOOKAHEAD_HOURS)
     earliest = now + timedelta(minutes=PREDICT_BUFFER_MINUTES)
@@ -234,12 +250,15 @@ Return a JSON object:
 
 If none are found, return {{"matches": []}}.
 Use official team names. Do not invent fixtures.
+Kickoff times must be true UTC (not local AEDT/AEST/NZDT mislabelled as Z).
 Do not include matches that have already kicked off.
 Do not include wheelchair or other competitions.
 """.strip()
     payload = gemini_json(client, prompt)
     matches = payload.get("matches", []) if isinstance(payload, dict) else []
+    canonical = canonical_fixture_lookup()
     cleaned: list[dict[str, Any]] = []
+    seen_pairings: set[tuple[str, tuple[str, str]]] = set()
     for raw in matches:
         try:
             competition = normalize_competition(raw.get("competition"))
@@ -254,19 +273,34 @@ Do not include wheelchair or other competitions.
                 stage = "pool"
             if not home or not away:
                 continue
+            key = pairing_key(competition, home, away)
+            # Prefer the curated fixtures.json kickoff/teams when available.
+            scheduled = canonical.get(key)
+            if scheduled is not None:
+                home = scheduled["home_team"]
+                away = scheduled["away_team"]
+                kickoff = scheduled["kickoff_utc"]
+                stage = scheduled.get("stage") or stage
+                venue = scheduled.get("venue") or str(raw.get("venue") or "").strip()
+            else:
+                venue = str(raw.get("venue") or "").strip()
             kickoff_dt = parse_iso(kickoff)
             # Hard cutoff: never keep a fixture that has already started.
             if kickoff_dt <= now + timedelta(minutes=PREDICT_BUFFER_MINUTES):
                 continue
             if kickoff_dt > until + timedelta(hours=1):
                 continue
+            if key in seen_pairings:
+                print(f"Skipping duplicate discovered pairing: {competition} {home} vs {away}")
+                continue
+            seen_pairings.add(key)
             cleaned.append(
                 {
                     "competition": competition,
                     "home_team": home,
                     "away_team": away,
                     "kickoff_utc": kickoff,
-                    "venue": str(raw.get("venue") or "").strip(),
+                    "venue": venue,
                     "stage": stage,
                 }
             )
@@ -750,6 +784,78 @@ def load_scheduled_fixtures() -> list[dict[str, Any]]:
     return scheduled
 
 
+def dedupe_pending_predictions(
+    pending: list[dict[str, Any]],
+    fixtures: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """One pending row per team pairing; prefer curated fixture kickoff/match_id.
+
+    Prediction JSON files on disk are left untouched. Display rows may use the
+    canonical fixture kickoff/venue/match_id so timezone-mislabelled duplicates
+    do not appear twice on the scoreboard.
+    """
+    fixtures_by_key = {
+        pairing_key(row["competition"], row["home_team"], row["away_team"]): row
+        for row in fixtures
+    }
+    grouped: dict[tuple[str, tuple[str, str]], list[dict[str, Any]]] = {}
+    for row in pending:
+        pred = row["prediction"]
+        home = str(pred.get("home_team") or "").strip()
+        away = str(pred.get("away_team") or "").strip()
+        if not home or not away:
+            continue
+        key = pairing_key(pred.get("competition"), home, away)
+        grouped.setdefault(key, []).append(row)
+
+    selected: list[dict[str, Any]] = []
+    for key, rows in grouped.items():
+        fixture = fixtures_by_key.get(key)
+        if fixture is not None:
+            preferred_id = fixture["match_id"]
+            exact = [row for row in rows if row["match_id"] == preferred_id]
+            if exact:
+                chosen = exact[-1]
+            else:
+                target = parse_iso(fixture["kickoff_utc"])
+
+                def kickoff_distance(row: dict[str, Any]) -> float:
+                    try:
+                        return abs(
+                            (
+                                parse_iso(str(row["prediction"]["kickoff_utc"])) - target
+                            ).total_seconds()
+                        )
+                    except (KeyError, TypeError, ValueError):
+                        return float("inf")
+
+                chosen = min(rows, key=kickoff_distance)
+            pred = dict(chosen["prediction"])
+            pred["competition"] = fixture["competition"]
+            pred["home_team"] = fixture["home_team"]
+            pred["away_team"] = fixture["away_team"]
+            pred["kickoff_utc"] = fixture["kickoff_utc"]
+            if fixture.get("venue"):
+                pred["venue"] = fixture["venue"]
+            if fixture.get("stage"):
+                pred["stage"] = fixture["stage"]
+            selected.append({"match_id": preferred_id, "prediction": pred})
+        else:
+            rows_sorted = sorted(
+                rows,
+                key=lambda row: str(row["prediction"].get("made_at") or ""),
+            )
+            selected.append(rows_sorted[-1])
+
+    selected.sort(
+        key=lambda row: (
+            row["prediction"].get("kickoff_utc", ""),
+            row["prediction"].get("competition", ""),
+        )
+    )
+    return selected
+
+
 def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
     grouped = group_rows_by_competition(rows)
     overall = summarize_rows(rows)
@@ -821,8 +927,46 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
     )
 
     content = "\n".join(lines)
-    pending = collect_pending_predictions({row["match_id"] for row in rows})
+    scored_ids = {row["match_id"] for row in rows}
+    scored_pairings = {
+        pairing_key(
+            row["prediction"].get("competition"),
+            str(row["prediction"].get("home_team") or ""),
+            str(row["prediction"].get("away_team") or ""),
+        )
+        for row in rows
+    }
+    pending_raw = collect_pending_predictions(scored_ids)
+    pending_raw = [
+        row
+        for row in pending_raw
+        if pairing_key(
+            row["prediction"].get("competition"),
+            str(row["prediction"].get("home_team") or ""),
+            str(row["prediction"].get("away_team") or ""),
+        )
+        not in scored_pairings
+    ]
     scheduled = load_scheduled_fixtures()
+    pending = dedupe_pending_predictions(pending_raw, scheduled)
+    # Scheduled rows already covered by a pending/scored pairing are dropped in
+    # build_site_payload via match_id; also drop by pairing when ids differ.
+    pending_pairings = {
+        pairing_key(
+            row["prediction"].get("competition"),
+            str(row["prediction"].get("home_team") or ""),
+            str(row["prediction"].get("away_team") or ""),
+        )
+        for row in pending
+    }
+    scheduled = [
+        row
+        for row in scheduled
+        if pairing_key(row["competition"], row["home_team"], row["away_team"])
+        not in scored_pairings
+        and pairing_key(row["competition"], row["home_team"], row["away_team"])
+        not in pending_pairings
+    ]
     payload = scoreboard_site.build_site_payload(
         updated=updated,
         scored_rows=rows,
@@ -845,6 +989,42 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
 
 def rebuild_scoreboard(rows: list[dict[str, Any]]) -> None:
     write_scoreboard_outputs(rows)
+
+
+def collect_scored_rows_from_disk() -> list[dict[str, Any]]:
+    """Build scored rows from existing prediction/result files (no API calls)."""
+    scored_rows: list[dict[str, Any]] = []
+    for path in list_prediction_files():
+        versions = load_json(path, [])
+        if not versions or not isinstance(versions, list):
+            continue
+        mid = path.stem
+        result_path = RESULTS_DIR / f"{mid}.json"
+        result = load_json(result_path, None)
+        if not isinstance(result, dict):
+            continue
+        try:
+            kickoff = parse_iso(str(result.get("kickoff_utc") or versions[-1]["kickoff_utc"]))
+        except (KeyError, TypeError, ValueError):
+            continue
+        prediction = prediction_before_kickoff(versions, kickoff)
+        if prediction is None:
+            continue
+        scored_rows.append(
+            {
+                "match_id": mid,
+                "prediction": prediction,
+                "result": result,
+                "scored": score_row(prediction, result),
+            }
+        )
+    scored_rows.sort(
+        key=lambda row: (
+            row["prediction"].get("kickoff_utc", ""),
+            row["prediction"].get("competition", ""),
+        )
+    )
+    return scored_rows
 
 
 def score_finished(client: genai.Client, now: datetime) -> None:
@@ -939,7 +1119,7 @@ def predict_upcoming(client: genai.Client, now: datetime) -> None:
 def main() -> None:
     if len(sys.argv) > 1 and sys.argv[1] in {"--docs-only", "docs-only"}:
         print("Rebuilding scoreboard site from fixtures/predictions (no Gemini calls).")
-        write_scoreboard_outputs([])
+        write_scoreboard_outputs(collect_scored_rows_from_disk())
         print("Done.")
         return
 

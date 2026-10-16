@@ -1,6 +1,6 @@
 {
-  "source": "Official RLWC 2026 draw (rlwc2026.com) for men; Wikipedia women's tournament page for women pool times/venues",
-  "updated": "2026-10-05",
+  "source": "Official RLWC 2026 draw (rlwc2026.com). Women kickoffs converted from site AEDT display; men from official draw UTC conversions.",
+  "updated": "2026-10-17",
   "matches": [
     {
       "competition": "men",
@@ -8,15 +8,6 @@
       "away_team": "New Zealand",
       "kickoff_utc": "2026-10-15T09:05:00Z",
       "venue": "Allianz Stadium, Sydney",
-      "stage": "pool",
-      "pool": "A"
-    },
-    {
-      "competition": "women",
-      "home_team": "Australia",
-      "away_team": "Samoa",
-      "kickoff_utc": "2026-10-15T09:05:00Z",
-      "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
       "pool": "A"
     },
@@ -31,21 +22,21 @@
     },
     {
       "competition": "women",
+      "home_team": "Australia",
+      "away_team": "Samoa",
+      "kickoff_utc": "2026-10-16T09:05:00Z",
+      "venue": "CommBank Stadium, Sydney",
+      "stage": "pool",
+      "pool": "A"
+    },
+    {
+      "competition": "women",
       "home_team": "Papua New Guinea",
       "away_team": "France",
       "kickoff_utc": "2026-10-17T02:15:00Z",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
       "pool": "B"
-    },
-    {
-      "competition": "women",
-      "home_team": "England",
-      "away_team": "Wales",
-      "kickoff_utc": "2026-10-17T04:15:00Z",
-      "venue": "HBF Park, Perth",
-      "stage": "pool",
-      "pool": "A"
     },
     {
       "competition": "men",
@@ -55,6 +46,15 @@
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
       "pool": "B"
+    },
+    {
+      "competition": "women",
+      "home_team": "England",
+      "away_team": "Wales",
+      "kickoff_utc": "2026-10-17T06:35:00Z",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "pool": "A"
     },
     {
       "competition": "men",
@@ -87,7 +87,7 @@
       "competition": "women",
       "home_team": "Samoa",
       "away_team": "Wales",
-      "kickoff_utc": "2026-10-23T06:50:00Z",
+      "kickoff_utc": "2026-10-23T06:45:00Z",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
       "pool": "A"
@@ -103,8 +103,8 @@
     },
     {
       "competition": "women",
-      "home_team": "Papua New Guinea",
-      "away_team": "Fiji",
+      "home_team": "Fiji",
+      "away_team": "Papua New Guinea",
       "kickoff_utc": "2026-10-24T02:15:00Z",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
@@ -141,7 +141,7 @@
       "competition": "women",
       "home_team": "New Zealand",
       "away_team": "France",
-      "kickoff_utc": "2026-10-25T01:50:00Z",
+      "kickoff_utc": "2026-10-25T03:00:00Z",
       "venue": "One NZ Stadium, Christchurch",
       "stage": "pool",
       "pool": "B"
@@ -168,7 +168,7 @@
       "competition": "women",
       "home_team": "England",
       "away_team": "Samoa",
-      "kickoff_utc": "2026-10-30T06:50:00Z",
+      "kickoff_utc": "2026-10-30T06:45:00Z",
       "venue": "WIN Stadium, Wollongong",
       "stage": "pool",
       "pool": "A"
@@ -186,7 +186,7 @@
       "competition": "women",
       "home_team": "Fiji",
       "away_team": "France",
-      "kickoff_utc": "2026-10-31T02:35:00Z",
+      "kickoff_utc": "2026-10-31T02:20:00Z",
       "venue": "Cbus Super Stadium, Gold Coast",
       "stage": "pool",
       "pool": "B"
@@ -204,7 +204,7 @@
       "competition": "women",
       "home_team": "New Zealand",
       "away_team": "Papua New Guinea",
-      "kickoff_utc": "2026-10-31T06:55:00Z",
+      "kickoff_utc": "2026-10-31T06:45:00Z",
       "venue": "Cbus Super Stadium, Gold Coast",
       "stage": "pool",
       "pool": "B"
@@ -222,7 +222,7 @@
       "competition": "women",
       "home_team": "Australia",
       "away_team": "Wales",
-      "kickoff_utc": "2026-11-01T04:45:00Z",
+      "kickoff_utc": "2026-11-01T04:40:00Z",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
       "pool": "A"
