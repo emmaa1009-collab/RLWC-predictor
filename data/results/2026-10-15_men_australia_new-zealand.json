@@ -6,8 +6,11 @@
   "home_score": 24,
   "away_score": 22,
   "recorded_at": "2026-10-15T22:51:37Z",
-  "source": "The Guardian",
+  "source": "NBC Sports / The Guardian",
   "model": "gemini-2.5-flash",
-  "verified_count": 1,
-  "locked": false
+  "verified_count": 2,
+  "locked": true,
+  "last_checked_at": "2026-10-16T06:28:24Z",
+  "locked_at": "2026-10-16T06:28:24Z",
+  "lock_reason": "confirmed"
 }

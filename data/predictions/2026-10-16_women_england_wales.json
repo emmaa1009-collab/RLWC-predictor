@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-16T06:29:04Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-16T23:35:00Z",
+    "home_team": "England",
+    "away_team": "Wales",
+    "venue": "HBF Park, Perth",
+    "stage": "pool",
+    "home_win_prob": 0.95,
+    "away_win_prob": 0.05,
+    "predicted_margin": 55,
+    "predicted_winner": "home",
+    "home_rank": 3,
+    "away_rank": 9,
+    "reasoning": "England is ranked significantly higher at 3rd in the Women's Rugby League World Rankings compared to Wales at 9th. Historically, England has dominated Wales in Rugby League encounters, securing large winning margins such as 62-0 in August 2025 and 82-0 in November 2024. England's squad features experienced players and NRLW talent, while Wales is making its first-ever Women's Rugby League World Cup appearance with several uncapped players, despite including some NRLW players and a former England international.",
+    "model": "gemini-2.5-flash"
+  }
+]

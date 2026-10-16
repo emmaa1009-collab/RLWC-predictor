@@ -1,12 +1,12 @@
 # SCOREBOARD
 
-Updated: 2026-10-15T22:53:26Z
+Updated: 2026-10-16T06:29:51Z
 
 ## Matches
 
 | Competition | Match | Score | Agent pick | Hit | Brier | Margin err | Rank baseline | Locked |
 |---|---|---|---|---|---|---|---|---|
-| Men | Australia vs New Zealand | 24-22 | Australia (72%) | Y | 0.078 | 12 | Y | N |
+| Men | Australia vs New Zealand | 24-22 | Australia (72%) | Y | 0.078 | 12 | Y | Y |
 
 ## Summary
 

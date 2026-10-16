@@ -15,5 +15,22 @@
     "away_rank": 5,
     "reasoning": "England is ranked 3rd in the Men's IRL World Rankings, two places above Tonga who are ranked 5th globally. England holds a perfect 6-0 head-to-head record against Tonga, including a narrow 20-18 victory in the 2017 Rugby League World Cup semi-final and a comprehensive 3-0 series win in 2023. This consistent historical dominance and higher ranking position England as the clear favorites for this opening pool match.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-16T06:29:38Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-17T10:05:00Z",
+    "home_team": "England",
+    "away_team": "Tonga",
+    "venue": "HBF Park, Perth",
+    "stage": "pool",
+    "home_win_prob": 0.7,
+    "away_win_prob": 0.3,
+    "predicted_margin": 10,
+    "predicted_winner": "home",
+    "home_rank": 3,
+    "away_rank": 5,
+    "reasoning": "England holds a superior world ranking (3rd) compared to Tonga (5th). Historically, England has a perfect head-to-head record against Tonga, winning all six previous Test matches, including a 3-0 series victory in 2023. While Tonga has shown the capability to challenge top-tier nations, England's consistent performance against them and recent strong results against other Pacific nations position them as favorites for this World Cup pool match.",
+    "model": "gemini-2.5-flash"
   }
 ]

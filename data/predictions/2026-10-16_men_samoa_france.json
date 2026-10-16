@@ -15,5 +15,22 @@
     "away_rank": 11,
     "reasoning": "Samoa enters the match as the significantly higher-ranked team at 4th globally, compared to France's 11th position. Historically, Samoa has a dominant head-to-head record, winning all four previous encounters, including a resounding 62-4 victory at the 2022 Rugby League World Cup. Samoa's squad is bolstered by numerous elite NRL players, many of whom featured in recent Grand Finals, indicating strong form and high-level experience. In contrast, France's squad is predominantly drawn from the Super League, with only one NRL-based player, and their recent results against top-tier nations have shown significant deficits.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-16T06:28:51Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-16T07:45:00Z",
+    "home_team": "Samoa",
+    "away_team": "France",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.9,
+    "away_win_prob": 0.1,
+    "predicted_margin": 24,
+    "predicted_winner": "home",
+    "home_rank": 4,
+    "away_rank": 11,
+    "reasoning": "Samoa enters the tournament ranked 4th globally, significantly higher than France at 11th. Historically, Samoa has a perfect record against France, winning all four of their previous encounters. The Samoan squad is notably strong, featuring numerous established NRL players and many who were part of their 2022 World Cup final run, including co-captains Junior Paulo and Jarome Luai, Stephen Crichton, and Hamiso Tabuai-Fidow. In contrast, France's squad is predominantly composed of Super League players, with only one NRL-based player, indicating a disparity in top-tier experience and talent.",
+    "model": "gemini-2.5-flash"
   }
 ]
