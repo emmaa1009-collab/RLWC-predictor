@@ -276,34 +276,34 @@
   </main>
 
   <script id="scoreboard-data" type="application/json">{
-  "updated": "2026-10-16T22:28:28Z",
+  "updated": "2026-10-17T06:18:30Z",
   "summaries": {
     "overall": {
-      "count": 4,
+      "count": 8,
       "hit_rate": 1.0,
-      "ranking_hit_rate": 1.0,
-      "brier": 0.0223,
+      "ranking_hit_rate": 0.75,
+      "brier": 0.045437500000000006,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 17.5
+      "margin_error": 21.625
     },
     "men": {
-      "count": 2,
+      "count": 3,
       "hit_rate": 1.0,
       "ranking_hit_rate": 1.0,
-      "brier": 0.0442,
+      "brier": 0.053766666666666664,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 31.0
+      "margin_error": 25.333333333333332
     },
     "women": {
-      "count": 2,
+      "count": 5,
       "hit_rate": 1.0,
-      "ranking_hit_rate": 1.0,
-      "brier": 0.0004000000000000007,
+      "ranking_hit_rate": 0.6,
+      "brier": 0.04044000000000001,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 4.0
+      "margin_error": 19.4
     }
   },
   "matches": [
@@ -366,8 +366,8 @@
       "result": {
         "home_score": 40,
         "away_score": 0,
-        "locked": false,
-        "source": "The Guardian, NRL.com"
+        "locked": true,
+        "source": "NRL.com, The Guardian"
       },
       "scored": {
         "hit": 1.0,
@@ -401,8 +401,8 @@
       "result": {
         "home_score": 78,
         "away_score": 4,
-        "locked": false,
-        "source": "Sky Sports, NRL.com, Rugby League Live"
+        "locked": true,
+        "source": "Sky Sports, League Unlimited, NRL.com"
       },
       "scored": {
         "hit": 1.0,
@@ -436,13 +436,83 @@
       "result": {
         "home_score": 40,
         "away_score": 0,
-        "locked": false,
-        "source": "The Guardian, NRL.com"
+        "locked": true,
+        "source": "The Guardian, NRL.com, SNA"
       },
       "scored": {
         "hit": 1.0,
         "brier": 0.0004000000000000007,
         "margin_error": 8,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
+    },
+    {
+      "match_id": "2026-10-16_women_papua-new-guinea_france",
+      "competition": "women",
+      "kickoff_utc": "2026-10-16T09:15:00Z",
+      "home_team": "Papua New Guinea",
+      "away_team": "France",
+      "venue": "",
+      "stage": "pool",
+      "status": "scored",
+      "prediction": {
+        "home_team": "Papua New Guinea",
+        "away_team": "France",
+        "kickoff_utc": "2026-10-16T09:15:00Z",
+        "venue": "",
+        "made_at": "2026-10-14T22:58:07Z",
+        "home_win_prob": 0.58,
+        "away_win_prob": 0.42,
+        "predicted_margin": 8,
+        "predicted_winner": "home",
+        "reasoning": "Papua New Guinea holds a significant home advantage playing in Port Moresby, a factor that often boosts team performance in rugby league. While France is ranked higher at 4th compared to Papua New Guinea's 6th in the IRL Women's rankings, both teams have experienced heavy defeats against top-tier nations recently. Papua New Guinea reached the semi-finals of the 2022 World Cup, demonstrating their capability in major tournaments. This, combined with the home crowd support, gives Papua New Guinea a slight edge in what is expected to be a competitive match."
+      },
+      "result": {
+        "home_score": 58,
+        "away_score": 4,
+        "locked": false,
+        "source": "NRL.com"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.17640000000000003,
+        "margin_error": 46,
+        "ranking_hit": 0.0,
+        "pred_side": "home"
+      }
+    },
+    {
+      "match_id": "2026-10-16_women_england_wales",
+      "competition": "women",
+      "kickoff_utc": "2026-10-16T23:35:00Z",
+      "home_team": "England",
+      "away_team": "Wales",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "status": "scored",
+      "prediction": {
+        "home_team": "England",
+        "away_team": "Wales",
+        "kickoff_utc": "2026-10-16T23:35:00Z",
+        "venue": "HBF Park, Perth",
+        "made_at": "2026-10-16T06:29:04Z",
+        "home_win_prob": 0.95,
+        "away_win_prob": 0.05,
+        "predicted_margin": 55,
+        "predicted_winner": "home",
+        "reasoning": "England is ranked significantly higher at 3rd in the Women's Rugby League World Rankings compared to Wales at 9th. Historically, England has dominated Wales in Rugby League encounters, securing large winning margins such as 62-0 in August 2025 and 82-0 in November 2024. England's squad features experienced players and NRLW talent, while Wales is making its first-ever Women's Rugby League World Cup appearance with several uncapped players, despite including some NRLW players and a former England international."
+      },
+      "result": {
+        "home_score": 60,
+        "away_score": 0,
+        "locked": false,
+        "source": "Sky Sports"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.0025000000000000044,
+        "margin_error": 5,
         "ranking_hit": 1.0,
         "pred_side": "home"
       }
@@ -455,7 +525,7 @@
       "away_team": "France",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "Papua New Guinea",
         "away_team": "France",
@@ -468,8 +538,19 @@
         "predicted_winner": "home",
         "reasoning": "While France holds a higher IRL World Ranking (4th) compared to Papua New Guinea (6th), Papua New Guinea is strongly favored due to their superior recent World Cup performance, having reached the semi-finals in 2022 while France lost all pool matches. The Orchids will benefit significantly from a passionate home crowd and familiarity with the tropical conditions in Port Moresby, which are expected to challenge the French team. Key player Elsie Albert also provides a strong leadership presence for PNG."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 58,
+        "away_score": 4,
+        "locked": false,
+        "source": "NRL.com"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.022500000000000006,
+        "margin_error": 38,
+        "ranking_hit": 0.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-17_men_papua-new-guinea_lebanon",
@@ -479,7 +560,7 @@
       "away_team": "Lebanon",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "Papua New Guinea",
         "away_team": "Lebanon",
@@ -492,32 +573,19 @@
         "predicted_winner": "home",
         "reasoning": "Papua New Guinea enters the match as the higher-ranked team at 6th globally, compared to Lebanon's 23rd ranking. This is the first head-to-head encounter between the two nations. Papua New Guinea will benefit from a significant home advantage, playing in Port Moresby where rugby league is the national sport. While PNG is missing key players like Lachlan Lam and Alex Johnston due to injury, their squad still features strong NRL and Super League talent. Lebanon also has notable omissions in Mitchell Moses and Adam Doueihi, and had a period of inactivity before a recent loss to Italy. Based on these factors, Papua New Guinea is favored to win by a clear margin."
       },
-      "result": null,
-      "scored": null
-    },
-    {
-      "match_id": "2026-10-17_women_england_wales",
-      "competition": "women",
-      "kickoff_utc": "2026-10-17T06:35:00Z",
-      "home_team": "England",
-      "away_team": "Wales",
-      "venue": "HBF Park, Perth",
-      "stage": "pool",
-      "status": "pending",
-      "prediction": {
-        "home_team": "England",
-        "away_team": "Wales",
-        "kickoff_utc": "2026-10-17T06:35:00Z",
-        "venue": "HBF Park, Perth",
-        "made_at": "2026-10-16T22:27:54Z",
-        "home_win_prob": 0.95,
-        "away_win_prob": 0.05,
-        "predicted_margin": 50,
-        "predicted_winner": "home",
-        "reasoning": "England is ranked significantly higher than Wales in the IRL Women's Rugby League World Rankings (3rd vs 9th). Historically, England has a dominant head-to-head record against Wales, winning all five previous encounters, with a total points difference of 290 in England's favor (296-6). This includes a substantial 82-0 victory for England in November 2024. Wales is making its first World Cup appearance, while England has consistently reached the semi-finals in previous tournaments."
+      "result": {
+        "home_score": 42,
+        "away_score": 18,
+        "locked": false,
+        "source": "Fox Sports"
       },
-      "result": null,
-      "scored": null
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.0729,
+        "margin_error": 14,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-17_men_england_tonga",
@@ -533,12 +601,12 @@
         "away_team": "Tonga",
         "kickoff_utc": "2026-10-17T09:05:00Z",
         "venue": "HBF Park, Perth",
-        "made_at": "2026-10-16T22:27:15Z",
-        "home_win_prob": 0.62,
-        "away_win_prob": 0.38,
-        "predicted_margin": 8,
+        "made_at": "2026-10-17T06:17:53Z",
+        "home_win_prob": 0.68,
+        "away_win_prob": 0.32,
+        "predicted_margin": 10,
         "predicted_winner": "home",
-        "reasoning": "England holds a perfect 6-0 head-to-head record against Tonga, including a narrow 20-18 victory in the 2017 World Cup semi-final and a 3-0 series sweep in 2023. England is also ranked 3rd globally, two places above 5th-ranked Tonga. However, England faces significant injury concerns with Morgan Smithies and Morgan Knowles ruled out of this opening match. Tonga boasts a powerful squad with strong NRL talent and will be highly motivated to secure their first-ever win against England in this World Cup opener."
+        "reasoning": "England enters the match ranked 3rd globally, two spots above Tonga's 5th position. Historically, England holds a dominant 6-0 head-to-head record against Tonga, including a 3-0 series whitewash in 2023. Tonga's recent form has been concerning, marked by a winless Pacific Championships campaign in 2025 and a significant loss to Samoa. While both teams feature strong NRL talent, England's consistent performance in direct encounters and higher ranking make them the favored side."
       },
       "result": null,
       "scored": null
@@ -581,12 +649,12 @@
         "away_team": "Cook Islands",
         "kickoff_utc": "2026-10-18T05:05:00Z",
         "venue": "McDonald Jones Stadium, Newcastle",
-        "made_at": "2026-10-16T22:27:30Z",
+        "made_at": "2026-10-17T06:18:05Z",
         "home_win_prob": 0.85,
         "away_win_prob": 0.15,
         "predicted_margin": 24,
         "predicted_winner": "home",
-        "reasoning": "Fiji holds a higher world ranking (7th) compared to the Cook Islands (8th). Fiji has a dominant recent head-to-head record against the Cook Islands, including significant wins of 44-24 in 2025 and 56-6 in 2024. Furthermore, Fiji's squad is strengthened by the return of key players like captain Api Koroisau, while the Cook Islands are missing important players such as Marata Niukore and Val Holmes for this match and are noted to have fitness concerns."
+        "reasoning": "Fiji is ranked 7th in the men's rugby league world rankings, while the Cook Islands are ranked 8th or 9th, indicating a slight advantage for Fiji. Fiji also holds a dominant head-to-head record, having won 9 out of 15 encounters, including the last three matches by significant margins (44-24 in 2025, 56-6 in 2024, and 22-18 in 2023). Furthermore, the Cook Islands are expected to be without key players for this match and face general fitness concerns, while Fiji sees the return of captain Api Koroisau and Jacob Saifiti, bolstering their squad."
       },
       "result": null,
       "scored": null

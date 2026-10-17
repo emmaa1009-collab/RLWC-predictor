@@ -1,0 +1,13 @@
+{
+  "competition": "women",
+  "home_team": "Papua New Guinea",
+  "away_team": "France",
+  "kickoff_utc": "2026-10-17T02:15:00Z",
+  "home_score": 58,
+  "away_score": 4,
+  "recorded_at": "2026-10-17T06:16:58Z",
+  "source": "NRL.com",
+  "model": "gemini-2.5-flash",
+  "verified_count": 1,
+  "locked": false
+}

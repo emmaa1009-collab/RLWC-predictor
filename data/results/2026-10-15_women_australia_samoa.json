@@ -6,8 +6,11 @@
   "home_score": 40,
   "away_score": 0,
   "recorded_at": "2026-10-16T22:26:25Z",
-  "source": "The Guardian, NRL.com",
+  "source": "NRL.com, The Guardian",
   "model": "gemini-2.5-flash",
-  "verified_count": 1,
-  "locked": false
+  "verified_count": 2,
+  "locked": true,
+  "last_checked_at": "2026-10-17T06:16:58Z",
+  "locked_at": "2026-10-17T06:16:58Z",
+  "lock_reason": "confirmed"
 }

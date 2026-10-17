@@ -15,5 +15,22 @@
     "away_rank": 8,
     "reasoning": "Fiji holds a higher world ranking (7th) compared to the Cook Islands (8th). Fiji has a dominant recent head-to-head record against the Cook Islands, including significant wins of 44-24 in 2025 and 56-6 in 2024. Furthermore, Fiji's squad is strengthened by the return of key players like captain Api Koroisau, while the Cook Islands are missing important players such as Marata Niukore and Val Holmes for this match and are noted to have fitness concerns.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-17T06:18:05Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-18T05:05:00Z",
+    "home_team": "Fiji",
+    "away_team": "Cook Islands",
+    "venue": "McDonald Jones Stadium, Newcastle",
+    "stage": "pool",
+    "home_win_prob": 0.85,
+    "away_win_prob": 0.15,
+    "predicted_margin": 24,
+    "predicted_winner": "home",
+    "home_rank": 7,
+    "away_rank": 8,
+    "reasoning": "Fiji is ranked 7th in the men's rugby league world rankings, while the Cook Islands are ranked 8th or 9th, indicating a slight advantage for Fiji. Fiji also holds a dominant head-to-head record, having won 9 out of 15 encounters, including the last three matches by significant margins (44-24 in 2025, 56-6 in 2024, and 22-18 in 2023). Furthermore, the Cook Islands are expected to be without key players for this match and face general fitness concerns, while Fiji sees the return of captain Api Koroisau and Jacob Saifiti, bolstering their squad.",
+    "model": "gemini-2.5-flash"
   }
 ]
