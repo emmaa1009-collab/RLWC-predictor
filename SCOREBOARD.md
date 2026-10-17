@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-10-17T06:18:30Z
+Updated: 2026-10-17T21:58:05Z
 
 ## Matches
 
@@ -10,10 +10,12 @@ Updated: 2026-10-17T06:18:30Z
 | Women | Australia vs Samoa | 40-0 | Australia (98%) | Y | 0.000 | 0 | Y | Y |
 | Men | Samoa vs France | 78-4 | Samoa (90%) | Y | 0.010 | 50 | Y | Y |
 | Women | Australia vs Samoa | 40-0 | Australia (98%) | Y | 0.000 | 8 | Y | Y |
-| Women | Papua New Guinea vs France | 58-4 | Papua New Guinea (58%) | Y | 0.176 | 46 | N | N |
-| Women | England vs Wales | 60-0 | England (95%) | Y | 0.003 | 5 | Y | N |
-| Women | Papua New Guinea vs France | 58-4 | Papua New Guinea (85%) | Y | 0.023 | 38 | N | N |
-| Men | Papua New Guinea vs Lebanon | 42-18 | Papua New Guinea (73%) | Y | 0.073 | 14 | Y | N |
+| Women | Papua New Guinea vs France | 58-4 | Papua New Guinea (58%) | Y | 0.176 | 46 | N | Y |
+| Women | England vs Wales | 70-6 | England (95%) | Y | 0.003 | 9 | Y | N |
+| Women | Papua New Guinea vs France | 58-4 | Papua New Guinea (85%) | Y | 0.023 | 38 | N | Y |
+| Men | Papua New Guinea vs Lebanon | 42-18 | Papua New Guinea (73%) | Y | 0.073 | 14 | Y | Y |
+| Women | England vs Wales | 70-6 | England (98%) | Y | 0.000 | 4 | Y | N |
+| Men | England vs Tonga | 12-30 | England (68%) | N | 0.462 | 28 | N | N |
 
 ## Summary
 
@@ -21,31 +23,31 @@ Updated: 2026-10-17T06:18:30Z
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 100.0% | 75.0% | 50.0% | n/a |
-| Brier (lower better) | 0.045 | n/a | 0.250 | n/a |
-| Mean abs margin error | 21.62 | n/a | n/a | n/a |
+| Hit rate | 90.0% | 70.0% | 50.0% | n/a |
+| Brier (lower better) | 0.083 | n/a | 0.250 | n/a |
+| Mean abs margin error | 20.90 | n/a | n/a | n/a |
 
-Matches scored: 8.
+Matches scored: 10.
 
 ### Men
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 100.0% | 100.0% | 50.0% | n/a |
-| Brier (lower better) | 0.054 | n/a | 0.250 | n/a |
-| Mean abs margin error | 25.33 | n/a | n/a | n/a |
+| Hit rate | 75.0% | 75.0% | 50.0% | n/a |
+| Brier (lower better) | 0.156 | n/a | 0.250 | n/a |
+| Mean abs margin error | 26.00 | n/a | n/a | n/a |
 
-Matches scored: 3.
+Matches scored: 4.
 
 ### Women
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 100.0% | 60.0% | 50.0% | n/a |
-| Brier (lower better) | 0.040 | n/a | 0.250 | n/a |
-| Mean abs margin error | 19.40 | n/a | n/a | n/a |
+| Hit rate | 100.0% | 66.7% | 50.0% | n/a |
+| Brier (lower better) | 0.034 | n/a | 0.250 | n/a |
+| Mean abs margin error | 17.50 | n/a | n/a | n/a |
 
-Matches scored: 5.
+Matches scored: 6.
 
 Draw handling: `half`.
 Results stay provisional until two agreeing lookups or 24h after kickoff.

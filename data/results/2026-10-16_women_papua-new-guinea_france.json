@@ -8,6 +8,9 @@
   "recorded_at": "2026-10-17T06:16:58Z",
   "source": "NRL.com",
   "model": "gemini-2.5-flash",
-  "verified_count": 1,
-  "locked": false
+  "verified_count": 2,
+  "locked": true,
+  "last_checked_at": "2026-10-17T21:56:49Z",
+  "locked_at": "2026-10-17T21:56:49Z",
+  "lock_reason": "confirmed"
 }

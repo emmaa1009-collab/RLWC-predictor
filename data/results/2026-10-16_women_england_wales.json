@@ -3,11 +3,17 @@
   "home_team": "England",
   "away_team": "Wales",
   "kickoff_utc": "2026-10-16T23:35:00Z",
-  "home_score": 60,
-  "away_score": 0,
-  "recorded_at": "2026-10-17T06:16:58Z",
-  "source": "Sky Sports",
+  "home_score": 70,
+  "away_score": 6,
+  "recorded_at": "2026-10-17T21:56:49Z",
+  "source": "NRL.com",
   "model": "gemini-2.5-flash",
   "verified_count": 1,
-  "locked": false
+  "locked": false,
+  "previous": {
+    "home_score": 60,
+    "away_score": 0,
+    "source": "Sky Sports",
+    "recorded_at": "2026-10-17T06:16:58Z"
+  }
 }

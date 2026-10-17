@@ -1,32 +1,32 @@
 {
-  "updated": "2026-10-17T06:18:30Z",
+  "updated": "2026-10-17T21:58:05Z",
   "summaries": {
     "overall": {
-      "count": 8,
-      "hit_rate": 1.0,
-      "ranking_hit_rate": 0.75,
-      "brier": 0.045437500000000006,
+      "count": 10,
+      "hit_rate": 0.9,
+      "ranking_hit_rate": 0.7,
+      "brier": 0.08263,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 21.625
+      "margin_error": 20.9
     },
     "men": {
-      "count": 3,
-      "hit_rate": 1.0,
-      "ranking_hit_rate": 1.0,
-      "brier": 0.053766666666666664,
+      "count": 4,
+      "hit_rate": 0.75,
+      "ranking_hit_rate": 0.75,
+      "brier": 0.15592499999999998,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 25.333333333333332
+      "margin_error": 26.0
     },
     "women": {
-      "count": 5,
+      "count": 6,
       "hit_rate": 1.0,
-      "ranking_hit_rate": 0.6,
-      "brier": 0.04044000000000001,
+      "ranking_hit_rate": 0.6666666666666666,
+      "brier": 0.033766666666666674,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 19.4
+      "margin_error": 17.5
     }
   },
   "matches": [
@@ -194,7 +194,7 @@
       "result": {
         "home_score": 58,
         "away_score": 4,
-        "locked": false,
+        "locked": true,
         "source": "NRL.com"
       },
       "scored": {
@@ -227,15 +227,15 @@
         "reasoning": "England is ranked significantly higher at 3rd in the Women's Rugby League World Rankings compared to Wales at 9th. Historically, England has dominated Wales in Rugby League encounters, securing large winning margins such as 62-0 in August 2025 and 82-0 in November 2024. England's squad features experienced players and NRLW talent, while Wales is making its first-ever Women's Rugby League World Cup appearance with several uncapped players, despite including some NRLW players and a former England international."
       },
       "result": {
-        "home_score": 60,
-        "away_score": 0,
+        "home_score": 70,
+        "away_score": 6,
         "locked": false,
-        "source": "Sky Sports"
+        "source": "NRL.com"
       },
       "scored": {
         "hit": 1.0,
         "brier": 0.0025000000000000044,
-        "margin_error": 5,
+        "margin_error": 9,
         "ranking_hit": 1.0,
         "pred_side": "home"
       }
@@ -264,7 +264,7 @@
       "result": {
         "home_score": 58,
         "away_score": 4,
-        "locked": false,
+        "locked": true,
         "source": "NRL.com"
       },
       "scored": {
@@ -299,13 +299,48 @@
       "result": {
         "home_score": 42,
         "away_score": 18,
-        "locked": false,
-        "source": "Fox Sports"
+        "locked": true,
+        "source": "NRL.com"
       },
       "scored": {
         "hit": 1.0,
         "brier": 0.0729,
         "margin_error": 14,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
+    },
+    {
+      "match_id": "2026-10-17_women_england_wales",
+      "competition": "women",
+      "kickoff_utc": "2026-10-17T06:35:00Z",
+      "home_team": "England",
+      "away_team": "Wales",
+      "venue": "HBF Park, Perth",
+      "stage": "pool",
+      "status": "scored",
+      "prediction": {
+        "home_team": "England",
+        "away_team": "Wales",
+        "kickoff_utc": "2026-10-17T06:35:00Z",
+        "venue": "HBF Park, Perth",
+        "made_at": "2026-10-17T06:17:40Z",
+        "home_win_prob": 0.98,
+        "away_win_prob": 0.02,
+        "predicted_margin": 60,
+        "predicted_winner": "home",
+        "reasoning": "England is ranked significantly higher at 3rd in the IRL Women's World Rankings, compared to Wales at 9th. England has a dominant head-to-head record against Wales, winning all five previous encounters with substantial margins, including 62-0 and 82-0 in recent years. England's squad features several NRLW players and top Betfred Women's Super League talent, while Wales is making their World Cup debut and has a key player, Ffion Jenkins, out due to medical advice."
+      },
+      "result": {
+        "home_score": 70,
+        "away_score": 6,
+        "locked": false,
+        "source": "NRL.com"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.0004000000000000007,
+        "margin_error": 4,
         "ranking_hit": 1.0,
         "pred_side": "home"
       }
@@ -318,7 +353,7 @@
       "away_team": "Tonga",
       "venue": "HBF Park, Perth",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "England",
         "away_team": "Tonga",
@@ -331,8 +366,19 @@
         "predicted_winner": "home",
         "reasoning": "England enters the match ranked 3rd globally, two spots above Tonga's 5th position. Historically, England holds a dominant 6-0 head-to-head record against Tonga, including a 3-0 series whitewash in 2023. Tonga's recent form has been concerning, marked by a winless Pacific Championships campaign in 2025 and a significant loss to Samoa. While both teams feature strong NRL talent, England's consistent performance in direct encounters and higher ranking make them the favored side."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 12,
+        "away_score": 30,
+        "locked": false,
+        "source": "AP News, Sky Sports, NRL.com"
+      },
+      "scored": {
+        "hit": 0.0,
+        "brier": 0.4623999999999999,
+        "margin_error": 28,
+        "ranking_hit": 0.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-18_women_new-zealand_fiji",
@@ -348,12 +394,12 @@
         "away_team": "Fiji",
         "kickoff_utc": "2026-10-18T02:50:00Z",
         "venue": "McDonald Jones Stadium, Newcastle",
-        "made_at": "2026-10-16T22:28:09Z",
-        "home_win_prob": 0.95,
-        "away_win_prob": 0.05,
-        "predicted_margin": 30,
+        "made_at": "2026-10-17T21:57:15Z",
+        "home_win_prob": 0.96,
+        "away_win_prob": 0.04,
+        "predicted_margin": 36,
         "predicted_winner": "home",
-        "reasoning": "New Zealand is ranked significantly higher at 2nd in the women's IRL World Rankings, compared to Fiji's 12th. The Kiwi Ferns boast a talent-laden squad featuring experienced NRLW players and Dally M Halfback of the Year Raecene McGregor, along with several debutants including former Jillaroos and an Olympic gold medallist. Fiji's squad, while including some NRLW talent, is noted to lack overall experience, particularly in the forwards. This is the first head-to-head encounter between these two nations, but based on world rankings and recent form against common opponents, New Zealand is expected to secure a comfortable victory."
+        "reasoning": "New Zealand (Kiwi Ferns) are ranked 2nd globally, significantly higher than Fiji (Bulikula) at 12th. The Kiwi Ferns boast a star-studded squad with numerous NRLW players and a strong history in the Rugby League World Cup, having won three titles. Fiji is making their first World Cup appearance and, despite some NRLW talent, is considered the lowest-ranked team in the tournament with acknowledged inexperience, particularly in the forwards. There is no recorded head-to-head history between the two teams in women's rugby league."
       },
       "result": null,
       "scored": null
@@ -372,12 +418,12 @@
         "away_team": "Cook Islands",
         "kickoff_utc": "2026-10-18T05:05:00Z",
         "venue": "McDonald Jones Stadium, Newcastle",
-        "made_at": "2026-10-17T06:18:05Z",
-        "home_win_prob": 0.85,
-        "away_win_prob": 0.15,
-        "predicted_margin": 24,
+        "made_at": "2026-10-17T21:57:42Z",
+        "home_win_prob": 0.88,
+        "away_win_prob": 0.12,
+        "predicted_margin": 20,
         "predicted_winner": "home",
-        "reasoning": "Fiji is ranked 7th in the men's rugby league world rankings, while the Cook Islands are ranked 8th or 9th, indicating a slight advantage for Fiji. Fiji also holds a dominant head-to-head record, having won 9 out of 15 encounters, including the last three matches by significant margins (44-24 in 2025, 56-6 in 2024, and 22-18 in 2023). Furthermore, the Cook Islands are expected to be without key players for this match and face general fitness concerns, while Fiji sees the return of captain Api Koroisau and Jacob Saifiti, bolstering their squad."
+        "reasoning": "Fiji is ranked 7th globally, one spot above the Cook Islands at 8th. Fiji holds a dominant head-to-head record, winning 9 of their 15 encounters, including their last three matches with margins of 20 points or more in 2024 and 2025. The Cook Islands have not defeated Fiji since 2009 and enter this match with key players Valentine Holmes and co-captain Marata Niukore sidelined due to injury, further weakening their squad. Fiji's squad, featuring NRL stars like Apisai Koroisau and Jacob Saifiti, appears stronger despite some injury absences."
       },
       "result": null,
       "scored": null

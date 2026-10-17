@@ -15,5 +15,22 @@
     "away_rank": 12,
     "reasoning": "New Zealand is ranked significantly higher at 2nd in the women's IRL World Rankings, compared to Fiji's 12th. The Kiwi Ferns boast a talent-laden squad featuring experienced NRLW players and Dally M Halfback of the Year Raecene McGregor, along with several debutants including former Jillaroos and an Olympic gold medallist. Fiji's squad, while including some NRLW talent, is noted to lack overall experience, particularly in the forwards. This is the first head-to-head encounter between these two nations, but based on world rankings and recent form against common opponents, New Zealand is expected to secure a comfortable victory.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-17T21:57:15Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-18T02:50:00Z",
+    "home_team": "New Zealand",
+    "away_team": "Fiji",
+    "venue": "McDonald Jones Stadium, Newcastle",
+    "stage": "pool",
+    "home_win_prob": 0.96,
+    "away_win_prob": 0.04,
+    "predicted_margin": 36,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 12,
+    "reasoning": "New Zealand (Kiwi Ferns) are ranked 2nd globally, significantly higher than Fiji (Bulikula) at 12th. The Kiwi Ferns boast a star-studded squad with numerous NRLW players and a strong history in the Rugby League World Cup, having won three titles. Fiji is making their first World Cup appearance and, despite some NRLW talent, is considered the lowest-ranked team in the tournament with acknowledged inexperience, particularly in the forwards. There is no recorded head-to-head history between the two teams in women's rugby league.",
+    "model": "gemini-2.5-flash"
   }
 ]

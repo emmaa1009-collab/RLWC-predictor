@@ -1,0 +1,13 @@
+{
+  "competition": "women",
+  "home_team": "England",
+  "away_team": "Wales",
+  "kickoff_utc": "2026-10-17T06:35:00Z",
+  "home_score": 70,
+  "away_score": 6,
+  "recorded_at": "2026-10-17T21:56:49Z",
+  "source": "NRL.com",
+  "model": "gemini-2.5-flash",
+  "verified_count": 1,
+  "locked": false
+}
