@@ -1,0 +1,13 @@
+{
+  "competition": "men",
+  "home_team": "Fiji",
+  "away_team": "Cook Islands",
+  "kickoff_utc": "2026-10-18T05:05:00Z",
+  "home_score": 40,
+  "away_score": 12,
+  "recorded_at": "2026-10-18T22:11:12Z",
+  "source": "Serious About Rugby League, NRL.com",
+  "model": "gemini-2.5-flash",
+  "verified_count": 1,
+  "locked": false
+}

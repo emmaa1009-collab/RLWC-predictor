@@ -1,23 +1,23 @@
 {
-  "updated": "2026-10-18T06:39:55Z",
+  "updated": "2026-10-18T22:11:34Z",
   "summaries": {
     "overall": {
-      "count": 8,
-      "hit_rate": 0.875,
-      "ranking_hit_rate": 0.75,
-      "brier": 0.081075,
+      "count": 9,
+      "hit_rate": 0.8888888888888888,
+      "ranking_hit_rate": 0.7777777777777778,
+      "brier": 0.07366666666666666,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 23.0
+      "margin_error": 21.333333333333332
     },
     "men": {
-      "count": 4,
-      "hit_rate": 0.75,
-      "ranking_hit_rate": 0.75,
-      "brier": 0.15592499999999998,
+      "count": 5,
+      "hit_rate": 0.8,
+      "ranking_hit_rate": 0.8,
+      "brier": 0.12761999999999998,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 26.0
+      "margin_error": 22.4
     },
     "women": {
       "count": 4,
@@ -299,8 +299,8 @@
       "result": {
         "home_score": 18,
         "away_score": 12,
-        "locked": false,
-        "source": "7NEWS / Fijivillage / NRL.com"
+        "locked": true,
+        "source": "NRL.com"
       },
       "scored": {
         "hit": 1.0,
@@ -318,7 +318,7 @@
       "away_team": "Cook Islands",
       "venue": "McDonald Jones Stadium, Newcastle",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "Fiji",
         "away_team": "Cook Islands",
@@ -331,8 +331,19 @@
         "predicted_winner": "home",
         "reasoning": "Fiji is ranked 7th globally, one spot above the Cook Islands at 8th. Fiji holds a dominant head-to-head record, winning 9 of their 15 encounters, including their last three matches with margins of 20 points or more in 2024 and 2025. The Cook Islands have not defeated Fiji since 2009 and enter this match with key players Valentine Holmes and co-captain Marata Niukore sidelined due to injury, further weakening their squad. Fiji's squad, featuring NRL stars like Apisai Koroisau and Jacob Saifiti, appears stronger despite some injury absences."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 40,
+        "away_score": 12,
+        "locked": false,
+        "source": "Serious About Rugby League, NRL.com"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.0144,
+        "margin_error": 8,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-23_women_samoa_wales",
