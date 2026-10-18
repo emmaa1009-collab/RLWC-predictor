@@ -1,0 +1,13 @@
+{
+  "competition": "women",
+  "home_team": "New Zealand",
+  "away_team": "Fiji",
+  "kickoff_utc": "2026-10-18T02:50:00Z",
+  "home_score": 18,
+  "away_score": 12,
+  "recorded_at": "2026-10-18T06:39:18Z",
+  "source": "7NEWS / Fijivillage / NRL.com",
+  "model": "gemini-2.5-flash",
+  "verified_count": 1,
+  "locked": false
+}

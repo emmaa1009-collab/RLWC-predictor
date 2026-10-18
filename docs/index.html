@@ -276,16 +276,16 @@
   </main>
 
   <script id="scoreboard-data" type="application/json">{
-  "updated": "2026-10-18T00:40:05Z",
+  "updated": "2026-10-18T06:39:55Z",
   "summaries": {
     "overall": {
-      "count": 7,
-      "hit_rate": 0.8571428571428571,
-      "ranking_hit_rate": 0.7142857142857143,
-      "brier": 0.09242857142857142,
+      "count": 8,
+      "hit_rate": 0.875,
+      "ranking_hit_rate": 0.75,
+      "brier": 0.081075,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 22.0
+      "margin_error": 23.0
     },
     "men": {
       "count": 4,
@@ -297,13 +297,13 @@
       "margin_error": 26.0
     },
     "women": {
-      "count": 3,
+      "count": 4,
       "hit_rate": 1.0,
-      "ranking_hit_rate": 0.6666666666666666,
-      "brier": 0.007766666666666669,
+      "ranking_hit_rate": 0.75,
+      "brier": 0.006225000000000002,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 16.666666666666668
+      "margin_error": 20.0
     }
   },
   "matches": [
@@ -506,8 +506,8 @@
       "result": {
         "home_score": 70,
         "away_score": 6,
-        "locked": false,
-        "source": "NRL.com"
+        "locked": true,
+        "source": "Sky Sports"
       },
       "scored": {
         "hit": 1.0,
@@ -541,8 +541,8 @@
       "result": {
         "home_score": 12,
         "away_score": 30,
-        "locked": false,
-        "source": "AP News, Sky Sports, NRL.com"
+        "locked": true,
+        "source": "Sky Sports, NRL.com, Associated Press"
       },
       "scored": {
         "hit": 0.0,
@@ -560,7 +560,7 @@
       "away_team": "Fiji",
       "venue": "McDonald Jones Stadium, Newcastle",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "New Zealand",
         "away_team": "Fiji",
@@ -573,8 +573,19 @@
         "predicted_winner": "home",
         "reasoning": "New Zealand (Kiwi Ferns) are ranked 2nd globally, significantly higher than Fiji (Bulikula) at 12th. The Kiwi Ferns boast a star-studded squad with numerous NRLW players and a strong history in the Rugby League World Cup, having won three titles. Fiji is making their first World Cup appearance and, despite some NRLW talent, is considered the lowest-ranked team in the tournament with acknowledged inexperience, particularly in the forwards. There is no recorded head-to-head history between the two teams in women's rugby league."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 18,
+        "away_score": 12,
+        "locked": false,
+        "source": "7NEWS / Fijivillage / NRL.com"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.001600000000000003,
+        "margin_error": 30,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-18_men_fiji_cook-islands",
