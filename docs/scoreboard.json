@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-17T21:58:05Z",
+  "updated": "2026-10-18T00:40:05Z",
   "summaries": {
     "overall": {
-      "count": 10,
-      "hit_rate": 0.9,
-      "ranking_hit_rate": 0.7,
-      "brier": 0.08263,
+      "count": 7,
+      "hit_rate": 0.8571428571428571,
+      "ranking_hit_rate": 0.7142857142857143,
+      "brier": 0.09242857142857142,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 20.9
+      "margin_error": 22.0
     },
     "men": {
       "count": 4,
@@ -20,13 +20,13 @@
       "margin_error": 26.0
     },
     "women": {
-      "count": 6,
+      "count": 3,
       "hit_rate": 1.0,
       "ranking_hit_rate": 0.6666666666666666,
-      "brier": 0.033766666666666674,
+      "brier": 0.007766666666666669,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 17.5
+      "margin_error": 16.666666666666668
     }
   },
   "matches": [
@@ -36,14 +36,14 @@
       "kickoff_utc": "2026-10-15T09:05:00Z",
       "home_team": "Australia",
       "away_team": "New Zealand",
-      "venue": "Sydney Football Stadium",
+      "venue": "Allianz Stadium, Sydney",
       "stage": "pool",
       "status": "scored",
       "prediction": {
         "home_team": "Australia",
         "away_team": "New Zealand",
         "kickoff_utc": "2026-10-15T09:05:00Z",
-        "venue": "Sydney Football Stadium",
+        "venue": "Allianz Stadium, Sydney",
         "made_at": "2026-10-15T06:35:09Z",
         "home_win_prob": 0.72,
         "away_win_prob": 0.28,
@@ -66,44 +66,9 @@
       }
     },
     {
-      "match_id": "2026-10-15_women_australia_samoa",
-      "competition": "women",
-      "kickoff_utc": "2026-10-15T15:05:00Z",
-      "home_team": "Australia",
-      "away_team": "Samoa",
-      "venue": "",
-      "stage": "pool",
-      "status": "scored",
-      "prediction": {
-        "home_team": "Australia",
-        "away_team": "Samoa",
-        "kickoff_utc": "2026-10-15T15:05:00Z",
-        "venue": "",
-        "made_at": "2026-10-14T22:57:50Z",
-        "home_win_prob": 0.98,
-        "away_win_prob": 0.02,
-        "predicted_margin": 40,
-        "predicted_winner": "home",
-        "reasoning": "Australia enters the tournament as the top-ranked women's rugby league team, while Samoa is ranked 5th globally. Australia has a dominant head-to-head record against Samoa, including a resounding 60-0 victory in their most recent encounter in October 2025. The Jillaroos boast a strong squad with established winning combinations, featuring numerous players from the undefeated NRLW premiers Sydney Roosters and the NSW Sky Blues. Samoa, while having NRLW experience across its squad, is still developing and faces a significant challenge against the highly experienced Australian side on home soil in Sydney."
-      },
-      "result": {
-        "home_score": 40,
-        "away_score": 0,
-        "locked": true,
-        "source": "NRL.com, The Guardian"
-      },
-      "scored": {
-        "hit": 1.0,
-        "brier": 0.0004000000000000007,
-        "margin_error": 0,
-        "ranking_hit": 1.0,
-        "pred_side": "home"
-      }
-    },
-    {
       "match_id": "2026-10-16_men_samoa_france",
       "competition": "men",
-      "kickoff_utc": "2026-10-16T07:45:00Z",
+      "kickoff_utc": "2026-10-16T06:45:00Z",
       "home_team": "Samoa",
       "away_team": "France",
       "venue": "CommBank Stadium, Sydney",
@@ -112,7 +77,7 @@
       "prediction": {
         "home_team": "Samoa",
         "away_team": "France",
-        "kickoff_utc": "2026-10-16T07:45:00Z",
+        "kickoff_utc": "2026-10-16T06:45:00Z",
         "venue": "CommBank Stadium, Sydney",
         "made_at": "2026-10-16T06:28:51Z",
         "home_win_prob": 0.9,
@@ -166,76 +131,6 @@
         "hit": 1.0,
         "brier": 0.0004000000000000007,
         "margin_error": 8,
-        "ranking_hit": 1.0,
-        "pred_side": "home"
-      }
-    },
-    {
-      "match_id": "2026-10-16_women_papua-new-guinea_france",
-      "competition": "women",
-      "kickoff_utc": "2026-10-16T09:15:00Z",
-      "home_team": "Papua New Guinea",
-      "away_team": "France",
-      "venue": "",
-      "stage": "pool",
-      "status": "scored",
-      "prediction": {
-        "home_team": "Papua New Guinea",
-        "away_team": "France",
-        "kickoff_utc": "2026-10-16T09:15:00Z",
-        "venue": "",
-        "made_at": "2026-10-14T22:58:07Z",
-        "home_win_prob": 0.58,
-        "away_win_prob": 0.42,
-        "predicted_margin": 8,
-        "predicted_winner": "home",
-        "reasoning": "Papua New Guinea holds a significant home advantage playing in Port Moresby, a factor that often boosts team performance in rugby league. While France is ranked higher at 4th compared to Papua New Guinea's 6th in the IRL Women's rankings, both teams have experienced heavy defeats against top-tier nations recently. Papua New Guinea reached the semi-finals of the 2022 World Cup, demonstrating their capability in major tournaments. This, combined with the home crowd support, gives Papua New Guinea a slight edge in what is expected to be a competitive match."
-      },
-      "result": {
-        "home_score": 58,
-        "away_score": 4,
-        "locked": true,
-        "source": "NRL.com"
-      },
-      "scored": {
-        "hit": 1.0,
-        "brier": 0.17640000000000003,
-        "margin_error": 46,
-        "ranking_hit": 0.0,
-        "pred_side": "home"
-      }
-    },
-    {
-      "match_id": "2026-10-16_women_england_wales",
-      "competition": "women",
-      "kickoff_utc": "2026-10-16T23:35:00Z",
-      "home_team": "England",
-      "away_team": "Wales",
-      "venue": "HBF Park, Perth",
-      "stage": "pool",
-      "status": "scored",
-      "prediction": {
-        "home_team": "England",
-        "away_team": "Wales",
-        "kickoff_utc": "2026-10-16T23:35:00Z",
-        "venue": "HBF Park, Perth",
-        "made_at": "2026-10-16T06:29:04Z",
-        "home_win_prob": 0.95,
-        "away_win_prob": 0.05,
-        "predicted_margin": 55,
-        "predicted_winner": "home",
-        "reasoning": "England is ranked significantly higher at 3rd in the Women's Rugby League World Rankings compared to Wales at 9th. Historically, England has dominated Wales in Rugby League encounters, securing large winning margins such as 62-0 in August 2025 and 82-0 in November 2024. England's squad features experienced players and NRLW talent, while Wales is making its first-ever Women's Rugby League World Cup appearance with several uncapped players, despite including some NRLW players and a former England international."
-      },
-      "result": {
-        "home_score": 70,
-        "away_score": 6,
-        "locked": false,
-        "source": "NRL.com"
-      },
-      "scored": {
-        "hit": 1.0,
-        "brier": 0.0025000000000000044,
-        "margin_error": 9,
         "ranking_hit": 1.0,
         "pred_side": "home"
       }

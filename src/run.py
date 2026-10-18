@@ -784,6 +784,56 @@ def load_scheduled_fixtures() -> list[dict[str, Any]]:
     return scheduled
 
 
+def _fixtures_by_pairing(
+    fixtures: list[dict[str, Any]],
+) -> dict[tuple[str, tuple[str, str]], dict[str, Any]]:
+    return {
+        pairing_key(row["competition"], row["home_team"], row["away_team"]): row
+        for row in fixtures
+    }
+
+
+def _choose_row_for_pairing(
+    rows: list[dict[str, Any]],
+    fixture: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """Pick one row for a team pairing, preferring the curated fixture match_id."""
+    if fixture is not None:
+        preferred_id = fixture["match_id"]
+        exact = [row for row in rows if row["match_id"] == preferred_id]
+        if exact:
+            return exact[-1]
+        target = parse_iso(fixture["kickoff_utc"])
+
+        def kickoff_distance(row: dict[str, Any]) -> float:
+            try:
+                return abs(
+                    (parse_iso(str(row["prediction"]["kickoff_utc"])) - target).total_seconds()
+                )
+            except (KeyError, TypeError, ValueError):
+                return float("inf")
+
+        return min(rows, key=kickoff_distance)
+    rows_sorted = sorted(
+        rows,
+        key=lambda row: str(row["prediction"].get("made_at") or ""),
+    )
+    return rows_sorted[-1]
+
+
+def _apply_fixture_overlay(prediction: dict[str, Any], fixture: dict[str, Any]) -> dict[str, Any]:
+    pred = dict(prediction)
+    pred["competition"] = fixture["competition"]
+    pred["home_team"] = fixture["home_team"]
+    pred["away_team"] = fixture["away_team"]
+    pred["kickoff_utc"] = fixture["kickoff_utc"]
+    if fixture.get("venue"):
+        pred["venue"] = fixture["venue"]
+    if fixture.get("stage"):
+        pred["stage"] = fixture["stage"]
+    return pred
+
+
 def dedupe_pending_predictions(
     pending: list[dict[str, Any]],
     fixtures: list[dict[str, Any]],
@@ -794,10 +844,7 @@ def dedupe_pending_predictions(
     canonical fixture kickoff/venue/match_id so timezone-mislabelled duplicates
     do not appear twice on the scoreboard.
     """
-    fixtures_by_key = {
-        pairing_key(row["competition"], row["home_team"], row["away_team"]): row
-        for row in fixtures
-    }
+    fixtures_by_key = _fixtures_by_pairing(fixtures)
     grouped: dict[tuple[str, tuple[str, str]], list[dict[str, Any]]] = {}
     for row in pending:
         pred = row["prediction"]
@@ -811,41 +858,62 @@ def dedupe_pending_predictions(
     selected: list[dict[str, Any]] = []
     for key, rows in grouped.items():
         fixture = fixtures_by_key.get(key)
+        chosen = _choose_row_for_pairing(rows, fixture)
         if fixture is not None:
-            preferred_id = fixture["match_id"]
-            exact = [row for row in rows if row["match_id"] == preferred_id]
-            if exact:
-                chosen = exact[-1]
-            else:
-                target = parse_iso(fixture["kickoff_utc"])
-
-                def kickoff_distance(row: dict[str, Any]) -> float:
-                    try:
-                        return abs(
-                            (
-                                parse_iso(str(row["prediction"]["kickoff_utc"])) - target
-                            ).total_seconds()
-                        )
-                    except (KeyError, TypeError, ValueError):
-                        return float("inf")
-
-                chosen = min(rows, key=kickoff_distance)
-            pred = dict(chosen["prediction"])
-            pred["competition"] = fixture["competition"]
-            pred["home_team"] = fixture["home_team"]
-            pred["away_team"] = fixture["away_team"]
-            pred["kickoff_utc"] = fixture["kickoff_utc"]
-            if fixture.get("venue"):
-                pred["venue"] = fixture["venue"]
-            if fixture.get("stage"):
-                pred["stage"] = fixture["stage"]
-            selected.append({"match_id": preferred_id, "prediction": pred})
-        else:
-            rows_sorted = sorted(
-                rows,
-                key=lambda row: str(row["prediction"].get("made_at") or ""),
+            selected.append(
+                {
+                    "match_id": fixture["match_id"],
+                    "prediction": _apply_fixture_overlay(chosen["prediction"], fixture),
+                }
             )
-            selected.append(rows_sorted[-1])
+        else:
+            selected.append(chosen)
+
+    selected.sort(
+        key=lambda row: (
+            row["prediction"].get("kickoff_utc", ""),
+            row["prediction"].get("competition", ""),
+        )
+    )
+    return selected
+
+
+def dedupe_scored_rows(
+    scored_rows: list[dict[str, Any]],
+    fixtures: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """One scored row per team pairing; prefer curated fixture match_id.
+
+    Leaves prediction/result JSON files on disk untouched so the audit trail
+    for mislabelled kickoffs remains, but the public scoreboard only shows the
+    real match once.
+    """
+    fixtures_by_key = _fixtures_by_pairing(fixtures)
+    grouped: dict[tuple[str, tuple[str, str]], list[dict[str, Any]]] = {}
+    for row in scored_rows:
+        pred = row["prediction"]
+        home = str(pred.get("home_team") or "").strip()
+        away = str(pred.get("away_team") or "").strip()
+        if not home or not away:
+            continue
+        key = pairing_key(pred.get("competition"), home, away)
+        grouped.setdefault(key, []).append(row)
+
+    selected: list[dict[str, Any]] = []
+    for key, rows in grouped.items():
+        fixture = fixtures_by_key.get(key)
+        chosen = _choose_row_for_pairing(rows, fixture)
+        if fixture is not None:
+            selected.append(
+                {
+                    "match_id": fixture["match_id"],
+                    "prediction": _apply_fixture_overlay(chosen["prediction"], fixture),
+                    "result": chosen["result"],
+                    "scored": chosen["scored"],
+                }
+            )
+        else:
+            selected.append(chosen)
 
     selected.sort(
         key=lambda row: (
@@ -857,6 +925,8 @@ def dedupe_pending_predictions(
 
 
 def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
+    scheduled = load_scheduled_fixtures()
+    rows = dedupe_scored_rows(rows, scheduled)
     grouped = group_rows_by_competition(rows)
     overall = summarize_rows(rows)
     men_stats = summarize_rows(grouped.get("men", []))
@@ -947,7 +1017,6 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
         )
         not in scored_pairings
     ]
-    scheduled = load_scheduled_fixtures()
     pending = dedupe_pending_predictions(pending_raw, scheduled)
     # Scheduled rows already covered by a pending/scored pairing are dropped in
     # build_site_payload via match_id; also drop by pairing when ids differ.

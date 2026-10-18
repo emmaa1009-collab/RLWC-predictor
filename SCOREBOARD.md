@@ -1,17 +1,14 @@
 # SCOREBOARD
 
-Updated: 2026-10-17T21:58:05Z
+Updated: 2026-10-18T00:40:05Z
 
 ## Matches
 
 | Competition | Match | Score | Agent pick | Hit | Brier | Margin err | Rank baseline | Locked |
 |---|---|---|---|---|---|---|---|---|
 | Men | Australia vs New Zealand | 24-22 | Australia (72%) | Y | 0.078 | 12 | Y | Y |
-| Women | Australia vs Samoa | 40-0 | Australia (98%) | Y | 0.000 | 0 | Y | Y |
 | Men | Samoa vs France | 78-4 | Samoa (90%) | Y | 0.010 | 50 | Y | Y |
 | Women | Australia vs Samoa | 40-0 | Australia (98%) | Y | 0.000 | 8 | Y | Y |
-| Women | Papua New Guinea vs France | 58-4 | Papua New Guinea (58%) | Y | 0.176 | 46 | N | Y |
-| Women | England vs Wales | 70-6 | England (95%) | Y | 0.003 | 9 | Y | N |
 | Women | Papua New Guinea vs France | 58-4 | Papua New Guinea (85%) | Y | 0.023 | 38 | N | Y |
 | Men | Papua New Guinea vs Lebanon | 42-18 | Papua New Guinea (73%) | Y | 0.073 | 14 | Y | Y |
 | Women | England vs Wales | 70-6 | England (98%) | Y | 0.000 | 4 | Y | N |
@@ -23,11 +20,11 @@ Updated: 2026-10-17T21:58:05Z
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 90.0% | 70.0% | 50.0% | n/a |
-| Brier (lower better) | 0.083 | n/a | 0.250 | n/a |
-| Mean abs margin error | 20.90 | n/a | n/a | n/a |
+| Hit rate | 85.7% | 71.4% | 50.0% | n/a |
+| Brier (lower better) | 0.092 | n/a | 0.250 | n/a |
+| Mean abs margin error | 22.00 | n/a | n/a | n/a |
 
-Matches scored: 10.
+Matches scored: 7.
 
 ### Men
 
@@ -44,10 +41,10 @@ Matches scored: 4.
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
 | Hit rate | 100.0% | 66.7% | 50.0% | n/a |
-| Brier (lower better) | 0.034 | n/a | 0.250 | n/a |
-| Mean abs margin error | 17.50 | n/a | n/a | n/a |
+| Brier (lower better) | 0.008 | n/a | 0.250 | n/a |
+| Mean abs margin error | 16.67 | n/a | n/a | n/a |
 
-Matches scored: 6.
+Matches scored: 3.
 
 Draw handling: `half`.
 Results stay provisional until two agreeing lookups or 24h after kickoff.

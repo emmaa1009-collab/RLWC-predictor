@@ -409,6 +409,57 @@ def test_dedupe_pending_predictions_keeps_one_per_pairing():
     assert deduped[0]["prediction"]["home_win_prob"] == 0.98
 
 
+def test_dedupe_scored_rows_keeps_one_per_pairing():
+    fixtures = [
+        {
+            "match_id": "2026-10-16_women_australia_samoa",
+            "competition": "women",
+            "home_team": "Australia",
+            "away_team": "Samoa",
+            "kickoff_utc": "2026-10-16T09:05:00Z",
+            "venue": "CommBank Stadium, Sydney",
+            "stage": "pool",
+        }
+    ]
+    scored = [
+        {
+            "match_id": "2026-10-15_women_australia_samoa",
+            "prediction": {
+                "competition": "women",
+                "home_team": "Australia",
+                "away_team": "Samoa",
+                "kickoff_utc": "2026-10-15T15:05:00Z",
+                "home_win_prob": 0.9,
+                "away_win_prob": 0.1,
+                "predicted_margin": 20,
+                "predicted_winner": "home",
+            },
+            "result": {"home_score": 40, "away_score": 0, "locked": True},
+            "scored": {"hit": 1.0, "brier": 0.01, "margin_error": 20, "ranking_hit": 1.0, "pred_side": "home"},
+        },
+        {
+            "match_id": "2026-10-16_women_australia_samoa",
+            "prediction": {
+                "competition": "women",
+                "home_team": "Australia",
+                "away_team": "Samoa",
+                "kickoff_utc": "2026-10-16T09:05:00Z",
+                "home_win_prob": 0.98,
+                "away_win_prob": 0.02,
+                "predicted_margin": 40,
+                "predicted_winner": "home",
+            },
+            "result": {"home_score": 40, "away_score": 0, "locked": True},
+            "scored": {"hit": 1.0, "brier": 0.0004, "margin_error": 8, "ranking_hit": 1.0, "pred_side": "home"},
+        },
+    ]
+    deduped = run.dedupe_scored_rows(scored, fixtures)
+    assert len(deduped) == 1
+    assert deduped[0]["match_id"] == "2026-10-16_women_australia_samoa"
+    assert deduped[0]["prediction"]["home_win_prob"] == 0.98
+    assert deduped[0]["result"]["home_score"] == 40
+
+
 def test_women_fixtures_include_canonical_opener():
     fixtures = run.load_scheduled_fixtures()
     women = [row for row in fixtures if row["competition"] == "women"]
