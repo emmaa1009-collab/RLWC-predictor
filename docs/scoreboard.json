@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T06:40:24Z",
+  "updated": "2026-10-21T23:00:04Z",
   "summaries": {
     "overall": {
       "count": 9,
@@ -353,9 +353,19 @@
       "away_team": "Wales",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
-      "pool": "A",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Samoa",
+        "away_team": "Wales",
+        "kickoff_utc": "2026-10-23T06:45:00Z",
+        "venue": "CommBank Stadium, Sydney",
+        "made_at": "2026-10-21T22:59:50Z",
+        "home_win_prob": 0.85,
+        "away_win_prob": 0.15,
+        "predicted_margin": 24,
+        "predicted_winner": "home",
+        "reasoning": "Samoa is ranked significantly higher globally at 5th, compared to Wales at 9th. In their opening World Cup matches, Samoa suffered a 0-40 loss to top-ranked Australia, while Wales endured a heavier 6-70 defeat against 3rd-ranked England. This suggests Samoa has demonstrated a slightly stronger defensive performance against a higher-calibre opponent, indicating they are the more formidable team in this matchup."
+      },
       "result": null,
       "scored": null
     },
@@ -367,9 +377,19 @@
       "away_team": "Lebanon",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Tonga",
+        "away_team": "Lebanon",
+        "kickoff_utc": "2026-10-23T09:05:00Z",
+        "venue": "CommBank Stadium, Sydney",
+        "made_at": "2026-10-21T23:00:04Z",
+        "home_win_prob": 0.92,
+        "away_win_prob": 0.08,
+        "predicted_margin": 24,
+        "predicted_winner": "home",
+        "reasoning": "Tonga, ranked 5th globally, enters this match with strong momentum following a significant victory over England in their opening World Cup fixture. Their squad boasts considerable depth and NRL talent, allowing them to manage player fatigue effectively. In contrast, Lebanon, ranked 23rd, suffered a clear defeat to Papua New Guinea in their first game and is significantly hampered by the absence of key playmakers Mitchell Moses and Adam Doueihi. While their only previous head-to-head was a close contest in 2017, Tonga's current form and superior squad strength make them strong favorites for a comfortable win."
+      },
       "result": null,
       "scored": null
     },
