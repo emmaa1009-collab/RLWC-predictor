@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-22T22:57:29Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-24T02:15:00Z",
+    "home_team": "Fiji",
+    "away_team": "Papua New Guinea",
+    "venue": "Santos National Football Stadium, Port Moresby",
+    "stage": "pool",
+    "home_win_prob": 0.65,
+    "away_win_prob": 0.35,
+    "predicted_margin": 14,
+    "predicted_winner": "home",
+    "home_rank": 6,
+    "away_rank": 12,
+    "reasoning": "Papua New Guinea (ranked 6th) holds a significant advantage playing at their home ground, Santos National Football Stadium in Port Moresby, where they recently secured a dominant 58-4 victory over France in the opening round of the World Cup. Fiji (ranked 12th) demonstrated strong form in their opening match, pushing second-ranked New Zealand to a narrow 18-12 defeat, indicating their capability to challenge higher-ranked opponents. However, Fiji will be without injured star Tamika Jones, and the strong home crowd support for the Orchids is expected to be a decisive factor.",
+    "model": "gemini-2.5-flash"
+  }
+]

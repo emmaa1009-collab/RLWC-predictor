@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-22T22:58:23Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-24T06:35:00Z",
+    "home_team": "England",
+    "away_team": "France",
+    "venue": "HBF Park, Perth",
+    "stage": "pool",
+    "home_win_prob": 0.96,
+    "away_win_prob": 0.04,
+    "predicted_margin": 38,
+    "predicted_winner": "home",
+    "home_rank": 3,
+    "away_rank": 11,
+    "reasoning": "England is significantly higher ranked globally (3rd) compared to France (11th) in men's rugby league. Historically, England has a dominant head-to-head record against France, including a 100% win rate in Rugby League World Cup matches with substantial margins. While England recently lost to Tonga, France suffered a massive 78-4 defeat to Samoa in their opening RLWC 2026 match, indicating a significant disparity in current form and overall team strength.",
+    "model": "gemini-2.5-flash"
+  }
+]

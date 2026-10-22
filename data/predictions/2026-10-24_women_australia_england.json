@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-22T22:58:06Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-24T09:05:00Z",
+    "home_team": "Australia",
+    "away_team": "England",
+    "venue": "HBF Park, Perth",
+    "stage": "pool",
+    "home_win_prob": 0.85,
+    "away_win_prob": 0.15,
+    "predicted_margin": 28,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 3,
+    "reasoning": "Australia enters the match as the world's top-ranked team, while England is ranked third globally. Historically, Australia has a dominant head-to-head record against England, winning all four previous encounters, including a significant 90-4 victory in March 2025. While England demonstrated strong form with a 70-6 win over Wales in their opening World Cup match, Australia's squad depth and consistent performance as reigning world champions make them strong favorites for this encounter.",
+    "model": "gemini-2.5-flash"
+  }
+]

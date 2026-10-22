@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-22T22:57:43Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-24T04:25:00Z",
+    "home_team": "Papua New Guinea",
+    "away_team": "Samoa",
+    "venue": "Santos National Football Stadium, Port Moresby",
+    "stage": "pool",
+    "home_win_prob": 0.25,
+    "away_win_prob": 0.75,
+    "predicted_margin": 14,
+    "predicted_winner": "away",
+    "home_rank": 6,
+    "away_rank": 4,
+    "reasoning": "Samoa is ranked 4th in the men's IRL World Rankings, higher than Papua New Guinea at 6th. Historically, Samoa has a dominant head-to-head record, winning all previous encounters against Papua New Guinea, including a 38-4 victory in the 2013 World Cup and 24-6 in the 2019 Oceania Cup. Both teams won their opening 2026 World Cup matches, with Samoa securing a commanding 78-4 win over France, while Papua New Guinea defeated Lebanon 42-18 on home soil. While Papua New Guinea will benefit from a significant home advantage at Santos National Football Stadium, Samoa's superior ranking and historical performance make them the clear favorites.",
+    "model": "gemini-2.5-flash"
+  }
+]
