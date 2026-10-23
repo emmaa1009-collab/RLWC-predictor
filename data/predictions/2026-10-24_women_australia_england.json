@@ -32,5 +32,22 @@
     "away_rank": 3,
     "reasoning": "Australia enters the 2026 Rugby League World Cup as the undisputed No. 1 ranked team in women's rugby league, having won the last three World Cups. England is ranked No. 3 globally. The most recent head-to-head encounter saw Australia defeat England by a significant margin of 90-4 in March 2025. While England is a strong team, their historical and recent performance against the top-ranked Jillaroos indicates a substantial difference in team strength.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-23T22:52:15Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-24T09:05:00Z",
+    "home_team": "Australia",
+    "away_team": "England",
+    "venue": "HBF Park, Perth",
+    "stage": "pool",
+    "home_win_prob": 0.92,
+    "away_win_prob": 0.08,
+    "predicted_margin": 40,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 3,
+    "reasoning": "Australia is the top-ranked team in women's rugby league, consistently holding the No. 1 position globally. England is ranked 3rd internationally. The head-to-head record heavily favors Australia, including a dominant 90-4 victory over England in March 2025 and a 38-0 win in the 2017 World Cup. Both teams won their opening matches of the 2026 World Cup, with Australia defeating Samoa 40-0 and England beating Wales 70-6, but Australia's historical dominance and recent large winning margin against England suggest they are strong favorites for this encounter.",
+    "model": "gemini-2.5-flash"
   }
 ]
