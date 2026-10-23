@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T22:58:23Z",
+  "updated": "2026-10-23T06:38:40Z",
   "summaries": {
     "overall": {
       "count": 9,
@@ -359,12 +359,12 @@
         "away_team": "Wales",
         "kickoff_utc": "2026-10-23T06:45:00Z",
         "venue": "CommBank Stadium, Sydney",
-        "made_at": "2026-10-22T22:57:13Z",
-        "home_win_prob": 0.88,
-        "away_win_prob": 0.12,
-        "predicted_margin": 24,
+        "made_at": "2026-10-23T06:37:45Z",
+        "home_win_prob": 0.9,
+        "away_win_prob": 0.1,
+        "predicted_margin": 40,
         "predicted_winner": "home",
-        "reasoning": "Samoa is ranked 5th globally, significantly higher than Wales at 9th. While both teams suffered heavy losses in Round 1, Samoa's defense against top-ranked Australia was noted as 'sensational' despite a 40-0 scoreline, whereas Wales was described as a 'weak Welsh side that lacked quality in both attack and defence' in their 70-6 defeat to England. Samoa also boasts more players with significant NRLW experience and has a more established history in the World Cup compared to debutants Wales."
+        "reasoning": "Samoa is ranked significantly higher at 5th in the world compared to Wales at 9th. Both teams suffered heavy defeats in their opening World Cup matches, with Samoa losing 40-0 to top-ranked Australia and Wales losing 70-6 to England. However, Samoa's defense was noted as strong at times against Australia, while Wales' performance against England was described as lacking quality in both attack and defense. This is Wales' first Women's Rugby League World Cup, whereas Samoa has prior World Cup experience. Samoa's more established international presence and a slightly better defensive showing in Round 1 suggest they are the stronger side."
       },
       "result": null,
       "scored": null
@@ -383,12 +383,12 @@
         "away_team": "Lebanon",
         "kickoff_utc": "2026-10-23T09:05:00Z",
         "venue": "CommBank Stadium, Sydney",
-        "made_at": "2026-10-22T22:56:50Z",
-        "home_win_prob": 0.88,
-        "away_win_prob": 0.12,
-        "predicted_margin": 24,
+        "made_at": "2026-10-23T06:37:27Z",
+        "home_win_prob": 0.92,
+        "away_win_prob": 0.08,
+        "predicted_margin": 26,
         "predicted_winner": "home",
-        "reasoning": "Tonga enters this match as the clear favourite, ranked 5th globally compared to Lebanon's 23rd position. Tonga is in strong form, having recently secured a historic 30-12 victory over 3rd-ranked England in their opening RLWC 2026 fixture. In contrast, Lebanon suffered a significant 42-18 defeat to Papua New Guinea in their first tournament match, exhibiting defensive vulnerabilities by conceding seven tries and missing 41 tackles. Although their sole head-to-head encounter in 2017 was a close 24-22 win for Tonga, Tonga's current momentum and higher standing in international rugby league suggest a more dominant performance in this fixture."
+        "reasoning": "Tonga is ranked 5th in the International Rugby League Men's World Rankings, significantly higher than Lebanon at 23rd. Tonga enters this match with strong momentum, having secured a dominant 30-12 victory over 3rd-ranked England in their opening World Cup fixture. In contrast, Lebanon suffered a 42-18 loss to Papua New Guinea in their first match, exhibiting defensive vulnerabilities by conceding seven tries and missing 41 tackles. While their only previous head-to-head in 2017 was a narrow 24-22 win for Tonga, current form and squad strength heavily favor Tonga for a comfortable victory."
       },
       "result": null,
       "scored": null
@@ -407,12 +407,12 @@
         "away_team": "Papua New Guinea",
         "kickoff_utc": "2026-10-24T02:15:00Z",
         "venue": "Santos National Football Stadium, Port Moresby",
-        "made_at": "2026-10-22T22:57:29Z",
-        "home_win_prob": 0.65,
-        "away_win_prob": 0.35,
-        "predicted_margin": 14,
-        "predicted_winner": "home",
-        "reasoning": "Papua New Guinea (ranked 6th) holds a significant advantage playing at their home ground, Santos National Football Stadium in Port Moresby, where they recently secured a dominant 58-4 victory over France in the opening round of the World Cup. Fiji (ranked 12th) demonstrated strong form in their opening match, pushing second-ranked New Zealand to a narrow 18-12 defeat, indicating their capability to challenge higher-ranked opponents. However, Fiji will be without injured star Tamika Jones, and the strong home crowd support for the Orchids is expected to be a decisive factor."
+        "made_at": "2026-10-23T06:38:40Z",
+        "home_win_prob": 0.4,
+        "away_win_prob": 0.6,
+        "predicted_margin": 10,
+        "predicted_winner": "away",
+        "reasoning": "Fiji is ranked 5th and Papua New Guinea 7th according to EXCEL Sports' pre-tournament rankings for the 2026 Women's Rugby League World Cup. Papua New Guinea enters this match with significant home advantage, having just secured a dominant 58-4 victory over France at Santos National Football Stadium in Port Moresby. Fiji demonstrated strong form in their opening match, pushing top-ranked New Zealand in an 18-12 loss. While the head-to-head record since 2025 shows a slight edge for Papua New Guinea (2 wins, 1 draw, 1 loss in 4 meetings), the home crowd and recent commanding performance are expected to give the Orchids the winning edge in a competitive encounter."
       },
       "result": null,
       "scored": null
@@ -431,12 +431,12 @@
         "away_team": "Samoa",
         "kickoff_utc": "2026-10-24T04:25:00Z",
         "venue": "Santos National Football Stadium, Port Moresby",
-        "made_at": "2026-10-22T22:57:43Z",
-        "home_win_prob": 0.25,
-        "away_win_prob": 0.75,
-        "predicted_margin": 14,
+        "made_at": "2026-10-23T06:37:55Z",
+        "home_win_prob": 0.35,
+        "away_win_prob": 0.65,
+        "predicted_margin": 10,
         "predicted_winner": "away",
-        "reasoning": "Samoa is ranked 4th in the men's IRL World Rankings, higher than Papua New Guinea at 6th. Historically, Samoa has a dominant head-to-head record, winning all previous encounters against Papua New Guinea, including a 38-4 victory in the 2013 World Cup and 24-6 in the 2019 Oceania Cup. Both teams won their opening 2026 World Cup matches, with Samoa securing a commanding 78-4 win over France, while Papua New Guinea defeated Lebanon 42-18 on home soil. While Papua New Guinea will benefit from a significant home advantage at Santos National Football Stadium, Samoa's superior ranking and historical performance make them the clear favorites."
+        "reasoning": "Samoa enters the match as the higher-ranked team (4th globally compared to Papua New Guinea's 6th) and boasts a perfect 3-0 head-to-head record against PNG in full international Test matches. Samoa also demonstrated strong form with a dominant 78-4 victory over France in their opening World Cup fixture. However, Papua New Guinea possesses a significant home-ground advantage, having won 15 of their last 16 Test matches in Port Moresby, and secured a convincing 42-18 win against Lebanon in their first World Cup game at the same venue."
       },
       "result": null,
       "scored": null
@@ -455,12 +455,12 @@
         "away_team": "France",
         "kickoff_utc": "2026-10-24T06:35:00Z",
         "venue": "HBF Park, Perth",
-        "made_at": "2026-10-22T22:58:23Z",
-        "home_win_prob": 0.96,
-        "away_win_prob": 0.04,
-        "predicted_margin": 38,
+        "made_at": "2026-10-23T06:38:08Z",
+        "home_win_prob": 0.9,
+        "away_win_prob": 0.1,
+        "predicted_margin": 28,
         "predicted_winner": "home",
-        "reasoning": "England is significantly higher ranked globally (3rd) compared to France (11th) in men's rugby league. Historically, England has a dominant head-to-head record against France, including a 100% win rate in Rugby League World Cup matches with substantial margins. While England recently lost to Tonga, France suffered a massive 78-4 defeat to Samoa in their opening RLWC 2026 match, indicating a significant disparity in current form and overall team strength."
+        "reasoning": "England is significantly higher ranked globally at 3rd, compared to France at 11th. Historically, England holds a dominant head-to-head record against France, winning 41 out of 51 matches, including all 5 Rugby League World Cup encounters. While England lost their opening RLWC 2026 match to Tonga by 18 points, France suffered a much heavier 74-point defeat to Samoa, indicating a substantial gap in current form and squad strength. England's squad features a strong contingent of NRL players, and despite one injury change, they are expected to perform strongly against a French side still searching for cohesion after their heavy opening loss."
       },
       "result": null,
       "scored": null
@@ -479,12 +479,12 @@
         "away_team": "England",
         "kickoff_utc": "2026-10-24T09:05:00Z",
         "venue": "HBF Park, Perth",
-        "made_at": "2026-10-22T22:58:06Z",
-        "home_win_prob": 0.85,
-        "away_win_prob": 0.15,
-        "predicted_margin": 28,
+        "made_at": "2026-10-23T06:38:25Z",
+        "home_win_prob": 0.92,
+        "away_win_prob": 0.08,
+        "predicted_margin": 40,
         "predicted_winner": "home",
-        "reasoning": "Australia enters the match as the world's top-ranked team, while England is ranked third globally. Historically, Australia has a dominant head-to-head record against England, winning all four previous encounters, including a significant 90-4 victory in March 2025. While England demonstrated strong form with a 70-6 win over Wales in their opening World Cup match, Australia's squad depth and consistent performance as reigning world champions make them strong favorites for this encounter."
+        "reasoning": "Australia enters the 2026 Rugby League World Cup as the undisputed No. 1 ranked team in women's rugby league, having won the last three World Cups. England is ranked No. 3 globally. The most recent head-to-head encounter saw Australia defeat England by a significant margin of 90-4 in March 2025. While England is a strong team, their historical and recent performance against the top-ranked Jillaroos indicates a substantial difference in team strength."
       },
       "result": null,
       "scored": null

@@ -15,5 +15,22 @@
     "away_rank": 12,
     "reasoning": "Papua New Guinea (ranked 6th) holds a significant advantage playing at their home ground, Santos National Football Stadium in Port Moresby, where they recently secured a dominant 58-4 victory over France in the opening round of the World Cup. Fiji (ranked 12th) demonstrated strong form in their opening match, pushing second-ranked New Zealand to a narrow 18-12 defeat, indicating their capability to challenge higher-ranked opponents. However, Fiji will be without injured star Tamika Jones, and the strong home crowd support for the Orchids is expected to be a decisive factor.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-23T06:38:40Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-24T02:15:00Z",
+    "home_team": "Fiji",
+    "away_team": "Papua New Guinea",
+    "venue": "Santos National Football Stadium, Port Moresby",
+    "stage": "pool",
+    "home_win_prob": 0.4,
+    "away_win_prob": 0.6,
+    "predicted_margin": 10,
+    "predicted_winner": "away",
+    "home_rank": 5,
+    "away_rank": 7,
+    "reasoning": "Fiji is ranked 5th and Papua New Guinea 7th according to EXCEL Sports' pre-tournament rankings for the 2026 Women's Rugby League World Cup. Papua New Guinea enters this match with significant home advantage, having just secured a dominant 58-4 victory over France at Santos National Football Stadium in Port Moresby. Fiji demonstrated strong form in their opening match, pushing top-ranked New Zealand in an 18-12 loss. While the head-to-head record since 2025 shows a slight edge for Papua New Guinea (2 wins, 1 draw, 1 loss in 4 meetings), the home crowd and recent commanding performance are expected to give the Orchids the winning edge in a competitive encounter.",
+    "model": "gemini-2.5-flash"
   }
 ]

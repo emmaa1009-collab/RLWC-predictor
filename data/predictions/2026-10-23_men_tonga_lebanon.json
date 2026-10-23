@@ -49,5 +49,22 @@
     "away_rank": 23,
     "reasoning": "Tonga enters this match as the clear favourite, ranked 5th globally compared to Lebanon's 23rd position. Tonga is in strong form, having recently secured a historic 30-12 victory over 3rd-ranked England in their opening RLWC 2026 fixture. In contrast, Lebanon suffered a significant 42-18 defeat to Papua New Guinea in their first tournament match, exhibiting defensive vulnerabilities by conceding seven tries and missing 41 tackles. Although their sole head-to-head encounter in 2017 was a close 24-22 win for Tonga, Tonga's current momentum and higher standing in international rugby league suggest a more dominant performance in this fixture.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-23T06:37:27Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-23T09:05:00Z",
+    "home_team": "Tonga",
+    "away_team": "Lebanon",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.92,
+    "away_win_prob": 0.08,
+    "predicted_margin": 26,
+    "predicted_winner": "home",
+    "home_rank": 5,
+    "away_rank": 23,
+    "reasoning": "Tonga is ranked 5th in the International Rugby League Men's World Rankings, significantly higher than Lebanon at 23rd. Tonga enters this match with strong momentum, having secured a dominant 30-12 victory over 3rd-ranked England in their opening World Cup fixture. In contrast, Lebanon suffered a 42-18 loss to Papua New Guinea in their first match, exhibiting defensive vulnerabilities by conceding seven tries and missing 41 tackles. While their only previous head-to-head in 2017 was a narrow 24-22 win for Tonga, current form and squad strength heavily favor Tonga for a comfortable victory.",
+    "model": "gemini-2.5-flash"
   }
 ]

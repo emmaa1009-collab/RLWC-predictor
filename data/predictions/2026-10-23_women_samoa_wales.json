@@ -32,5 +32,22 @@
     "away_rank": 9,
     "reasoning": "Samoa is ranked 5th globally, significantly higher than Wales at 9th. While both teams suffered heavy losses in Round 1, Samoa's defense against top-ranked Australia was noted as 'sensational' despite a 40-0 scoreline, whereas Wales was described as a 'weak Welsh side that lacked quality in both attack and defence' in their 70-6 defeat to England. Samoa also boasts more players with significant NRLW experience and has a more established history in the World Cup compared to debutants Wales.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-23T06:37:45Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-23T06:45:00Z",
+    "home_team": "Samoa",
+    "away_team": "Wales",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.9,
+    "away_win_prob": 0.1,
+    "predicted_margin": 40,
+    "predicted_winner": "home",
+    "home_rank": 5,
+    "away_rank": 9,
+    "reasoning": "Samoa is ranked significantly higher at 5th in the world compared to Wales at 9th. Both teams suffered heavy defeats in their opening World Cup matches, with Samoa losing 40-0 to top-ranked Australia and Wales losing 70-6 to England. However, Samoa's defense was noted as strong at times against Australia, while Wales' performance against England was described as lacking quality in both attack and defense. This is Wales' first Women's Rugby League World Cup, whereas Samoa has prior World Cup experience. Samoa's more established international presence and a slightly better defensive showing in Round 1 suggest they are the stronger side.",
+    "model": "gemini-2.5-flash"
   }
 ]
