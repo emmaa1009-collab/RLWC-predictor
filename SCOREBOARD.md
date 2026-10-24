@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-10-23T22:52:59Z
+Updated: 2026-10-24T06:36:14Z
 
 ## Matches
 
@@ -15,8 +15,9 @@ Updated: 2026-10-23T22:52:59Z
 | Men | England vs Tonga | 12-30 | England (68%) | N | 0.462 | 28 | N | Y |
 | Women | New Zealand vs Fiji | 18-12 | New Zealand (96%) | Y | 0.002 | 30 | Y | Y |
 | Men | Fiji vs Cook Islands | 40-12 | Fiji (88%) | Y | 0.014 | 8 | Y | Y |
-| Women | Samoa vs Wales | 76-0 | Samoa (90%) | Y | 0.010 | 36 | Y | N |
-| Men | Tonga vs Lebanon | 36-0 | Tonga (92%) | Y | 0.006 | 10 | Y | N |
+| Women | Samoa vs Wales | 76-0 | Samoa (90%) | Y | 0.010 | 36 | Y | Y |
+| Men | Tonga vs Lebanon | 36-0 | Tonga (92%) | Y | 0.006 | 10 | Y | Y |
+| Women | Fiji vs Papua New Guinea | 40-4 | Papua New Guinea (40%) | N | 0.360 | 46 | Y | N |
 
 ## Summary
 
@@ -24,11 +25,11 @@ Updated: 2026-10-23T22:52:59Z
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 90.9% | 81.8% | 50.0% | n/a |
-| Brier (lower better) | 0.062 | n/a | 0.250 | n/a |
-| Mean abs margin error | 21.64 | n/a | n/a | n/a |
+| Hit rate | 83.3% | 83.3% | 50.0% | n/a |
+| Brier (lower better) | 0.087 | n/a | 0.250 | n/a |
+| Mean abs margin error | 23.67 | n/a | n/a | n/a |
 
-Matches scored: 11.
+Matches scored: 12.
 
 ### Men
 
@@ -44,11 +45,11 @@ Matches scored: 6.
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 100.0% | 80.0% | 50.0% | n/a |
-| Brier (lower better) | 0.007 | n/a | 0.250 | n/a |
-| Mean abs margin error | 23.20 | n/a | n/a | n/a |
+| Hit rate | 83.3% | 83.3% | 50.0% | n/a |
+| Brier (lower better) | 0.066 | n/a | 0.250 | n/a |
+| Mean abs margin error | 27.00 | n/a | n/a | n/a |
 
-Matches scored: 5.
+Matches scored: 6.
 
 Draw handling: `half`.
 Results stay provisional until two agreeing lookups or 24h after kickoff.

@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-24T06:35:53Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-25T09:05:00Z",
+    "home_team": "Australia",
+    "away_team": "Fiji",
+    "venue": "Suncorp Stadium, Brisbane",
+    "stage": "pool",
+    "home_win_prob": 0.97,
+    "away_win_prob": 0.03,
+    "predicted_margin": 40,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 7,
+    "reasoning": "Australia is the top-ranked men's rugby league team globally and holds a perfect head-to-head record against Fiji, winning all seven previous encounters by an average of over 50 points. The match is being played in Australia, providing a significant home-ground advantage. Fiji, ranked 7th, has historically struggled to contain Australia's attack, with their closest loss being by 32 points.",
+    "model": "gemini-2.5-flash"
+  }
+]

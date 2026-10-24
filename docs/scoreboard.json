@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-23T22:52:59Z",
+  "updated": "2026-10-24T06:36:14Z",
   "summaries": {
     "overall": {
-      "count": 11,
-      "hit_rate": 0.9090909090909091,
-      "ranking_hit_rate": 0.8181818181818182,
-      "brier": 0.061763636363636354,
+      "count": 12,
+      "hit_rate": 0.8333333333333334,
+      "ranking_hit_rate": 0.8333333333333334,
+      "brier": 0.08661666666666666,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 21.636363636363637
+      "margin_error": 23.666666666666668
     },
     "men": {
       "count": 6,
@@ -20,13 +20,13 @@
       "margin_error": 20.333333333333332
     },
     "women": {
-      "count": 5,
-      "hit_rate": 1.0,
-      "ranking_hit_rate": 0.8,
-      "brier": 0.006980000000000002,
+      "count": 6,
+      "hit_rate": 0.8333333333333334,
+      "ranking_hit_rate": 0.8333333333333334,
+      "brier": 0.06581666666666666,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 23.2
+      "margin_error": 27.0
     }
   },
   "matches": [
@@ -369,7 +369,7 @@
       "result": {
         "home_score": 76,
         "away_score": 0,
-        "locked": false,
+        "locked": true,
         "source": "NRL.com"
       },
       "scored": {
@@ -404,8 +404,8 @@
       "result": {
         "home_score": 36,
         "away_score": 0,
-        "locked": false,
-        "source": "Sky Sports / NRL.com"
+        "locked": true,
+        "source": "League Unlimited, Fox Sports, Total Rugby League, NRL.com"
       },
       "scored": {
         "hit": 1.0,
@@ -423,7 +423,7 @@
       "away_team": "Papua New Guinea",
       "venue": "Santos National Football Stadium, Port Moresby",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "Fiji",
         "away_team": "Papua New Guinea",
@@ -436,8 +436,19 @@
         "predicted_winner": "away",
         "reasoning": "Fiji is ranked 5th and Papua New Guinea 7th according to EXCEL Sports' pre-tournament rankings for the 2026 Women's Rugby League World Cup. Papua New Guinea enters this match with significant home advantage, having just secured a dominant 58-4 victory over France at Santos National Football Stadium in Port Moresby. Fiji demonstrated strong form in their opening match, pushing top-ranked New Zealand in an 18-12 loss. While the head-to-head record since 2025 shows a slight edge for Papua New Guinea (2 wins, 1 draw, 1 loss in 4 meetings), the home crowd and recent commanding performance are expected to give the Orchids the winning edge in a competitive encounter."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 40,
+        "away_score": 4,
+        "locked": false,
+        "source": "NRL.com"
+      },
+      "scored": {
+        "hit": 0.0,
+        "brier": 0.36,
+        "margin_error": 46,
+        "ranking_hit": 1.0,
+        "pred_side": "away"
+      }
     },
     {
       "match_id": "2026-10-24_men_papua-new-guinea_samoa",
@@ -501,12 +512,12 @@
         "away_team": "England",
         "kickoff_utc": "2026-10-24T09:05:00Z",
         "venue": "HBF Park, Perth",
-        "made_at": "2026-10-23T22:52:15Z",
+        "made_at": "2026-10-24T06:35:15Z",
         "home_win_prob": 0.92,
         "away_win_prob": 0.08,
-        "predicted_margin": 40,
+        "predicted_margin": 45,
         "predicted_winner": "home",
-        "reasoning": "Australia is the top-ranked team in women's rugby league, consistently holding the No. 1 position globally. England is ranked 3rd internationally. The head-to-head record heavily favors Australia, including a dominant 90-4 victory over England in March 2025 and a 38-0 win in the 2017 World Cup. Both teams won their opening matches of the 2026 World Cup, with Australia defeating Samoa 40-0 and England beating Wales 70-6, but Australia's historical dominance and recent large winning margin against England suggest they are strong favorites for this encounter."
+        "reasoning": "Australia enters the match as the top-ranked women's rugby league team globally, while England is ranked third. Australia has demonstrated dominant form, including winning the 2022 World Cup and the 2025 Pacific Championship, and commenced the 2026 World Cup with a 40-0 victory over Samoa. Crucially, Australia inflicted a massive 90-4 defeat on England in March 2025. Although England started their 2026 campaign with a 70-6 win against Wales and has incorporated NRLW players into their squad, the historical head-to-head and Australia's consistent top-tier performance, coupled with home advantage, strongly favor the Jillaroos."
       },
       "result": null,
       "scored": null
@@ -525,12 +536,12 @@
         "away_team": "France",
         "kickoff_utc": "2026-10-25T03:00:00Z",
         "venue": "One NZ Stadium, Christchurch",
-        "made_at": "2026-10-23T22:52:38Z",
-        "home_win_prob": 0.95,
-        "away_win_prob": 0.05,
-        "predicted_margin": 40,
+        "made_at": "2026-10-24T06:35:29Z",
+        "home_win_prob": 0.98,
+        "away_win_prob": 0.02,
+        "predicted_margin": 42,
         "predicted_winner": "home",
-        "reasoning": "New Zealand is ranked significantly higher (2nd) than France (4th) in the women's international rugby league rankings. New Zealand also holds a strong home advantage for this match in Christchurch. France suffered a heavy 58-4 defeat to Papua New Guinea in their opening World Cup match, indicating poor form, while New Zealand secured an 18-12 victory over Fiji in their first game, demonstrating resilience. The historical head-to-head, including a 42-26 win for New Zealand in 2025, further supports a dominant performance by the home team."
+        "reasoning": "New Zealand is ranked 2nd in the IRL Women's World Rankings, significantly higher than France at 4th. In previous women's rugby league encounters, New Zealand has a perfect head-to-head record against France, including a 46-0 victory in 2022. New Zealand also enters this match with a recent win against Fiji (18-12) in the current World Cup, while France suffered a heavy 58-4 defeat to Papua New Guinea in their opening game. The Kiwi Ferns' squad is strong, featuring experienced NRLW players, and they will benefit from playing at home in Christchurch."
       },
       "result": null,
       "scored": null
@@ -549,12 +560,12 @@
         "away_team": "Cook Islands",
         "kickoff_utc": "2026-10-25T05:05:00Z",
         "venue": "One NZ Stadium, Christchurch",
-        "made_at": "2026-10-23T22:52:52Z",
-        "home_win_prob": 0.97,
-        "away_win_prob": 0.03,
+        "made_at": "2026-10-24T06:35:41Z",
+        "home_win_prob": 0.98,
+        "away_win_prob": 0.02,
         "predicted_margin": 48,
         "predicted_winner": "home",
-        "reasoning": "New Zealand, ranked 2nd globally, holds a significant advantage over the 8th-ranked Cook Islands. The Kiwis have a dominant 1-0 head-to-head record, including an 84-10 victory in their only previous encounter. While New Zealand has made some squad changes for this match, including the absence of Kalyn Ponga due to injury, they still field a strong team with considerable NRL talent. The Cook Islands, despite the debut of star Valentine Holmes, suffered a 12-40 loss to Fiji in their opening World Cup match and have a history of struggling against top-tier nations. Playing at home in Christchurch further strengthens New Zealand's position."
+        "reasoning": "New Zealand is ranked significantly higher (2nd) than the Cook Islands (8th) in the men's rugby league world rankings. New Zealand also boasts a dominant head-to-head record, having won their only previous encounter against the Cook Islands 84-10. The Cook Islands suffered a substantial 40-12 defeat to Fiji in their opening World Cup match and have a history of heavy losses against stronger nations. New Zealand, despite a narrow loss to Australia in Round 1, fields a formidable squad and will benefit from playing at home in Christchurch."
       },
       "result": null,
       "scored": null
@@ -567,9 +578,19 @@
       "away_team": "Fiji",
       "venue": "Suncorp Stadium, Brisbane",
       "stage": "pool",
-      "pool": "A",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Australia",
+        "away_team": "Fiji",
+        "kickoff_utc": "2026-10-25T09:05:00Z",
+        "venue": "Suncorp Stadium, Brisbane",
+        "made_at": "2026-10-24T06:35:53Z",
+        "home_win_prob": 0.97,
+        "away_win_prob": 0.03,
+        "predicted_margin": 40,
+        "predicted_winner": "home",
+        "reasoning": "Australia is the top-ranked men's rugby league team globally and holds a perfect head-to-head record against Fiji, winning all seven previous encounters by an average of over 50 points. The match is being played in Australia, providing a significant home-ground advantage. Fiji, ranked 7th, has historically struggled to contain Australia's attack, with their closest loss being by 32 points."
+      },
       "result": null,
       "scored": null
     },

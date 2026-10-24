@@ -6,8 +6,11 @@
   "home_score": 36,
   "away_score": 0,
   "recorded_at": "2026-10-23T22:51:19Z",
-  "source": "Sky Sports / NRL.com",
+  "source": "League Unlimited, Fox Sports, Total Rugby League, NRL.com",
   "model": "gemini-2.5-flash",
-  "verified_count": 1,
-  "locked": false
+  "verified_count": 2,
+  "locked": true,
+  "last_checked_at": "2026-10-24T06:34:34Z",
+  "locked_at": "2026-10-24T06:34:34Z",
+  "lock_reason": "confirmed"
 }
