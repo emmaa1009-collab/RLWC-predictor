@@ -32,5 +32,22 @@
     "away_rank": 4,
     "reasoning": "New Zealand is ranked 2nd in the IRL Women's World Rankings, significantly higher than France at 4th. In previous women's rugby league encounters, New Zealand has a perfect head-to-head record against France, including a 46-0 victory in 2022. New Zealand also enters this match with a recent win against Fiji (18-12) in the current World Cup, while France suffered a heavy 58-4 defeat to Papua New Guinea in their opening game. The Kiwi Ferns' squad is strong, featuring experienced NRLW players, and they will benefit from playing at home in Christchurch.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-24T22:13:12Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-25T03:00:00Z",
+    "home_team": "New Zealand",
+    "away_team": "France",
+    "venue": "One NZ Stadium, Christchurch",
+    "stage": "pool",
+    "home_win_prob": 0.96,
+    "away_win_prob": 0.04,
+    "predicted_margin": 50,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 4,
+    "reasoning": "New Zealand is ranked significantly higher (2nd globally) than France (4th globally by IRL, 7th by EXCEL Sports pre-tournament rankings). New Zealand has a strong, star-studded squad with considerable NRLW talent and Olympic medalists, and they are playing at home in Christchurch. France began their World Cup campaign with a heavy 58-4 loss to Papua New Guinea, and historically, New Zealand has dominated their head-to-head encounters, including past World Cup wins of 88-0 and 46-0.",
+    "model": "gemini-2.5-flash"
   }
 ]

@@ -32,5 +32,22 @@
     "away_rank": 8,
     "reasoning": "New Zealand is ranked significantly higher (2nd) than the Cook Islands (8th) in the men's rugby league world rankings. New Zealand also boasts a dominant head-to-head record, having won their only previous encounter against the Cook Islands 84-10. The Cook Islands suffered a substantial 40-12 defeat to Fiji in their opening World Cup match and have a history of heavy losses against stronger nations. New Zealand, despite a narrow loss to Australia in Round 1, fields a formidable squad and will benefit from playing at home in Christchurch.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-24T22:13:24Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-25T05:05:00Z",
+    "home_team": "New Zealand",
+    "away_team": "Cook Islands",
+    "venue": "One NZ Stadium, Christchurch",
+    "stage": "pool",
+    "home_win_prob": 0.98,
+    "away_win_prob": 0.02,
+    "predicted_margin": 48,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 8,
+    "reasoning": "New Zealand is ranked 2nd globally, significantly higher than the Cook Islands at 8th. New Zealand demonstrated strong form in their opening RLWC 2026 match, narrowly losing to top-ranked Australia 24-22, while the Cook Islands suffered a heavy 40-12 defeat to Fiji. The Kiwis also boast a dominant head-to-head record, winning their only previous encounter 84-10 in 2000. With a star-studded squad featuring top NRL talent and playing at home, New Zealand is heavily favored.",
+    "model": "gemini-2.5-flash"
   }
 ]

@@ -15,5 +15,22 @@
     "away_rank": 7,
     "reasoning": "Australia is the top-ranked men's rugby league team globally and holds a perfect head-to-head record against Fiji, winning all seven previous encounters by an average of over 50 points. The match is being played in Australia, providing a significant home-ground advantage. Fiji, ranked 7th, has historically struggled to contain Australia's attack, with their closest loss being by 32 points.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-24T22:13:35Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-25T09:05:00Z",
+    "home_team": "Australia",
+    "away_team": "Fiji",
+    "venue": "Suncorp Stadium, Brisbane",
+    "stage": "pool",
+    "home_win_prob": 0.95,
+    "away_win_prob": 0.05,
+    "predicted_margin": 40,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 7,
+    "reasoning": "Australia enters this match as the top-ranked men's rugby league team globally, while Fiji is ranked 7th. Historically, Australia has an undefeated 7-0 record against Fiji in all World Cup encounters, winning by an average margin exceeding 50 points. The match is held at Suncorp Stadium in Brisbane, providing Australia with a significant home-ground advantage, where they previously defeated Fiji 54-6 in the 2017 World Cup semi-final. Although both teams won their opening pool matches in the 2026 tournament, Australia's victory was against a higher-ranked opponent (New Zealand), reinforcing their dominant position.",
+    "model": "gemini-2.5-flash"
   }
 ]
