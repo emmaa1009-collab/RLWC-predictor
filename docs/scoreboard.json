@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T22:15:24Z",
+  "updated": "2026-10-26T07:07:55Z",
   "summaries": {
     "overall": {
       "count": 18,
@@ -614,8 +614,8 @@
       "result": {
         "home_score": 82,
         "away_score": 16,
-        "locked": false,
-        "source": "NRL.com, Sky Sports, League Unlimited"
+        "locked": true,
+        "source": "NRL.com, League Unlimited, Sky Sports, SuperSport, Fox Sports"
       },
       "scored": {
         "hit": 1.0,
@@ -649,8 +649,8 @@
       "result": {
         "home_score": 36,
         "away_score": 22,
-        "locked": false,
-        "source": "The Guardian, NRL.com, Love Rugby League"
+        "locked": true,
+        "source": "The Guardian, Total Rugby League, NRL.com"
       },
       "scored": {
         "hit": 1.0,

@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-10-25T22:15:24Z
+Updated: 2026-10-26T07:07:55Z
 
 ## Matches
 
@@ -22,8 +22,8 @@ Updated: 2026-10-25T22:15:24Z
 | Men | England vs France | 82-0 | England (92%) | Y | 0.006 | 52 | Y | Y |
 | Women | Australia vs England | 78-0 | Australia (92%) | Y | 0.006 | 33 | Y | Y |
 | Women | New Zealand vs France | 92-0 | New Zealand (96%) | Y | 0.002 | 42 | Y | Y |
-| Men | New Zealand vs Cook Islands | 82-16 | New Zealand (98%) | Y | 0.000 | 18 | Y | N |
-| Men | Australia vs Fiji | 36-22 | Australia (95%) | Y | 0.003 | 26 | Y | N |
+| Men | New Zealand vs Cook Islands | 82-16 | New Zealand (98%) | Y | 0.000 | 18 | Y | Y |
+| Men | Australia vs Fiji | 36-22 | Australia (95%) | Y | 0.003 | 26 | Y | Y |
 
 ## Summary
 
