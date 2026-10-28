@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T07:35:04Z",
+  "updated": "2026-10-28T23:51:33Z",
   "summaries": {
     "overall": {
       "count": 18,
@@ -668,9 +668,19 @@
       "away_team": "Samoa",
       "venue": "WIN Stadium, Wollongong",
       "stage": "pool",
-      "pool": "A",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "England",
+        "away_team": "Samoa",
+        "kickoff_utc": "2026-10-30T06:45:00Z",
+        "venue": "WIN Stadium, Wollongong",
+        "made_at": "2026-10-28T23:51:13Z",
+        "home_win_prob": 0.35,
+        "away_win_prob": 0.65,
+        "predicted_margin": 8,
+        "predicted_winner": "away",
+        "reasoning": "England is ranked 3rd globally, while Samoa is ranked 5th. However, recent form against common opponents suggests Samoa has an edge. England suffered a significant 78-0 loss to top-ranked Australia, whereas Samoa's loss to Australia was a more resilient 40-0. Both teams recorded dominant wins against Wales, with Samoa's 76-0 victory slightly larger than England's 70-6. England is also missing key player Eva Hunter due to injury. This, combined with Samoa's better defensive showing against Australia and shorter travel to the venue, points towards a Samoa victory."
+      },
       "result": null,
       "scored": null
     },
@@ -682,9 +692,19 @@
       "away_team": "Papua New Guinea",
       "venue": "WIN Stadium, Wollongong",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "England",
+        "away_team": "Papua New Guinea",
+        "kickoff_utc": "2026-10-30T09:05:00Z",
+        "venue": "WIN Stadium, Wollongong",
+        "made_at": "2026-10-28T23:51:33Z",
+        "home_win_prob": 0.88,
+        "away_win_prob": 0.12,
+        "predicted_margin": 26,
+        "predicted_winner": "home",
+        "reasoning": "England is ranked significantly higher (3rd globally) compared to Papua New Guinea (6th). Historically, England has a perfect 4-0 head-to-head record against Papua New Guinea in Test matches, including a dominant 36-6 victory in their last Rugby League World Cup encounter in 2017. In the current 2026 World Cup, England demonstrated strong attacking form with an 82-0 win over France, while Papua New Guinea suffered a heavy 64-6 defeat to Samoa, indicating a disparity in performance against top-tier teams."
+      },
       "result": null,
       "scored": null
     },

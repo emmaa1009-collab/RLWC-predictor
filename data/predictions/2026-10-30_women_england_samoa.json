@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-28T23:51:13Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-30T06:45:00Z",
+    "home_team": "England",
+    "away_team": "Samoa",
+    "venue": "WIN Stadium, Wollongong",
+    "stage": "pool",
+    "home_win_prob": 0.35,
+    "away_win_prob": 0.65,
+    "predicted_margin": 8,
+    "predicted_winner": "away",
+    "home_rank": 3,
+    "away_rank": 5,
+    "reasoning": "England is ranked 3rd globally, while Samoa is ranked 5th. However, recent form against common opponents suggests Samoa has an edge. England suffered a significant 78-0 loss to top-ranked Australia, whereas Samoa's loss to Australia was a more resilient 40-0. Both teams recorded dominant wins against Wales, with Samoa's 76-0 victory slightly larger than England's 70-6. England is also missing key player Eva Hunter due to injury. This, combined with Samoa's better defensive showing against Australia and shorter travel to the venue, points towards a Samoa victory.",
+    "model": "gemini-2.5-flash"
+  }
+]
