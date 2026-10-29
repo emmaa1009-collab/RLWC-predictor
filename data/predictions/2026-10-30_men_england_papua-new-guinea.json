@@ -15,5 +15,22 @@
     "away_rank": 6,
     "reasoning": "England is ranked significantly higher (3rd globally) compared to Papua New Guinea (6th). Historically, England has a perfect 4-0 head-to-head record against Papua New Guinea in Test matches, including a dominant 36-6 victory in their last Rugby League World Cup encounter in 2017. In the current 2026 World Cup, England demonstrated strong attacking form with an 82-0 win over France, while Papua New Guinea suffered a heavy 64-6 defeat to Samoa, indicating a disparity in performance against top-tier teams.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-29T23:46:32Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-30T09:05:00Z",
+    "home_team": "England",
+    "away_team": "Papua New Guinea",
+    "venue": "WIN Stadium, Wollongong",
+    "stage": "pool",
+    "home_win_prob": 0.88,
+    "away_win_prob": 0.12,
+    "predicted_margin": 36,
+    "predicted_winner": "home",
+    "home_rank": 3,
+    "away_rank": 6,
+    "reasoning": "England is ranked significantly higher (3rd) than Papua New Guinea (6th) in the men's Rugby League World Rankings. Historically, England has won all four of their head-to-head encounters against Papua New Guinea, including dominant victories in the last two World Cups (46-6 in 2022 and 36-6 in 2017). England's recent form includes an emphatic 82-0 win over France, showcasing their attacking strength, while Papua New Guinea suffered a heavy 64-6 defeat to Samoa in their last match, indicating defensive vulnerabilities against stronger opposition. Furthermore, England is highly motivated to achieve a substantial winning margin to aid their semi-final qualification hopes.",
+    "model": "gemini-2.5-flash"
   }
 ]

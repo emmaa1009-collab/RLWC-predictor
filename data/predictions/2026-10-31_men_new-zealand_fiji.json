@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-29T23:47:08Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-31T04:30:00Z",
+    "home_team": "New Zealand",
+    "away_team": "Fiji",
+    "venue": "Cbus Super Stadium, Gold Coast",
+    "stage": "pool",
+    "home_win_prob": 0.85,
+    "away_win_prob": 0.15,
+    "predicted_margin": 20,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 7,
+    "reasoning": "New Zealand is ranked significantly higher globally (2nd) compared to Fiji (7th) in men's rugby league. New Zealand boasts a formidable squad, including key NRL stars and recent Dally M award winners, and demonstrated strong form by winning the 2025 Pacific Championships. While Fiji showed resilience in a close loss to Australia, they are significantly weakened by injuries to key players like Viliame Kikau, Jahream Bula, and Maika Sivo, and the ineligibility of the Fainu brothers. Although the head-to-head record is split 1-1, New Zealand won the most recent encounter in the 2022 World Cup.",
+    "model": "gemini-2.5-flash"
+  }
+]

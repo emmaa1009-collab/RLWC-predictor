@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-29T23:46:52Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-31T02:20:00Z",
+    "home_team": "Fiji",
+    "away_team": "France",
+    "venue": "Cbus Super Stadium, Gold Coast",
+    "stage": "pool",
+    "home_win_prob": 0.85,
+    "away_win_prob": 0.15,
+    "predicted_margin": 28,
+    "predicted_winner": "home",
+    "home_rank": 12,
+    "away_rank": 4,
+    "reasoning": "Despite France holding a higher official IRL Women's Rugby League ranking (4th) compared to Fiji (12th) as of August 2026, Fiji enters this match with significantly superior recent form in the 2026 Rugby League World Cup. Fiji narrowly lost to second-ranked New Zealand (18-12) and secured a dominant 40-4 victory over Papua New Guinea in their opening two matches. In contrast, France has suffered heavy defeats in their World Cup campaign, losing 58-4 to Papua New Guinea and 92-0 to New Zealand. The EXCEL Sports model, which considers current talent and NRLW experience, also ranks Fiji higher (5th) than France (7th) and predicts Fiji to reach the semi-finals. There is no recorded head-to-head match in women's rugby league between these two nations.",
+    "model": "gemini-2.5-flash"
+  }
+]
