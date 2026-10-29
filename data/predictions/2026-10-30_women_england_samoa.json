@@ -15,5 +15,22 @@
     "away_rank": 5,
     "reasoning": "England is ranked 3rd globally, while Samoa is ranked 5th. However, recent form against common opponents suggests Samoa has an edge. England suffered a significant 78-0 loss to top-ranked Australia, whereas Samoa's loss to Australia was a more resilient 40-0. Both teams recorded dominant wins against Wales, with Samoa's 76-0 victory slightly larger than England's 70-6. England is also missing key player Eva Hunter due to injury. This, combined with Samoa's better defensive showing against Australia and shorter travel to the venue, points towards a Samoa victory.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-29T07:43:10Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-30T06:45:00Z",
+    "home_team": "England",
+    "away_team": "Samoa",
+    "venue": "WIN Stadium, Wollongong",
+    "stage": "pool",
+    "home_win_prob": 0.42,
+    "away_win_prob": 0.58,
+    "predicted_margin": 10,
+    "predicted_winner": "away",
+    "home_rank": 3,
+    "away_rank": 5,
+    "reasoning": "England is ranked 3rd and Samoa 5th in the IRL World Rankings. However, Samoa has demonstrated stronger form in the current World Cup, losing to top-ranked Australia by 40 points compared to England's 78-point loss. Additionally, Samoa's 76-0 victory over Wales was more dominant than England's 70-6 win against the same opponent. Both teams feature strong NRLW talent, but England is without injured Eva Hunter, giving Samoa a slight edge based on recent tournament performance.",
+    "model": "gemini-2.5-flash"
   }
 ]
