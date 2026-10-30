@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-30T23:28:22Z",
+    "competition": "men",
+    "kickoff_utc": "2026-11-01T05:40:00Z",
+    "home_team": "Lebanon",
+    "away_team": "France",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.92,
+    "away_win_prob": 0.08,
+    "predicted_margin": 31,
+    "predicted_winner": "home",
+    "home_rank": 23,
+    "away_rank": 11,
+    "reasoning": "Despite France holding a higher world ranking at 11th compared to Lebanon's 23rd, their performance in the 2026 Rugby League World Cup has been significantly weaker. France has suffered heavy defeats, conceding 82 points against England and 78 points against Samoa in their two pool matches. Lebanon, while also losing their opening two games (0-36 to Tonga and 18-42 to Papua New Guinea), has shown slightly more resilience. Furthermore, Lebanon defeated France 29-18 in their only previous World Cup encounter in 2017, and are expected to benefit from strong crowd support at CommBank Stadium in Sydney due to the Lebanese diaspora.",
+    "model": "gemini-2.5-flash"
+  }
+]

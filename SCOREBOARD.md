@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-10-30T07:47:08Z
+Updated: 2026-10-30T23:28:43Z
 
 ## Matches
 
@@ -24,6 +24,8 @@ Updated: 2026-10-30T07:47:08Z
 | Women | New Zealand vs France | 92-0 | New Zealand (96%) | Y | 0.002 | 42 | Y | Y |
 | Men | New Zealand vs Cook Islands | 82-16 | New Zealand (98%) | Y | 0.000 | 18 | Y | Y |
 | Men | Australia vs Fiji | 36-22 | Australia (95%) | Y | 0.003 | 26 | Y | Y |
+| Women | England vs Samoa | 6-24 | England (55%) | N | 0.303 | 24 | N | N |
+| Men | England vs Papua New Guinea | 34-12 | England (88%) | Y | 0.014 | 14 | Y | N |
 
 ## Summary
 
@@ -31,31 +33,31 @@ Updated: 2026-10-30T07:47:08Z
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 88.9% | 88.9% | 50.0% | n/a |
-| Brier (lower better) | 0.066 | n/a | 0.250 | n/a |
-| Mean abs margin error | 27.94 | n/a | n/a | n/a |
+| Hit rate | 85.0% | 85.0% | 50.0% | n/a |
+| Brier (lower better) | 0.075 | n/a | 0.250 | n/a |
+| Mean abs margin error | 27.05 | n/a | n/a | n/a |
 
-Matches scored: 18.
+Matches scored: 20.
 
 ### Men
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 90.0% | 90.0% | 50.0% | n/a |
-| Brier (lower better) | 0.078 | n/a | 0.250 | n/a |
-| Mean abs margin error | 26.60 | n/a | n/a | n/a |
+| Hit rate | 90.9% | 90.9% | 50.0% | n/a |
+| Brier (lower better) | 0.072 | n/a | 0.250 | n/a |
+| Mean abs margin error | 25.45 | n/a | n/a | n/a |
 
-Matches scored: 10.
+Matches scored: 11.
 
 ### Women
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 87.5% | 87.5% | 50.0% | n/a |
-| Brier (lower better) | 0.050 | n/a | 0.250 | n/a |
-| Mean abs margin error | 29.62 | n/a | n/a | n/a |
+| Hit rate | 77.8% | 77.8% | 50.0% | n/a |
+| Brier (lower better) | 0.078 | n/a | 0.250 | n/a |
+| Mean abs margin error | 29.00 | n/a | n/a | n/a |
 
-Matches scored: 8.
+Matches scored: 9.
 
 Draw handling: `half`.
 Results stay provisional until two agreeing lookups or 24h after kickoff.

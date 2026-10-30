@@ -15,5 +15,22 @@
     "away_rank": 8,
     "reasoning": "Australia is the top-ranked men's rugby league team globally, while the Cook Islands are ranked 8th. Australia enters the match with a perfect record in the 2026 Rugby League World Cup, including a 36-22 victory over Fiji and a 24-22 win against New Zealand, and holds a significant home advantage in Townsville. In contrast, the Cook Islands have suffered heavy defeats in the tournament, including an 82-16 loss to New Zealand and a 40-12 loss to Fiji, and have never progressed past the group stage in previous World Cups.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-30T23:27:43Z",
+    "competition": "men",
+    "kickoff_utc": "2026-10-31T09:05:00Z",
+    "home_team": "Australia",
+    "away_team": "Cook Islands",
+    "venue": "Queensland Country Bank Stadium, Townsville",
+    "stage": "pool",
+    "home_win_prob": 0.99,
+    "away_win_prob": 0.01,
+    "predicted_margin": 62,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 8,
+    "reasoning": "Australia is ranked 1st globally, while the Cook Islands are ranked 8th, indicating a significant disparity in team strength. Australia enters the match with a perfect record in the current World Cup, despite some closer-than-expected wins against strong opposition. In contrast, the Cook Islands have suffered heavy defeats in the tournament, including an 82-16 loss to New Zealand and a 40-12 loss to Fiji. Australia also sees the return of several key players, including Reece Walsh, Isaah Yeo, Liam Martin, and Cameron Munster, further bolstering their already formidable squad, while the Cook Islands are without the injured Esom Ioka.",
+    "model": "gemini-2.5-flash"
   }
 ]

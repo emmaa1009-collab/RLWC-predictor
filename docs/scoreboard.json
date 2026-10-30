@@ -1,32 +1,32 @@
 {
-  "updated": "2026-10-30T07:47:08Z",
+  "updated": "2026-10-30T23:28:43Z",
   "summaries": {
     "overall": {
-      "count": 18,
-      "hit_rate": 0.8888888888888888,
-      "ranking_hit_rate": 0.8888888888888888,
-      "brier": 0.0655111111111111,
+      "count": 20,
+      "hit_rate": 0.85,
+      "ranking_hit_rate": 0.85,
+      "brier": 0.074805,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 27.944444444444443
+      "margin_error": 27.05
     },
     "men": {
-      "count": 10,
-      "hit_rate": 0.9,
-      "ranking_hit_rate": 0.9,
-      "brier": 0.07762999999999999,
+      "count": 11,
+      "hit_rate": 0.9090909090909091,
+      "ranking_hit_rate": 0.9090909090909091,
+      "brier": 0.07188181818181817,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 26.6
+      "margin_error": 25.454545454545453
     },
     "women": {
-      "count": 8,
-      "hit_rate": 0.875,
-      "ranking_hit_rate": 0.875,
-      "brier": 0.0503625,
+      "count": 9,
+      "hit_rate": 0.7777777777777778,
+      "ranking_hit_rate": 0.7777777777777778,
+      "brier": 0.07837777777777778,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 29.625
+      "margin_error": 29.0
     }
   },
   "matches": [
@@ -668,7 +668,7 @@
       "away_team": "Samoa",
       "venue": "WIN Stadium, Wollongong",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "England",
         "away_team": "Samoa",
@@ -681,8 +681,19 @@
         "predicted_winner": "home",
         "reasoning": "England is ranked 3rd globally, while Samoa is 5th. Both teams hold a 1-1 record in the current World Cup pool stage. Samoa's recent form against common opponents, including a more competitive 0-40 loss to Australia compared to England's 0-78 defeat, and a larger winning margin against Wales (76-0 vs 70-6), suggests strong current performance. However, England's higher overall ranking and squad depth, featuring several NRLW players and the return of Georgia Roche, provide a slight advantage despite the absence of injured Eva Hunter."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 6,
+        "away_score": 24,
+        "locked": false,
+        "source": "Sky Sports, The Guardian"
+      },
+      "scored": {
+        "hit": 0.0,
+        "brier": 0.30250000000000005,
+        "margin_error": 24,
+        "ranking_hit": 0.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-30_men_england_papua-new-guinea",
@@ -692,7 +703,7 @@
       "away_team": "Papua New Guinea",
       "venue": "WIN Stadium, Wollongong",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "England",
         "away_team": "Papua New Guinea",
@@ -705,8 +716,19 @@
         "predicted_winner": "home",
         "reasoning": "England is ranked significantly higher (3rd) than Papua New Guinea (6th) in the men's Rugby League World Rankings. Historically, England has won all four of their head-to-head encounters against Papua New Guinea, including dominant victories in the last two World Cups (46-6 in 2022 and 36-6 in 2017). England's recent form includes an emphatic 82-0 win over France, showcasing their attacking strength, while Papua New Guinea suffered a heavy 64-6 defeat to Samoa in their last match, indicating defensive vulnerabilities against stronger opposition. Furthermore, England is highly motivated to achieve a substantial winning margin to aid their semi-final qualification hopes."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 34,
+        "away_score": 12,
+        "locked": false,
+        "source": "NRL.com"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.0144,
+        "margin_error": 14,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-31_women_fiji_france",
@@ -722,12 +744,12 @@
         "away_team": "France",
         "kickoff_utc": "2026-10-31T02:20:00Z",
         "venue": "Cbus Super Stadium, Gold Coast",
-        "made_at": "2026-10-29T23:46:52Z",
-        "home_win_prob": 0.85,
-        "away_win_prob": 0.15,
-        "predicted_margin": 28,
+        "made_at": "2026-10-30T23:26:49Z",
+        "home_win_prob": 0.88,
+        "away_win_prob": 0.12,
+        "predicted_margin": 35,
         "predicted_winner": "home",
-        "reasoning": "Despite France holding a higher official IRL Women's Rugby League ranking (4th) compared to Fiji (12th) as of August 2026, Fiji enters this match with significantly superior recent form in the 2026 Rugby League World Cup. Fiji narrowly lost to second-ranked New Zealand (18-12) and secured a dominant 40-4 victory over Papua New Guinea in their opening two matches. In contrast, France has suffered heavy defeats in their World Cup campaign, losing 58-4 to Papua New Guinea and 92-0 to New Zealand. The EXCEL Sports model, which considers current talent and NRLW experience, also ranks Fiji higher (5th) than France (7th) and predicts Fiji to reach the semi-finals. There is no recorded head-to-head match in women's rugby league between these two nations."
+        "reasoning": "Fiji enters this match with significantly better recent form in the 2026 Women's Rugby League World Cup, having secured a 40-4 victory over Papua New Guinea and a competitive 12-18 loss to New Zealand. In contrast, France has suffered heavy defeats in the tournament, losing 0-92 to New Zealand and 4-58 to Papua New Guinea. While France holds a higher official IRL ranking (4th compared to Fiji's 12th) as of August 2026, and won their only prior head-to-head match 44-0 in 2022, Fiji's current tournament performance and the inclusion of 10 NRLW players in their squad suggest a stronger team in present form."
       },
       "result": null,
       "scored": null
@@ -746,12 +768,12 @@
         "away_team": "Fiji",
         "kickoff_utc": "2026-10-31T04:30:00Z",
         "venue": "Cbus Super Stadium, Gold Coast",
-        "made_at": "2026-10-29T23:47:08Z",
+        "made_at": "2026-10-30T23:27:15Z",
         "home_win_prob": 0.85,
         "away_win_prob": 0.15,
         "predicted_margin": 20,
         "predicted_winner": "home",
-        "reasoning": "New Zealand is ranked significantly higher globally (2nd) compared to Fiji (7th) in men's rugby league. New Zealand boasts a formidable squad, including key NRL stars and recent Dally M award winners, and demonstrated strong form by winning the 2025 Pacific Championships. While Fiji showed resilience in a close loss to Australia, they are significantly weakened by injuries to key players like Viliame Kikau, Jahream Bula, and Maika Sivo, and the ineligibility of the Fainu brothers. Although the head-to-head record is split 1-1, New Zealand won the most recent encounter in the 2022 World Cup."
+        "reasoning": "New Zealand enters this match as the significantly higher-ranked team, sitting at 2nd in the men's rugby league world rankings compared to Fiji's 7th. While the head-to-head record is split 1-1, New Zealand secured a 24-18 victory in their most recent encounter at the 2022 World Cup, indicating their current competitive edge. New Zealand's recent form includes a dominant 82-16 win over the Cook Islands and a narrow 24-22 loss to top-ranked Australia, demonstrating their strong attacking capabilities and ability to challenge elite teams. The return of key players like Dane Gagai and Moses Leota further strengthens the New Zealand squad for this fixture."
       },
       "result": null,
       "scored": null
@@ -764,9 +786,19 @@
       "away_team": "Papua New Guinea",
       "venue": "Cbus Super Stadium, Gold Coast",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "New Zealand",
+        "away_team": "Papua New Guinea",
+        "kickoff_utc": "2026-10-31T06:45:00Z",
+        "venue": "Cbus Super Stadium, Gold Coast",
+        "made_at": "2026-10-30T23:27:30Z",
+        "home_win_prob": 0.95,
+        "away_win_prob": 0.05,
+        "predicted_margin": 45,
+        "predicted_winner": "home",
+        "reasoning": "New Zealand is ranked significantly higher (2nd) than Papua New Guinea (6th) in the women's rugby league world rankings. The Kiwi Ferns have a dominant head-to-head record, winning both previous encounters against the Orchids by large margins (36-0 in 2024 and 50-4 in 2017). New Zealand enters this match in formidable form, having recently secured a record-breaking 92-0 victory over France in the current World Cup, while Papua New Guinea suffered a substantial 40-4 loss to Fiji in their last outing."
+      },
       "result": null,
       "scored": null
     },
@@ -784,12 +816,12 @@
         "away_team": "Cook Islands",
         "kickoff_utc": "2026-10-31T09:05:00Z",
         "venue": "Queensland Country Bank Stadium, Townsville",
-        "made_at": "2026-10-29T23:47:19Z",
-        "home_win_prob": 0.98,
-        "away_win_prob": 0.02,
-        "predicted_margin": 60,
+        "made_at": "2026-10-30T23:27:43Z",
+        "home_win_prob": 0.99,
+        "away_win_prob": 0.01,
+        "predicted_margin": 62,
         "predicted_winner": "home",
-        "reasoning": "Australia is the top-ranked men's rugby league team globally, while the Cook Islands are ranked 8th. Australia enters the match with a perfect record in the 2026 Rugby League World Cup, including a 36-22 victory over Fiji and a 24-22 win against New Zealand, and holds a significant home advantage in Townsville. In contrast, the Cook Islands have suffered heavy defeats in the tournament, including an 82-16 loss to New Zealand and a 40-12 loss to Fiji, and have never progressed past the group stage in previous World Cups."
+        "reasoning": "Australia is ranked 1st globally, while the Cook Islands are ranked 8th, indicating a significant disparity in team strength. Australia enters the match with a perfect record in the current World Cup, despite some closer-than-expected wins against strong opposition. In contrast, the Cook Islands have suffered heavy defeats in the tournament, including an 82-16 loss to New Zealand and a 40-12 loss to Fiji. Australia also sees the return of several key players, including Reece Walsh, Isaah Yeo, Liam Martin, and Cameron Munster, further bolstering their already formidable squad, while the Cook Islands are without the injured Esom Ioka."
       },
       "result": null,
       "scored": null
@@ -802,9 +834,19 @@
       "away_team": "Wales",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
-      "pool": "A",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Australia",
+        "away_team": "Wales",
+        "kickoff_utc": "2026-11-01T04:40:00Z",
+        "venue": "CommBank Stadium, Sydney",
+        "made_at": "2026-10-30T23:28:03Z",
+        "home_win_prob": 0.99,
+        "away_win_prob": 0.01,
+        "predicted_margin": 55,
+        "predicted_winner": "home",
+        "reasoning": "Australia is the top-ranked team in women's rugby league and the reigning world champions, demonstrating consistent dominance with recent large victories in the current World Cup against England (78-0) and Samoa (40-0). In stark contrast, Wales, ranked 9th, is making their first World Cup appearance and has suffered significant defeats in the tournament, including a 70-6 loss to England and a 76-0 loss to Samoa. While historical head-to-head records show a mixed bag including two Welsh victories in international friendlies in 2024 and July 2025, Australia secured a commanding 41-5 win in their most recent friendly encounter in August 2025 and a 13-7 victory in the 2022 World Cup. Playing on home soil in Sydney further strengthens Australia's advantage."
+      },
       "result": null,
       "scored": null
     },
@@ -816,9 +858,19 @@
       "away_team": "France",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Lebanon",
+        "away_team": "France",
+        "kickoff_utc": "2026-11-01T05:40:00Z",
+        "venue": "CommBank Stadium, Sydney",
+        "made_at": "2026-10-30T23:28:22Z",
+        "home_win_prob": 0.92,
+        "away_win_prob": 0.08,
+        "predicted_margin": 31,
+        "predicted_winner": "home",
+        "reasoning": "Despite France holding a higher world ranking at 11th compared to Lebanon's 23rd, their performance in the 2026 Rugby League World Cup has been significantly weaker. France has suffered heavy defeats, conceding 82 points against England and 78 points against Samoa in their two pool matches. Lebanon, while also losing their opening two games (0-36 to Tonga and 18-42 to Papua New Guinea), has shown slightly more resilience. Furthermore, Lebanon defeated France 29-18 in their only previous World Cup encounter in 2017, and are expected to benefit from strong crowd support at CommBank Stadium in Sydney due to the Lebanese diaspora."
+      },
       "result": null,
       "scored": null
     },
@@ -830,9 +882,19 @@
       "away_team": "Samoa",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
-      "pool": "B",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "Tonga",
+        "away_team": "Samoa",
+        "kickoff_utc": "2026-11-01T08:05:00Z",
+        "venue": "CommBank Stadium, Sydney",
+        "made_at": "2026-10-30T23:28:36Z",
+        "home_win_prob": 0.4,
+        "away_win_prob": 0.6,
+        "predicted_margin": 8,
+        "predicted_winner": "away",
+        "reasoning": "Samoa is ranked 4th globally, slightly above Tonga at 5th. Samoa also holds a stronger recent head-to-head record, including a 34-6 victory in 2025 and a narrow 20-18 win in the 2022 Rugby League World Cup quarter-final. Both teams are undefeated in the current tournament, but Samoa's significantly higher points differential (+132 compared to Tonga's +54) indicates more dominant performances in their pool matches. While Tonga benefits from the return of key halfback Isaiya Katoa, Samoa's squad, featuring a core of players from their 2022 World Cup final appearance, has demonstrated strong form and depth."
+      },
       "result": null,
       "scored": null
     }

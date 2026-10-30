@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-30T23:27:30Z",
+    "competition": "women",
+    "kickoff_utc": "2026-10-31T06:45:00Z",
+    "home_team": "New Zealand",
+    "away_team": "Papua New Guinea",
+    "venue": "Cbus Super Stadium, Gold Coast",
+    "stage": "pool",
+    "home_win_prob": 0.95,
+    "away_win_prob": 0.05,
+    "predicted_margin": 45,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 6,
+    "reasoning": "New Zealand is ranked significantly higher (2nd) than Papua New Guinea (6th) in the women's rugby league world rankings. The Kiwi Ferns have a dominant head-to-head record, winning both previous encounters against the Orchids by large margins (36-0 in 2024 and 50-4 in 2017). New Zealand enters this match in formidable form, having recently secured a record-breaking 92-0 victory over France in the current World Cup, while Papua New Guinea suffered a substantial 40-4 loss to Fiji in their last outing.",
+    "model": "gemini-2.5-flash"
+  }
+]

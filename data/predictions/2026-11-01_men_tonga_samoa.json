@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-10-30T23:28:36Z",
+    "competition": "men",
+    "kickoff_utc": "2026-11-01T08:05:00Z",
+    "home_team": "Tonga",
+    "away_team": "Samoa",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.4,
+    "away_win_prob": 0.6,
+    "predicted_margin": 8,
+    "predicted_winner": "away",
+    "home_rank": 5,
+    "away_rank": 4,
+    "reasoning": "Samoa is ranked 4th globally, slightly above Tonga at 5th. Samoa also holds a stronger recent head-to-head record, including a 34-6 victory in 2025 and a narrow 20-18 win in the 2022 Rugby League World Cup quarter-final. Both teams are undefeated in the current tournament, but Samoa's significantly higher points differential (+132 compared to Tonga's +54) indicates more dominant performances in their pool matches. While Tonga benefits from the return of key halfback Isaiya Katoa, Samoa's squad, featuring a core of players from their 2022 World Cup final appearance, has demonstrated strong form and depth.",
+    "model": "gemini-2.5-flash"
+  }
+]

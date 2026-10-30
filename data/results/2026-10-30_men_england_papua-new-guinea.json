@@ -1,0 +1,13 @@
+{
+  "competition": "men",
+  "home_team": "England",
+  "away_team": "Papua New Guinea",
+  "kickoff_utc": "2026-10-30T09:05:00Z",
+  "home_score": 34,
+  "away_score": 12,
+  "recorded_at": "2026-10-30T23:26:21Z",
+  "source": "NRL.com",
+  "model": "gemini-2.5-flash",
+  "verified_count": 1,
+  "locked": false
+}
