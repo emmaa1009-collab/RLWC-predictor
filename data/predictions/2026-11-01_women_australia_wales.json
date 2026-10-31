@@ -15,5 +15,22 @@
     "away_rank": 9,
     "reasoning": "Australia is the top-ranked team in women's rugby league and the reigning world champions, demonstrating consistent dominance with recent large victories in the current World Cup against England (78-0) and Samoa (40-0). In stark contrast, Wales, ranked 9th, is making their first World Cup appearance and has suffered significant defeats in the tournament, including a 70-6 loss to England and a 76-0 loss to Samoa. While historical head-to-head records show a mixed bag including two Welsh victories in international friendlies in 2024 and July 2025, Australia secured a commanding 41-5 win in their most recent friendly encounter in August 2025 and a 13-7 victory in the 2022 World Cup. Playing on home soil in Sydney further strengthens Australia's advantage.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-31T07:35:44Z",
+    "competition": "women",
+    "kickoff_utc": "2026-11-01T04:40:00Z",
+    "home_team": "Australia",
+    "away_team": "Wales",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.995,
+    "away_win_prob": 0.005,
+    "predicted_margin": 70,
+    "predicted_winner": "home",
+    "home_rank": 1,
+    "away_rank": 9,
+    "reasoning": "Australia is the top-ranked team in women's rugby league, consistently performing as the world's benchmark. In contrast, Wales is ranked 9th globally. Australia has dominated their Rugby League World Cup 2026 pool matches, securing commanding victories of 40-0 against Samoa and 78-0 against England, without conceding any points. Wales has experienced significant defeats in their tournament games, losing 70-6 to England and 76-0 to Samoa, highlighting a substantial gap in form and quality. The match is hosted in Sydney, Australia, providing a home advantage for the Jillaroos.",
+    "model": "gemini-2.5-flash"
   }
 ]

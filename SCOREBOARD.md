@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-10-30T23:28:43Z
+Updated: 2026-10-31T07:36:36Z
 
 ## Matches
 
@@ -24,8 +24,10 @@ Updated: 2026-10-30T23:28:43Z
 | Women | New Zealand vs France | 92-0 | New Zealand (96%) | Y | 0.002 | 42 | Y | Y |
 | Men | New Zealand vs Cook Islands | 82-16 | New Zealand (98%) | Y | 0.000 | 18 | Y | Y |
 | Men | Australia vs Fiji | 36-22 | Australia (95%) | Y | 0.003 | 26 | Y | Y |
-| Women | England vs Samoa | 6-24 | England (55%) | N | 0.303 | 24 | N | N |
-| Men | England vs Papua New Guinea | 34-12 | England (88%) | Y | 0.014 | 14 | Y | N |
+| Women | England vs Samoa | 6-24 | England (55%) | N | 0.303 | 24 | N | Y |
+| Men | England vs Papua New Guinea | 34-12 | England (88%) | Y | 0.014 | 14 | Y | Y |
+| Women | Fiji vs France | 54-6 | Fiji (88%) | Y | 0.014 | 13 | N | N |
+| Men | New Zealand vs Fiji | 78-0 | New Zealand (85%) | Y | 0.023 | 58 | Y | N |
 
 ## Summary
 
@@ -33,31 +35,31 @@ Updated: 2026-10-30T23:28:43Z
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 85.0% | 85.0% | 50.0% | n/a |
-| Brier (lower better) | 0.075 | n/a | 0.250 | n/a |
-| Mean abs margin error | 27.05 | n/a | n/a | n/a |
+| Hit rate | 86.4% | 81.8% | 50.0% | n/a |
+| Brier (lower better) | 0.070 | n/a | 0.250 | n/a |
+| Mean abs margin error | 27.82 | n/a | n/a | n/a |
 
-Matches scored: 20.
+Matches scored: 22.
 
 ### Men
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 90.9% | 90.9% | 50.0% | n/a |
-| Brier (lower better) | 0.072 | n/a | 0.250 | n/a |
-| Mean abs margin error | 25.45 | n/a | n/a | n/a |
+| Hit rate | 91.7% | 91.7% | 50.0% | n/a |
+| Brier (lower better) | 0.068 | n/a | 0.250 | n/a |
+| Mean abs margin error | 28.17 | n/a | n/a | n/a |
 
-Matches scored: 11.
+Matches scored: 12.
 
 ### Women
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 77.8% | 77.8% | 50.0% | n/a |
-| Brier (lower better) | 0.078 | n/a | 0.250 | n/a |
-| Mean abs margin error | 29.00 | n/a | n/a | n/a |
+| Hit rate | 80.0% | 70.0% | 50.0% | n/a |
+| Brier (lower better) | 0.072 | n/a | 0.250 | n/a |
+| Mean abs margin error | 27.40 | n/a | n/a | n/a |
 
-Matches scored: 9.
+Matches scored: 10.
 
 Draw handling: `half`.
 Results stay provisional until two agreeing lookups or 24h after kickoff.
