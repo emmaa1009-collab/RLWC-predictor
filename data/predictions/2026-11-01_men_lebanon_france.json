@@ -32,5 +32,22 @@
     "away_rank": 11,
     "reasoning": "Despite France's higher world ranking (11th vs. Lebanon's 23rd), their current World Cup form has been exceptionally poor, suffering massive defeats of 78-4 against Samoa and 82-0 against England. Lebanon, while also losing their opening matches, has shown more resilience with smaller margins of defeat (42-18 vs. Papua New Guinea and 36-0 vs. Tonga). Furthermore, Lebanon holds a historical advantage in World Cup encounters, having won their only previous meeting against France 29-18 in 2017. The significant disparity in recent performance and the head-to-head World Cup record strongly favor a Lebanon victory.",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "made_at": "2026-10-31T23:04:17Z",
+    "competition": "men",
+    "kickoff_utc": "2026-11-01T05:40:00Z",
+    "home_team": "Lebanon",
+    "away_team": "France",
+    "venue": "CommBank Stadium, Sydney",
+    "stage": "pool",
+    "home_win_prob": 0.7,
+    "away_win_prob": 0.3,
+    "predicted_margin": 20,
+    "predicted_winner": "home",
+    "home_rank": 23,
+    "away_rank": 11,
+    "reasoning": "Lebanon holds a strong 4-1 head-to-head record against France, including a 29-18 victory in their last encounter at the 2017 World Cup. While France is ranked higher at 11th compared to Lebanon's 23rd, France has suffered significantly heavier defeats in the 2026 World Cup, conceding 78 points to Samoa and 82 points to England. Lebanon's losses, though also substantial, were by smaller margins (42-18 to PNG and 36-0 to Tonga). Despite Lebanon's injury to halfback Khaled Rajab, their historical dominance and France's current defensive struggles make Lebanon the likely winner.",
+    "model": "gemini-2.5-flash"
   }
 ]

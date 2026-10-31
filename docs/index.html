@@ -276,34 +276,34 @@
   </main>
 
   <script id="scoreboard-data" type="application/json">{
-  "updated": "2026-10-31T07:36:36Z",
+  "updated": "2026-10-31T23:04:58Z",
   "summaries": {
     "overall": {
-      "count": 22,
-      "hit_rate": 0.8636363636363636,
-      "ranking_hit_rate": 0.8181818181818182,
-      "brier": 0.06968181818181818,
+      "count": 24,
+      "hit_rate": 0.875,
+      "ranking_hit_rate": 0.8333333333333334,
+      "brier": 0.06398333333333332,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 27.818181818181817
+      "margin_error": 26.291666666666668
     },
     "men": {
-      "count": 12,
-      "hit_rate": 0.9166666666666666,
-      "ranking_hit_rate": 0.9166666666666666,
-      "brier": 0.06776666666666666,
+      "count": 13,
+      "hit_rate": 0.9230769230769231,
+      "ranking_hit_rate": 0.9230769230769231,
+      "brier": 0.06256153846153846,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 28.166666666666668
+      "margin_error": 26.153846153846153
     },
     "women": {
-      "count": 10,
-      "hit_rate": 0.8,
-      "ranking_hit_rate": 0.7,
-      "brier": 0.07198,
+      "count": 11,
+      "hit_rate": 0.8181818181818182,
+      "ranking_hit_rate": 0.7272727272727273,
+      "brier": 0.06566363636363637,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 27.4
+      "margin_error": 26.454545454545453
     }
   },
   "matches": [
@@ -1031,8 +1031,8 @@
       "result": {
         "home_score": 54,
         "away_score": 6,
-        "locked": false,
-        "source": "NRL.com, Flashscore.com"
+        "locked": true,
+        "source": "NRL.com Match Centre"
       },
       "scored": {
         "hit": 1.0,
@@ -1066,8 +1066,8 @@
       "result": {
         "home_score": 78,
         "away_score": 0,
-        "locked": false,
-        "source": "Fox Sports / Flashscore.com"
+        "locked": true,
+        "source": "NRL.com, League Unlimited, Fox Sports"
       },
       "scored": {
         "hit": 1.0,
@@ -1085,7 +1085,7 @@
       "away_team": "Papua New Guinea",
       "venue": "Cbus Super Stadium, Gold Coast",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "New Zealand",
         "away_team": "Papua New Guinea",
@@ -1098,8 +1098,19 @@
         "predicted_winner": "home",
         "reasoning": "New Zealand is ranked significantly higher (2nd) than Papua New Guinea (6th) in the women's rugby league world rankings. The Kiwi Ferns have a dominant head-to-head record, winning both previous encounters against the Orchids by large margins (36-0 in 2024 and 50-4 in 2017). New Zealand enters this match in formidable form, having recently secured a record-breaking 92-0 victory over France in the current World Cup, while Papua New Guinea suffered a substantial 40-4 loss to Fiji in their last outing."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 40,
+        "away_score": 12,
+        "locked": false,
+        "source": "Sport Nation / NRL.com / Fox Sports"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.0025000000000000044,
+        "margin_error": 17,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-10-31_men_australia_cook-islands",
@@ -1109,7 +1120,7 @@
       "away_team": "Cook Islands",
       "venue": "Queensland Country Bank Stadium, Townsville",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "Australia",
         "away_team": "Cook Islands",
@@ -1122,8 +1133,19 @@
         "predicted_winner": "home",
         "reasoning": "Australia is ranked 1st globally, while the Cook Islands are ranked 8th, indicating a significant disparity in team strength. Australia enters the match with a perfect record in the current World Cup, despite some closer-than-expected wins against strong opposition. In contrast, the Cook Islands have suffered heavy defeats in the tournament, including an 82-16 loss to New Zealand and a 40-12 loss to Fiji. Australia also sees the return of several key players, including Reece Walsh, Isaah Yeo, Liam Martin, and Cameron Munster, further bolstering their already formidable squad, while the Cook Islands are without the injured Esom Ioka."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 66,
+        "away_score": 6,
+        "locked": false,
+        "source": "The Guardian, NRL.com, Dave.Sport, Fox Sports, League Unlimited"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 0.00010000000000000018,
+        "margin_error": 2,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-11-01_women_australia_wales",
@@ -1163,12 +1185,12 @@
         "away_team": "France",
         "kickoff_utc": "2026-11-01T05:40:00Z",
         "venue": "CommBank Stadium, Sydney",
-        "made_at": "2026-10-31T07:36:13Z",
-        "home_win_prob": 0.9,
-        "away_win_prob": 0.1,
-        "predicted_margin": 30,
+        "made_at": "2026-10-31T23:04:17Z",
+        "home_win_prob": 0.7,
+        "away_win_prob": 0.3,
+        "predicted_margin": 20,
         "predicted_winner": "home",
-        "reasoning": "Despite France's higher world ranking (11th vs. Lebanon's 23rd), their current World Cup form has been exceptionally poor, suffering massive defeats of 78-4 against Samoa and 82-0 against England. Lebanon, while also losing their opening matches, has shown more resilience with smaller margins of defeat (42-18 vs. Papua New Guinea and 36-0 vs. Tonga). Furthermore, Lebanon holds a historical advantage in World Cup encounters, having won their only previous meeting against France 29-18 in 2017. The significant disparity in recent performance and the head-to-head World Cup record strongly favor a Lebanon victory."
+        "reasoning": "Lebanon holds a strong 4-1 head-to-head record against France, including a 29-18 victory in their last encounter at the 2017 World Cup. While France is ranked higher at 11th compared to Lebanon's 23rd, France has suffered significantly heavier defeats in the 2026 World Cup, conceding 78 points to Samoa and 82 points to England. Lebanon's losses, though also substantial, were by smaller margins (42-18 to PNG and 36-0 to Tonga). Despite Lebanon's injury to halfback Khaled Rajab, their historical dominance and France's current defensive struggles make Lebanon the likely winner."
       },
       "result": null,
       "scored": null
@@ -1187,12 +1209,12 @@
         "away_team": "Samoa",
         "kickoff_utc": "2026-11-01T08:05:00Z",
         "venue": "CommBank Stadium, Sydney",
-        "made_at": "2026-10-31T07:35:57Z",
-        "home_win_prob": 0.43,
-        "away_win_prob": 0.57,
-        "predicted_margin": 8,
+        "made_at": "2026-10-31T23:04:35Z",
+        "home_win_prob": 0.35,
+        "away_win_prob": 0.65,
+        "predicted_margin": 10,
         "predicted_winner": "away",
-        "reasoning": "Samoa is currently ranked 4th in the men's IRL World Rankings, slightly higher than Tonga at 5th. Samoa has demonstrated strong recent form, including reaching the final of the 2021 Rugby League World Cup and a significant 34-6 victory over Tonga in 2025. While Tonga has also started the RLWC 2026 strongly with wins over England and Lebanon, Samoa's consistent performance against top-tier nations and their recent head-to-head advantage suggest they are the marginal favorites in this encounter."
+        "reasoning": "Samoa enters this match with strong momentum, having secured two dominant victories in the 2026 Rugby League World Cup pool stage with a significantly higher points differential (+132) compared to Tonga (+54). Their recent head-to-head record also favors Samoa, including a narrow 20-18 victory in the 2022 World Cup quarter-final and a more convincing 34-6 win in October 2025. While Tonga is also undefeated in the tournament, their wins have been less emphatic, and Samoa holds a slightly higher world ranking (4th vs 5th)."
       },
       "result": null,
       "scored": null
