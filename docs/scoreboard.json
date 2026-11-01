@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-31T23:04:58Z",
+  "updated": "2026-11-01T08:15:01Z",
   "summaries": {
     "overall": {
-      "count": 24,
-      "hit_rate": 0.875,
-      "ranking_hit_rate": 0.8333333333333334,
-      "brier": 0.06398333333333332,
+      "count": 25,
+      "hit_rate": 0.88,
+      "ranking_hit_rate": 0.84,
+      "brier": 0.061425,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 26.291666666666668
+      "margin_error": 27.16
     },
     "men": {
       "count": 13,
@@ -20,13 +20,13 @@
       "margin_error": 26.153846153846153
     },
     "women": {
-      "count": 11,
-      "hit_rate": 0.8181818181818182,
-      "ranking_hit_rate": 0.7272727272727273,
-      "brier": 0.06566363636363637,
+      "count": 12,
+      "hit_rate": 0.8333333333333334,
+      "ranking_hit_rate": 0.75,
+      "brier": 0.06019375,
       "market_hit_rate": null,
       "market_brier": null,
-      "margin_error": 26.454545454545453
+      "margin_error": 28.25
     }
   },
   "matches": [
@@ -824,8 +824,8 @@
       "result": {
         "home_score": 40,
         "away_score": 12,
-        "locked": false,
-        "source": "Sport Nation / NRL.com / Fox Sports"
+        "locked": true,
+        "source": "NRL.com"
       },
       "scored": {
         "hit": 1.0,
@@ -859,8 +859,8 @@
       "result": {
         "home_score": 66,
         "away_score": 6,
-        "locked": false,
-        "source": "The Guardian, NRL.com, Dave.Sport, Fox Sports, League Unlimited"
+        "locked": true,
+        "source": "The Guardian, NRL.com, Sky Sports"
       },
       "scored": {
         "hit": 1.0,
@@ -878,7 +878,7 @@
       "away_team": "Wales",
       "venue": "CommBank Stadium, Sydney",
       "stage": "pool",
-      "status": "pending",
+      "status": "scored",
       "prediction": {
         "home_team": "Australia",
         "away_team": "Wales",
@@ -891,8 +891,19 @@
         "predicted_winner": "home",
         "reasoning": "Australia is the top-ranked team in women's rugby league, consistently performing as the world's benchmark. In contrast, Wales is ranked 9th globally. Australia has dominated their Rugby League World Cup 2026 pool matches, securing commanding victories of 40-0 against Samoa and 78-0 against England, without conceding any points. Wales has experienced significant defeats in their tournament games, losing 70-6 to England and 76-0 to Samoa, highlighting a substantial gap in form and quality. The match is hosted in Sydney, Australia, providing a home advantage for the Jillaroos."
       },
-      "result": null,
-      "scored": null
+      "result": {
+        "home_score": 124,
+        "away_score": 6,
+        "locked": false,
+        "source": "The Guardian, NRL.com, Fox Sports"
+      },
+      "scored": {
+        "hit": 1.0,
+        "brier": 2.5000000000000045e-05,
+        "margin_error": 48,
+        "ranking_hit": 1.0,
+        "pred_side": "home"
+      }
     },
     {
       "match_id": "2026-11-01_men_lebanon_france",

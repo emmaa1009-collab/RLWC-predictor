@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-10-31T23:04:58Z
+Updated: 2026-11-01T08:15:01Z
 
 ## Matches
 
@@ -28,8 +28,9 @@ Updated: 2026-10-31T23:04:58Z
 | Men | England vs Papua New Guinea | 34-12 | England (88%) | Y | 0.014 | 14 | Y | Y |
 | Women | Fiji vs France | 54-6 | Fiji (88%) | Y | 0.014 | 13 | N | Y |
 | Men | New Zealand vs Fiji | 78-0 | New Zealand (85%) | Y | 0.023 | 58 | Y | Y |
-| Women | New Zealand vs Papua New Guinea | 40-12 | New Zealand (95%) | Y | 0.003 | 17 | Y | N |
-| Men | Australia vs Cook Islands | 66-6 | Australia (99%) | Y | 0.000 | 2 | Y | N |
+| Women | New Zealand vs Papua New Guinea | 40-12 | New Zealand (95%) | Y | 0.003 | 17 | Y | Y |
+| Men | Australia vs Cook Islands | 66-6 | Australia (99%) | Y | 0.000 | 2 | Y | Y |
+| Women | Australia vs Wales | 124-6 | Australia (100%) | Y | 0.000 | 48 | Y | N |
 
 ## Summary
 
@@ -37,11 +38,11 @@ Updated: 2026-10-31T23:04:58Z
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 87.5% | 83.3% | 50.0% | n/a |
-| Brier (lower better) | 0.064 | n/a | 0.250 | n/a |
-| Mean abs margin error | 26.29 | n/a | n/a | n/a |
+| Hit rate | 88.0% | 84.0% | 50.0% | n/a |
+| Brier (lower better) | 0.061 | n/a | 0.250 | n/a |
+| Mean abs margin error | 27.16 | n/a | n/a | n/a |
 
-Matches scored: 24.
+Matches scored: 25.
 
 ### Men
 
@@ -57,11 +58,11 @@ Matches scored: 13.
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 81.8% | 72.7% | 50.0% | n/a |
-| Brier (lower better) | 0.066 | n/a | 0.250 | n/a |
-| Mean abs margin error | 26.45 | n/a | n/a | n/a |
+| Hit rate | 83.3% | 75.0% | 50.0% | n/a |
+| Brier (lower better) | 0.060 | n/a | 0.250 | n/a |
+| Mean abs margin error | 28.25 | n/a | n/a | n/a |
 
-Matches scored: 11.
+Matches scored: 12.
 
 Draw handling: `half`.
 Results stay provisional until two agreeing lookups or 24h after kickoff.
