@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-11-01T08:15:01Z
+Updated: 2026-11-01T23:19:36Z
 
 ## Matches
 
@@ -30,7 +30,9 @@ Updated: 2026-11-01T08:15:01Z
 | Men | New Zealand vs Fiji | 78-0 | New Zealand (85%) | Y | 0.023 | 58 | Y | Y |
 | Women | New Zealand vs Papua New Guinea | 40-12 | New Zealand (95%) | Y | 0.003 | 17 | Y | Y |
 | Men | Australia vs Cook Islands | 66-6 | Australia (99%) | Y | 0.000 | 2 | Y | Y |
-| Women | Australia vs Wales | 124-6 | Australia (100%) | Y | 0.000 | 48 | Y | N |
+| Women | Australia vs Wales | 124-6 | Australia (100%) | Y | 0.000 | 48 | Y | Y |
+| Men | Lebanon vs France | 24-20 | Lebanon (70%) | Y | 0.090 | 16 | N | N |
+| Men | Tonga vs Samoa | 20-18 | Samoa (35%) | N | 0.423 | 12 | N | N |
 
 ## Summary
 
@@ -38,21 +40,21 @@ Updated: 2026-11-01T08:15:01Z
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 88.0% | 84.0% | 50.0% | n/a |
-| Brier (lower better) | 0.061 | n/a | 0.250 | n/a |
-| Mean abs margin error | 27.16 | n/a | n/a | n/a |
+| Hit rate | 85.2% | 77.8% | 50.0% | n/a |
+| Brier (lower better) | 0.076 | n/a | 0.250 | n/a |
+| Mean abs margin error | 26.19 | n/a | n/a | n/a |
 
-Matches scored: 25.
+Matches scored: 27.
 
 ### Men
 
 | Metric | Agent | Ranking baseline | Coin flip | Market odds |
 |---|---|---|---|---|
-| Hit rate | 92.3% | 92.3% | 50.0% | n/a |
-| Brier (lower better) | 0.063 | n/a | 0.250 | n/a |
-| Mean abs margin error | 26.15 | n/a | n/a | n/a |
+| Hit rate | 86.7% | 80.0% | 50.0% | n/a |
+| Brier (lower better) | 0.088 | n/a | 0.250 | n/a |
+| Mean abs margin error | 24.53 | n/a | n/a | n/a |
 
-Matches scored: 13.
+Matches scored: 15.
 
 ### Women
 
