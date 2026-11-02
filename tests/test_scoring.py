@@ -41,7 +41,7 @@ def test_normalize_competition():
     assert run.normalize_competition("men") == "men"
     assert run.normalize_competition("Women's") == "women"
     assert run.normalize_competition("mens") == "men"
-    assert run.normalize_competition("wheelchair") is None
+    assert run.normalize_competition("wheelchair") == "wheelchair"
 
 
 def test_kickoff_still_upcoming_hard_cutoff():
@@ -329,8 +329,8 @@ def test_load_scheduled_fixtures_has_men_and_women_pools():
     fixtures = run.load_scheduled_fixtures()
     assert len(fixtures) >= 20
     comps = {row["competition"] for row in fixtures}
-    assert comps == {"men", "women"}
-    assert all(row["stage"] == "pool" for row in fixtures)
+    assert comps == {"men", "women", "wheelchair"}
+    assert all(row["stage"] in {"pool", "knockout"} for row in fixtures)
     assert all(row.get("match_id") for row in fixtures)
     # Prediction rows must win over scheduled duplicates.
     pending = [
@@ -477,3 +477,28 @@ def test_women_fixtures_include_canonical_opener():
         if {row["home_team"], row["away_team"]} == {"Australia", "Samoa"}
     ]
     assert len(aus_samoa) == 1
+
+
+def test_named_semis_and_wheelchair_pool_are_scheduled():
+    fixtures = run.load_scheduled_fixtures()
+    men_semis = [
+        row for row in fixtures if row["competition"] == "men" and row["stage"] == "knockout"
+    ]
+    women_semis = [
+        row for row in fixtures if row["competition"] == "women" and row["stage"] == "knockout"
+    ]
+    wheelchair = [row for row in fixtures if row["competition"] == "wheelchair"]
+    assert {(row["home_team"], row["away_team"]) for row in men_semis} == {
+        ("New Zealand", "Tonga"),
+        ("Australia", "Samoa"),
+    }
+    assert {(row["home_team"], row["away_team"]) for row in women_semis} == {
+        ("New Zealand", "Samoa"),
+        ("Australia", "Fiji"),
+    }
+    assert len(wheelchair) == 12
+    assert all(row["stage"] == "pool" for row in wheelchair)
+    nz_tonga = next(row for row in men_semis if row["away_team"] == "Tonga")
+    assert nz_tonga["kickoff_utc"] == "2026-11-07T09:05:00Z"
+    aus_fiji = next(row for row in women_semis if row["away_team"] == "Fiji")
+    assert aus_fiji["kickoff_utc"] == "2026-11-08T06:45:00Z"

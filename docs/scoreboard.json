@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T08:27:48Z",
+  "updated": "2026-11-02T11:21:06Z",
   "summaries": {
     "overall": {
       "count": 27,
@@ -27,6 +27,15 @@
       "market_hit_rate": null,
       "market_brier": null,
       "margin_error": 28.25
+    },
+    "wheelchair": {
+      "count": 0,
+      "hit_rate": null,
+      "ranking_hit_rate": null,
+      "brier": null,
+      "market_hit_rate": null,
+      "market_brier": null,
+      "margin_error": null
     }
   },
   "matches": [
@@ -661,6 +670,34 @@
       }
     },
     {
+      "match_id": "2026-10-30_wheelchair_ireland_united-states",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-10-30T02:00:00Z",
+      "home_team": "Ireland",
+      "away_team": "United States",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "A",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-10-30_wheelchair_england_wales",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-10-30T04:30:00Z",
+      "home_team": "England",
+      "away_team": "Wales",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "A",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
       "match_id": "2026-10-30_women_england_samoa",
       "competition": "women",
       "kickoff_utc": "2026-10-30T06:45:00Z",
@@ -766,6 +803,20 @@
       }
     },
     {
+      "match_id": "2026-10-31_wheelchair_france_scotland",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-10-31T04:00:00Z",
+      "home_team": "France",
+      "away_team": "Scotland",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "B",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
       "match_id": "2026-10-31_men_new-zealand_fiji",
       "competition": "men",
       "kickoff_utc": "2026-10-31T04:30:00Z",
@@ -799,6 +850,20 @@
         "ranking_hit": 1.0,
         "pred_side": "home"
       }
+    },
+    {
+      "match_id": "2026-10-31_wheelchair_australia_new-zealand",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-10-31T06:30:00Z",
+      "home_team": "Australia",
+      "away_team": "New Zealand",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "B",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
     },
     {
       "match_id": "2026-10-31_women_new-zealand_papua-new-guinea",
@@ -974,6 +1039,174 @@
         "ranking_hit": 0.0,
         "pred_side": "away"
       }
+    },
+    {
+      "match_id": "2026-11-03_wheelchair_france_new-zealand",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-03T00:00:00Z",
+      "home_team": "France",
+      "away_team": "New Zealand",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "B",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-03_wheelchair_australia_scotland",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-03T02:30:00Z",
+      "home_team": "Australia",
+      "away_team": "Scotland",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "B",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-03_wheelchair_ireland_wales",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-03T05:00:00Z",
+      "home_team": "Ireland",
+      "away_team": "Wales",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "A",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-03_wheelchair_england_united-states",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-03T07:30:00Z",
+      "home_team": "England",
+      "away_team": "United States",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "A",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-06_wheelchair_scotland_new-zealand",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-06T00:00:00Z",
+      "home_team": "Scotland",
+      "away_team": "New Zealand",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "B",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-06_wheelchair_wales_united-states",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-06T02:30:00Z",
+      "home_team": "Wales",
+      "away_team": "United States",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "A",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-06_wheelchair_england_ireland",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-06T06:00:00Z",
+      "home_team": "England",
+      "away_team": "Ireland",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "A",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-06_wheelchair_australia_france",
+      "competition": "wheelchair",
+      "kickoff_utc": "2026-11-06T08:30:00Z",
+      "home_team": "Australia",
+      "away_team": "France",
+      "venue": "WIN Entertainment Centre, Wollongong",
+      "stage": "pool",
+      "pool": "B",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-07_women_new-zealand_samoa",
+      "competition": "women",
+      "kickoff_utc": "2026-11-07T06:45:00Z",
+      "home_team": "New Zealand",
+      "away_team": "Samoa",
+      "venue": "McDonald Jones Stadium, Newcastle",
+      "stage": "knockout",
+      "pool": "",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-07_men_new-zealand_tonga",
+      "competition": "men",
+      "kickoff_utc": "2026-11-07T09:05:00Z",
+      "home_team": "New Zealand",
+      "away_team": "Tonga",
+      "venue": "McDonald Jones Stadium, Newcastle",
+      "stage": "knockout",
+      "pool": "",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-08_women_australia_fiji",
+      "competition": "women",
+      "kickoff_utc": "2026-11-08T06:45:00Z",
+      "home_team": "Australia",
+      "away_team": "Fiji",
+      "venue": "Allianz Stadium, Sydney",
+      "stage": "knockout",
+      "pool": "",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
+    },
+    {
+      "match_id": "2026-11-08_men_australia_samoa",
+      "competition": "men",
+      "kickoff_utc": "2026-11-08T09:05:00Z",
+      "home_team": "Australia",
+      "away_team": "Samoa",
+      "venue": "Allianz Stadium, Sydney",
+      "stage": "knockout",
+      "pool": "",
+      "status": "scheduled",
+      "prediction": null,
+      "result": null,
+      "scored": null
     }
   ]
 }

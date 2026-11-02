@@ -1,6 +1,6 @@
 # RLWC Predictor
 
-An experiment to see how accurately an AI agent can predict the results of the 2026 Rugby League World Cup — **men's and women's** tournaments (roughly 15 October to 15 November 2026, Australia, New Zealand and Papua New Guinea). The women's competition starts about a day after the men's.
+An experiment to see how accurately an AI agent can predict the results of the 2026 Rugby League World Cup — **men's, women's, and wheelchair** tournaments (roughly 15 October to 15 November 2026, Australia, New Zealand and Papua New Guinea). The women's competition starts about a day after the men's. The wheelchair competition is a separate draw.
 
 No money is involved. The point is to measure, honestly, how well the agent does compared with simple baselines.
 
@@ -10,9 +10,9 @@ Everything runs on its own. You set it up once and then check the scoreboard whe
 
 A GitHub Actions workflow runs twice a day during the tournament window. Each run does three things:
 
-1. **Predict.** Gemini searches the web (Google Search grounding) for men's and women's matches kicking off in the next 36 hours. For each one it researches recent form, squad and injury news, rankings, venue and head-to-head record, then outputs a win probability for each team and a predicted margin.
+1. **Predict.** Gemini searches the web (Google Search grounding) for men's, women's, and wheelchair matches kicking off in the next 36 hours. For each one it researches recent form, squad and injury news, rankings, venue and head-to-head record, then outputs a win probability for each team and a predicted margin.
 2. **Record.** The prediction is saved to `data/predictions/` and committed to this repo. The commit history is the audit trail showing each prediction was made before kickoff.
-3. **Score.** For any match that has finished, the agent looks up the final score, saves it to `data/results/`, and updates `SCOREBOARD.md` plus the HTML scoreboard in `docs/` (Overall, Men, and Women summaries).
+3. **Score.** For any match that has finished, the agent looks up the final score, saves it to `data/results/`, and updates `SCOREBOARD.md` plus the HTML scoreboard in `docs/` (Overall, Men, Women, and Wheelchair summaries).
 
 The prompt is built into `src/run.py`, so nothing needs to be written by hand before each match.
 
@@ -22,7 +22,7 @@ The prompt is built into `src/run.py`, so nothing needs to be written by hand be
 .github/workflows/predict.yml   Schedule and automation
 src/run.py                      Predict, record and score logic (with the built-in prompt)
 requirements.txt                Python dependencies
-data/fixtures.json              Published pool fixtures (shown on the site before predictions exist)
+data/fixtures.json              Published fixtures, including named semis and the wheelchair pool
 data/predictions/               One JSON file per match, append-only list of versions
 data/results/                   One JSON file per finished match
 SCOREBOARD.md                   Auto-generated running results
@@ -68,7 +68,7 @@ Files are append-only. A new version is added if a later run finds changed infor
 
 ## Scoring
 
-Three measures are tracked, each compared with baselines, for **Overall**, **Men**, and **Women**.
+Three measures are tracked, each compared with baselines, for **Overall**, **Men**, **Women**, and **Wheelchair**.
 
 - **Hit rate.** The percentage of matches where the team given more than 50% won.
 - **Brier score.** For each match, take the probability the agent gave to the actual winner, subtract it from 1, and square the result. Average across matches. Lower is better. Always guessing 50/50 scores 0.25, and a perfect forecaster scores 0.
@@ -86,14 +86,14 @@ If you want a market comparison, you can paste bookmaker-implied probabilities i
 - Predictions are made and committed before kickoff, never after.
 - Earlier versions are never edited or removed.
 - The agent is not shown results of the match it is predicting.
-- Men's and women's evidence are kept separate.
+- Men's, women's, and wheelchair evidence are kept separate.
 - Do not hand edit files in `data/predictions/` once the tournament starts.
 
 ## Cost
 
 Designed to run on the **Gemini free tier** (AI Studio API key, no billing required). GitHub Actions is free for this workload on a public repo, and within the free private-repo minute allowance.
 
-Free-tier rate limits reset daily. Two runs a day across men's plus women's fixtures uses more quota than men-only; if a run fails with a quota error, re-run it later from the Actions tab.
+Free-tier rate limits reset daily. Two runs a day across men's, women's, and wheelchair fixtures uses more quota than men-only; if a run fails with a quota error, re-run it later from the Actions tab.
 
 ## Limitations
 
@@ -119,7 +119,7 @@ Free-tier rate limits reset daily. Two runs a day across men's plus women's fixt
 Easiest views while the repo stays private:
 
 1. **[`SCOREBOARD.md`](SCOREBOARD.md)** — markdown tally on GitHub
-2. **[`docs/index.html`](docs/index.html)** — HTML scoreboard (open the file locally after cloning, or download it from GitHub). It lists pool fixtures from `data/fixtures.json` with **No prediction yet** until a forecast is recorded, then Overall / Men / Women summaries, each forecast, and the final score when available.
+2. **[`docs/index.html`](docs/index.html)** — HTML scoreboard (open the file locally after cloning, or download it from GitHub). It lists fixtures from `data/fixtures.json` with **No prediction yet** until a forecast is recorded, then Overall / Men / Women / Wheelchair summaries, each forecast, and the final score when available.
 
 To refresh the HTML from fixtures without calling Gemini:
 
