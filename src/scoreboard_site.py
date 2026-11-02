@@ -115,7 +115,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
       gap: 1.25rem;
     }
     @media (min-width: 800px) {
-      .summary-grid { grid-template-columns: repeat(2, 1fr); }
+      .summary-grid { grid-template-columns: repeat(3, 1fr); }
     }
     .summary-block h3 {
       margin: 0 0 0.75rem;
@@ -260,7 +260,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
   <main class="wrap">
     <header class="hero">
       <h1 class="brand">RLWC <span>Predictor</span></h1>
-      <p class="lede">Men’s, women’s, and wheelchair Rugby League World Cup 2026 — forecasts locked before kickoff, scored against the real results.</p>
+      <p class="lede">Men’s and women’s Rugby League World Cup 2026 — forecasts locked before kickoff, scored against the real results.</p>
       <p class="meta" id="updated">Loading…</p>
     </header>
 
@@ -275,7 +275,6 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
         <button type="button" data-filter="all" aria-pressed="true">All</button>
         <button type="button" data-filter="men" aria-pressed="false">Men</button>
         <button type="button" data-filter="women" aria-pressed="false">Women</button>
-        <button type="button" data-filter="wheelchair" aria-pressed="false">Wheelchair</button>
       </div>
       <div class="match-list" id="matches"></div>
     </section>
@@ -342,12 +341,6 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
         </div>`;
     }
 
-    function competitionLabel(competition) {
-      if (competition === "women") return "Women";
-      if (competition === "wheelchair") return "Wheelchair";
-      return "Men";
-    }
-
     function renderMatch(match) {
       const pred = match.prediction || {};
       const result = match.result;
@@ -383,7 +376,7 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
       }
       return `
         <article class="match" data-competition="${esc(match.competition)}">
-          <div class="comp">${esc(competitionLabel(match.competition))}</div>
+          <div class="comp">${esc(match.competition === "women" ? "Women" : "Men")}</div>
           <div>
             <p class="fixture">${esc(home)} vs ${esc(away)}</p>
             ${middle}
@@ -404,7 +397,6 @@ SCOREBOARD_PAGE = """<!DOCTYPE html>
       renderSummary("Overall", summaries.overall || { count: 0 }),
       renderSummary("Men", summaries.men || { count: 0 }),
       renderSummary("Women", summaries.women || { count: 0 }),
-      renderSummary("Wheelchair", summaries.wheelchair || { count: 0 }),
     ].join("");
 
     const matchesEl = document.getElementById("matches");
@@ -464,7 +456,6 @@ def build_site_payload(
     overall: dict[str, Any],
     men: dict[str, Any],
     women: dict[str, Any],
-    wheelchair: dict[str, Any] | None = None,
     scheduled_rows: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     matches: list[dict[str, Any]] = []
@@ -574,7 +565,6 @@ def build_site_payload(
             "overall": serialize_stats(overall),
             "men": serialize_stats(men),
             "women": serialize_stats(women),
-            "wheelchair": serialize_stats(wheelchair or empty_stats()),
         },
         "matches": matches,
     }

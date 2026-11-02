@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-11-02T11:21:06Z
+Updated: 2026-11-02T11:25:51Z
 
 ## Matches
 
@@ -65,16 +65,6 @@ Matches scored: 15.
 | Mean abs margin error | 28.25 | n/a | n/a | n/a |
 
 Matches scored: 12.
-
-### Wheelchair
-
-| Metric | Agent | Ranking baseline | Coin flip | Market odds |
-|---|---|---|---|---|
-| Hit rate | n/a | n/a | 50.0% | n/a |
-| Brier (lower better) | n/a | n/a | 0.250 | n/a |
-| Mean abs margin error | n/a | n/a | n/a | n/a |
-
-Matches scored: 0.
 
 Draw handling: `half`.
 Results stay provisional until two agreeing lookups or 24h after kickoff.

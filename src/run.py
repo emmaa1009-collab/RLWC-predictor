@@ -36,19 +36,18 @@ PREDICT_BUFFER_MINUTES = 1
 RESULT_LOCK_AFTER = timedelta(hours=24)
 RESULT_AGREE_TO_LOCK = 2
 
-VALID_COMPETITIONS = frozenset({"men", "women", "wheelchair"})
+VALID_COMPETITIONS = frozenset({"men", "women"})
 
 SYSTEM_RULES = """
-You are forecasting the 2026 Rugby League World Cup men's, women's, and wheelchair
-tournaments (hosted in Australia, New Zealand and Papua New Guinea; roughly
-15 Oct–15 Nov 2026). The women's tournament starts about a day after the men's.
-The wheelchair tournament is a separate competition at WIN Entertainment Centre, Wollongong.
+You are forecasting the 2026 Rugby League World Cup men's and women's tournaments
+(hosted in Australia, New Zealand and Papua New Guinea; roughly 15 Oct–15 Nov 2026).
+The women's tournament starts about a day after the men's.
 
 Rules:
 - Use Google Search for current fixtures, form, injuries, squads, rankings, venue,
   and head-to-head. Prefer official / reputable rugby league sources.
-- Always keep men's, women's, and wheelchair competitions separate. Never mix rankings,
-  squads, or results across competitions.
+- Always keep men's and women's competitions separate. Never mix rankings, squads,
+  or results across competitions.
 - Never invent final scores for unfinished matches.
 - Respond with JSON only. No markdown fences, no commentary outside JSON.
 """.strip()
@@ -87,8 +86,6 @@ def normalize_competition(value: Any) -> str | None:
         "womens": "women",
         "women's": "women",
         "female": "women",
-        "wheelchair": "wheelchair",
-        "wheel chair": "wheelchair",
     }
     competition = aliases.get(text)
     if competition in VALID_COMPETITIONS:
@@ -97,7 +94,7 @@ def normalize_competition(value: Any) -> str | None:
 
 
 def competition_label(competition: str) -> str:
-    return {"men": "Men", "women": "Women", "wheelchair": "Wheelchair"}.get(competition, competition.title())
+    return "Men" if competition == "men" else "Women"
 
 
 def match_id(kickoff_utc: str, competition: str, home: str, away: str) -> str:
@@ -234,14 +231,14 @@ def discover_fixtures(client: genai.Client, now: datetime) -> list[dict[str, Any
 Search for Rugby League World Cup 2026 fixtures with kickoff between
 {iso_z(earliest)} and {iso_z(until)} (UTC), inclusive.
 
-Include the men's tournament, the women's tournament, AND the wheelchair tournament.
+Include BOTH the men's tournament and the women's tournament.
 Tag every match with the correct competition.
 
 Return a JSON object:
 {{
   "matches": [
     {{
-      "competition": "men" or "women" or "wheelchair",
+      "competition": "men" or "women",
       "home_team": "string",
       "away_team": "string",
       "kickoff_utc": "YYYY-MM-DDTHH:MM:SSZ",
@@ -255,7 +252,7 @@ If none are found, return {{"matches": []}}.
 Use official team names. Do not invent fixtures.
 Kickoff times must be true UTC (not local AEDT/AEST/NZDT mislabelled as Z).
 Do not include matches that have already kicked off.
-Do not include competitions other than men, women, and wheelchair.
+Do not include wheelchair or other competitions.
 """.strip()
     payload = gemini_json(client, prompt)
     matches = payload.get("matches", []) if isinstance(payload, dict) else []
@@ -331,8 +328,8 @@ Match:
 - Venue: {match.get('venue') or 'unknown'}
 - Stage: {match['stage']}
 
-Use only {label} rugby league evidence (form, squad/injury news, world rankings,
-venue/travel, head-to-head). Do not use rankings or results from the other competitions.
+Use only {label}'s rugby league evidence (form, squad/injury news, world rankings,
+venue/travel, head-to-head). Do not use the other gender's rankings or results.
 Do not use any information from after kickoff. Do not report a final score.
 If you can see live or final scores, refuse and return:
 {{"refuse": true, "reason": "match already started or finished"}}
@@ -481,7 +478,7 @@ If finished, return:
 }}
 
 Only mark finished when you can cite a final full-time score from a reputable source.
-Do not confuse this with a fixture of the same teams in another competition.
+Do not confuse this with the other gender's fixture of the same teams.
 """.strip()
     raw = gemini_json(client, prompt)
     if not isinstance(raw, dict) or not raw.get("finished"):
@@ -696,15 +693,13 @@ def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def group_rows_by_competition(rows: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
-    grouped: dict[str, list[dict[str, Any]]] = {"men": [], "women": [], "wheelchair": []}
+    grouped: dict[str, list[dict[str, Any]]] = {"men": [], "women": []}
     for row in rows:
         competition = normalize_competition(row["prediction"].get("competition"))
         if competition is None:
             # Infer from match_id when older files lack the field.
             mid = str(row.get("match_id", ""))
-            if "_wheelchair_" in mid:
-                competition = "wheelchair"
-            elif "_women_" in mid:
+            if "_women_" in mid:
                 competition = "women"
             else:
                 competition = "men"
@@ -936,7 +931,6 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
     overall = summarize_rows(rows)
     men_stats = summarize_rows(grouped.get("men", []))
     women_stats = summarize_rows(grouped.get("women", []))
-    wheelchair_stats = summarize_rows(grouped.get("wheelchair", []))
 
     updated = iso_z(utc_now())
     lines = [
@@ -989,7 +983,6 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
     lines.extend(summary_table_lines("Overall", overall))
     lines.extend(summary_table_lines("Men", men_stats))
     lines.extend(summary_table_lines("Women", women_stats))
-    lines.extend(summary_table_lines("Wheelchair", wheelchair_stats))
     lines.extend(
         [
             f"Draw handling: `{DRAW_HANDLING}`.",
@@ -1050,7 +1043,6 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
         overall=overall,
         men=men_stats,
         women=women_stats,
-        wheelchair=wheelchair_stats,
         scheduled_rows=scheduled,
     )
 
