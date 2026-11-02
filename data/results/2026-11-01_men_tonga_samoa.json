@@ -6,8 +6,11 @@
   "home_score": 20,
   "away_score": 18,
   "recorded_at": "2026-11-01T23:19:09Z",
-  "source": "NRL.com, The Guardian, Rugby League Hub, Flashscore, Sky Sports, Fox Sports",
+  "source": "NRL.com, The Guardian, League Unlimited, Flashscore.com, AAP News, Samoa Global News",
   "model": "gemini-2.5-flash",
-  "verified_count": 1,
-  "locked": false
+  "verified_count": 2,
+  "locked": true,
+  "last_checked_at": "2026-11-02T08:27:24Z",
+  "locked_at": "2026-11-02T08:27:24Z",
+  "lock_reason": "confirmed"
 }

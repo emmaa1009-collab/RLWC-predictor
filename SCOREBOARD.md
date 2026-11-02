@@ -1,6 +1,6 @@
 # SCOREBOARD
 
-Updated: 2026-11-01T23:19:36Z
+Updated: 2026-11-02T08:27:48Z
 
 ## Matches
 
@@ -31,8 +31,8 @@ Updated: 2026-11-01T23:19:36Z
 | Women | New Zealand vs Papua New Guinea | 40-12 | New Zealand (95%) | Y | 0.003 | 17 | Y | Y |
 | Men | Australia vs Cook Islands | 66-6 | Australia (99%) | Y | 0.000 | 2 | Y | Y |
 | Women | Australia vs Wales | 124-6 | Australia (100%) | Y | 0.000 | 48 | Y | Y |
-| Men | Lebanon vs France | 24-20 | Lebanon (70%) | Y | 0.090 | 16 | N | N |
-| Men | Tonga vs Samoa | 20-18 | Samoa (35%) | N | 0.423 | 12 | N | N |
+| Men | Lebanon vs France | 24-20 | Lebanon (70%) | Y | 0.090 | 16 | N | Y |
+| Men | Tonga vs Samoa | 20-18 | Samoa (35%) | N | 0.423 | 12 | N | Y |
 
 ## Summary
 
