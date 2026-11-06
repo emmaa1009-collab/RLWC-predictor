@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T08:37:09Z",
+  "updated": "2026-11-06T00:42:21Z",
   "summaries": {
     "overall": {
       "count": 27,
@@ -983,9 +983,19 @@
       "away_team": "Samoa",
       "venue": "McDonald Jones Stadium, Newcastle",
       "stage": "knockout",
-      "pool": "",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "New Zealand",
+        "away_team": "Samoa",
+        "kickoff_utc": "2026-11-07T06:45:00Z",
+        "venue": "McDonald Jones Stadium, Newcastle",
+        "made_at": "2026-11-06T00:42:08Z",
+        "home_win_prob": 0.8,
+        "away_win_prob": 0.2,
+        "predicted_margin": 14,
+        "predicted_winner": "home",
+        "reasoning": "New Zealand, ranked 2nd globally, enters the semi-final undefeated in the pool stage, showcasing strong performances including a comeback win against Fiji and a dominant victory over France. Samoa, ranked 4th, has shown significant improvement in the tournament, securing impressive wins against Wales and England to reach their first semi-final, though they suffered a heavy loss to Australia. While Samoa pushed New Zealand in their last encounter in 2025, losing 22-20 after leading 20-0, New Zealand's ability to recover and their overall depth are key factors. Samoa is also contending with several key injuries to players like Taliah Fuimaono, Sarina Masaga, and Sienna Lofipo, which could impact their performance."
+      },
       "result": null,
       "scored": null
     },
@@ -997,9 +1007,19 @@
       "away_team": "Tonga",
       "venue": "McDonald Jones Stadium, Newcastle",
       "stage": "knockout",
-      "pool": "",
-      "status": "scheduled",
-      "prediction": null,
+      "status": "pending",
+      "prediction": {
+        "home_team": "New Zealand",
+        "away_team": "Tonga",
+        "kickoff_utc": "2026-11-07T09:05:00Z",
+        "venue": "McDonald Jones Stadium, Newcastle",
+        "made_at": "2026-11-06T00:42:21Z",
+        "home_win_prob": 0.68,
+        "away_win_prob": 0.32,
+        "predicted_margin": 10,
+        "predicted_winner": "home",
+        "reasoning": "New Zealand enters the match ranked 2nd globally, significantly higher than Tonga at 5th. Historically, New Zealand holds a strong head-to-head record against Tonga, winning 6 of their 8 encounters. While New Zealand experienced a close loss to Australia (24-22), they have since delivered dominant performances with large winning margins against the Cook Islands (82-16) and Fiji (78-0) in the World Cup. Tonga, despite being undefeated in the tournament with wins over England (30-12), Lebanon (36-0), and a narrow victory against Samoa (20-18), faces a higher-ranked opponent with a strong recent scoring record. New Zealand also has some key players returning from suspension or injury, such as Phoenix Crossland, which will bolster their squad."
+      },
       "result": null,
       "scored": null
     },

@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-11-06T00:42:21Z",
+    "competition": "men",
+    "kickoff_utc": "2026-11-07T09:05:00Z",
+    "home_team": "New Zealand",
+    "away_team": "Tonga",
+    "venue": "McDonald Jones Stadium, Newcastle",
+    "stage": "knockout",
+    "home_win_prob": 0.68,
+    "away_win_prob": 0.32,
+    "predicted_margin": 10,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 5,
+    "reasoning": "New Zealand enters the match ranked 2nd globally, significantly higher than Tonga at 5th. Historically, New Zealand holds a strong head-to-head record against Tonga, winning 6 of their 8 encounters. While New Zealand experienced a close loss to Australia (24-22), they have since delivered dominant performances with large winning margins against the Cook Islands (82-16) and Fiji (78-0) in the World Cup. Tonga, despite being undefeated in the tournament with wins over England (30-12), Lebanon (36-0), and a narrow victory against Samoa (20-18), faces a higher-ranked opponent with a strong recent scoring record. New Zealand also has some key players returning from suspension or injury, such as Phoenix Crossland, which will bolster their squad.",
+    "model": "gemini-2.5-flash"
+  }
+]

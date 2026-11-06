@@ -1,0 +1,19 @@
+[
+  {
+    "made_at": "2026-11-06T00:42:08Z",
+    "competition": "women",
+    "kickoff_utc": "2026-11-07T06:45:00Z",
+    "home_team": "New Zealand",
+    "away_team": "Samoa",
+    "venue": "McDonald Jones Stadium, Newcastle",
+    "stage": "knockout",
+    "home_win_prob": 0.8,
+    "away_win_prob": 0.2,
+    "predicted_margin": 14,
+    "predicted_winner": "home",
+    "home_rank": 2,
+    "away_rank": 4,
+    "reasoning": "New Zealand, ranked 2nd globally, enters the semi-final undefeated in the pool stage, showcasing strong performances including a comeback win against Fiji and a dominant victory over France. Samoa, ranked 4th, has shown significant improvement in the tournament, securing impressive wins against Wales and England to reach their first semi-final, though they suffered a heavy loss to Australia. While Samoa pushed New Zealand in their last encounter in 2025, losing 22-20 after leading 20-0, New Zealand's ability to recover and their overall depth are key factors. Samoa is also contending with several key injuries to players like Taliah Fuimaono, Sarina Masaga, and Sienna Lofipo, which could impact their performance.",
+    "model": "gemini-2.5-flash"
+  }
+]
