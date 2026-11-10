@@ -1,10 +1,12 @@
 # RLWC Predictor
 
+> **Experiment status: FAILED.** Semi-final coverage broke when an unpinned `google-genai` major upgrade silently killed every Gemini call from 2026-11-06 08:36 UTC. See [`EXPERIMENT.md`](EXPERIMENT.md). Pool-stage scoreboard numbers are a partial record only — not a valid full-tournament result.
+
 An experiment to see how accurately an AI agent can predict the results of the 2026 Rugby League World Cup — **men's and women's** tournaments (roughly 15 October to 15 November 2026, Australia, New Zealand and Papua New Guinea). The women's competition starts about a day after the men's.
 
-No money is involved. The point is to measure, honestly, how well the agent does compared with simple baselines.
+No money is involved. The point is to measure, honestly, how well the agent does compared with simple baselines. This run did not finish under those rules.
 
-Everything runs on its own. You set it up once and then check the scoreboard whenever you like.
+Everything was meant to run on its own after setup. In practice, silent API failure left the board looking healthy while knockout forecasts and scores stopped.
 
 ## How it works
 
@@ -25,7 +27,8 @@ requirements.txt                Python dependencies
 data/fixtures.json              Published fixtures, including named semis
 data/predictions/               One JSON file per match, append-only list of versions
 data/results/                   One JSON file per finished match
-SCOREBOARD.md                   Auto-generated running results
+SCOREBOARD.md                   Auto-generated running results (failure banner included)
+EXPERIMENT.md                   Verdict, gap, root cause, integrity rules
 docs/index.html                 HTML scoreboard (local open or optional GitHub Pages)
 docs/scoreboard.json            Same data as JSON for the HTML page
 ```
@@ -95,13 +98,25 @@ Designed to run on the **Gemini free tier** (AI Studio API key, no billing requi
 
 Free-tier rate limits reset daily. Two runs a day across men's plus women's fixtures uses more quota than men-only; if a run fails with a quota error, re-run it later from the Actions tab.
 
+## Incident / gap (Nov 2026)
+
+Full write-up: [`EXPERIMENT.md`](EXPERIMENT.md).
+
+- **From 2026-11-06 08:36 UTC**, Actions installed `google-genai 3.0.0` (requirements were `>=1.0.0`). That release defaulted to API `v1`, which rejects this project’s `system_instruction`. Every discover / predict / score call failed with `400 INVALID_ARGUMENT`.
+- **Nov 7 semis** have pre-break predictions but never got recorded results (stuck Pending).
+- **Nov 8 semis** have no predictions — the whole pre-kickoff window ran under the broken SDK, and post-kickoff forecasts are forbidden.
+- Jobs stayed **green** because exceptions were swallowed; many commits only refreshed the scoreboard timestamp.
+- **No retroactive Gemini forecasts** for missed matches. That would contaminate the audit trail.
+
 ## Limitations
 
+- **Experiment incomplete.** Knockout coverage failed; do not treat the scoreboard as a finished tournament measure. See [`EXPERIMENT.md`](EXPERIMENT.md).
 - **Small sample.** Roughly 20 men's matches and a smaller women's draw. Interesting for comparison, not statistical proof. A single upset can move the Brier score a lot.
 - **Draws.** Pool matches can end in a draw. By default these are scored as 0.5 for each side. If you would rather exclude draws, change `DRAW_HANDLING` in `src/run.py` (or set the `DRAW_HANDLING` env var to `exclude`).
 - **Result lookups.** The agent finds scores through web search. Results stay provisional until two agreeing lookups (or 24 hours after kickoff), then lock. If a result is still wrong, edit the match file in `data/results/` by hand; the scoreboard rebuilds on the next run.
 - **No live-score leakage.** Matches that have already kicked off are never predicted.
 - **Information cutoff.** The agent can only use what it can find on the web at the time of each run, so thin or conflicting coverage of a team will show up as lower confidence or lower quality predictions.
+- **Unpinned SDK risk.** A free-floating `google-genai>=1.0.0` install can pick up breaking majors mid-tournament (this is what ended the run).
 
 ## Troubleshooting
 
@@ -110,9 +125,10 @@ Free-tier rate limits reset daily. Two runs a day across men's plus women's fixt
 | Workflow fails at push | Workflow permissions set to "Read and write" (setup step 4) |
 | `GEMINI_API_KEY` error | Secret name spelled exactly, and set under Actions secrets |
 | Quota / 429 errors | Free-tier daily limit hit; wait and re-run, or switch `GEMINI_MODEL` |
-| No predictions appear | Check the run is inside 14 October to 16 November, or trigger it manually |
+| No predictions appear | Check the run is inside 14 October to 16 November, or trigger it manually; also open the log for `Fixture discovery failed` (green jobs can still be failing Gemini) |
 | Duplicate or missing matches | Open the run log and check the fixture list the agent found |
 | Run skipped | The window check step prints the reason in the log |
+| `Developer instruction is not enabled for api version v1` | `google-genai` 3.x defaulting to API `v1`; pin `<3` / `==2.34.0` or force `v1beta` — see [`EXPERIMENT.md`](EXPERIMENT.md) |
 
 ## Watching results
 
@@ -135,4 +151,6 @@ You can publish `docs/` via **Settings → Pages → Deploy from a branch → `/
 
 ## Ending the experiment
 
-After the finals around 15 November, the scheduled runs skip themselves from 17 November. `SCOREBOARD.md` and `docs/index.html` will hold the final tally.
+**This run is closed as a failure.** See [`EXPERIMENT.md`](EXPERIMENT.md).
+
+Scheduled runs still skip themselves from 17 November. `SCOREBOARD.md` and `docs/index.html` hold a partial tally plus a failure banner — not a completed experiment.

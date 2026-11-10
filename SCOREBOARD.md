@@ -1,6 +1,8 @@
 # SCOREBOARD
 
-Updated: 2026-11-10T08:52:24Z
+> **Experiment status: FAILED.** Gemini calls broke from 2026-11-06 08:36 UTC (unpinned `google-genai` 3.0.0 → API `v1` rejected `system_instruction`). Nov 7 semis: predictions exist, results never recorded. Nov 8 semis: no predictions. Partial pool-stage numbers only — not a valid full-tournament result. See [`EXPERIMENT.md`](EXPERIMENT.md).
+
+Updated: 2026-11-10T09:26:44Z
 
 ## Matches
 
@@ -72,4 +74,5 @@ Results stay provisional until two agreeing lookups or 24h after kickoff.
 Market odds come from `data/baseline_odds.json` when present (optional, manual).
 
 HTML scoreboard: `docs/index.html` (optional GitHub Pages from `/docs`).
-Scheduled pool fixtures (no prediction yet) come from `data/fixtures.json`.
+Scheduled fixtures (no prediction yet) come from `data/fixtures.json`.
+Experiment verdict: FAILED — see `EXPERIMENT.md`.

@@ -936,6 +936,12 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
     lines = [
         "# SCOREBOARD",
         "",
+        "> **Experiment status: FAILED.** Gemini calls broke from 2026-11-06 08:36 UTC "
+        "(unpinned `google-genai` 3.0.0 → API `v1` rejected `system_instruction`). "
+        "Nov 7 semis: predictions exist, results never recorded. Nov 8 semis: no predictions. "
+        "Partial pool-stage numbers only — not a valid full-tournament result. "
+        "See [`EXPERIMENT.md`](EXPERIMENT.md).",
+        "",
         f"Updated: {updated}",
         "",
         "## Matches",
@@ -991,7 +997,8 @@ def write_scoreboard_outputs(rows: list[dict[str, Any]]) -> None:
             "Market odds come from `data/baseline_odds.json` when present (optional, manual).",
             "",
             "HTML scoreboard: `docs/index.html` (optional GitHub Pages from `/docs`).",
-            "Scheduled pool fixtures (no prediction yet) come from `data/fixtures.json`.",
+            "Scheduled fixtures (no prediction yet) come from `data/fixtures.json`.",
+            "Experiment verdict: FAILED — see `EXPERIMENT.md`.",
             "",
         ]
     )

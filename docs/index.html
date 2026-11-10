@@ -82,6 +82,28 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
+    .failure-banner {
+      margin-top: 1.5rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid rgba(226, 91, 91, 0.45);
+      border-left: 4px solid var(--bad);
+      background: rgba(226, 91, 91, 0.1);
+      color: var(--mist);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .failure-banner strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--bad);
+    }
+    .failure-banner a {
+      color: var(--whistle);
+    }
 
     section {
       margin-top: 2.75rem;
@@ -251,6 +273,13 @@
       <h1 class="brand">RLWC <span>Predictor</span></h1>
       <p class="lede">Men’s and women’s Rugby League World Cup 2026 — forecasts locked before kickoff, scored against the real results.</p>
       <p class="meta" id="updated">Loading…</p>
+      <aside class="failure-banner" role="status">
+        <strong>Experiment failed</strong>
+        From 6 Nov 2026 the unattended Gemini pipeline stopped working (SDK major bump;
+        jobs stayed green). Semi-final forecasts and scores are incomplete. Pool-stage
+        numbers below are a partial record only — not a full-tournament result.
+        Details: <a href="EXPERIMENT.md">EXPERIMENT.md</a>.
+      </aside>
     </header>
 
     <section aria-labelledby="summary-heading">
@@ -269,14 +298,14 @@
     </section>
 
     <footer>
-      Predictions are append-only and scored only if made before kickoff.
-      Results stay provisional until confirmed. Opening this file from a private
-      repo keeps it private; enabling GitHub Pages usually publishes it publicly.
+      Experiment status: FAILED. Predictions are append-only and scored only if made
+      before kickoff. Results stay provisional until confirmed. Opening this file from
+      a private repo keeps it private; enabling GitHub Pages usually publishes it publicly.
     </footer>
   </main>
 
   <script id="scoreboard-data" type="application/json">{
-  "updated": "2026-11-10T08:52:24Z",
+  "updated": "2026-11-10T09:26:44Z",
   "summaries": {
     "overall": {
       "count": 27,
