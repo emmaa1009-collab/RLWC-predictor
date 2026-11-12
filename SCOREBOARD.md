@@ -2,7 +2,7 @@
 
 > **Experiment status: FAILED.** Gemini calls broke from 2026-11-06 08:36 UTC (unpinned `google-genai` 3.0.0 → API `v1` rejected `system_instruction`). Nov 7 semis: predictions exist, results never recorded. Nov 8 semis: no predictions. Partial pool-stage numbers only — not a valid full-tournament result. See [`EXPERIMENT.md`](EXPERIMENT.md).
 
-Updated: 2026-11-11T08:28:38Z
+Updated: 2026-11-12T01:46:31Z
 
 ## Matches
 
